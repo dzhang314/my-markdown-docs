@@ -22,9 +22,9 @@ md.use(require('markdown-it-container'), 'definition', {
     },
     render: function(tokens, idx) {
         if (tokens[idx].nesting === 1) { // opening tag
-            return '<div class="definition">\n';
+            return '<p><div class="card bg-light"><div class="card-body">\n';
         } else { // closing tag
-            return '</div>\n';
+            return '</div></div></p>\n';
         }
     }
 });
@@ -62,6 +62,8 @@ output += 'crossorigin="anonymous">\n';
 output += "<style> @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap'); </style>\n";
 output += `<style>
 p { font-family: 'STIX Two Text', serif; }
+h1 { text-align: center; }
+.card-body p:last-child { margin-bottom: 0; padding-bottom: 0; }
 .katex { font-size: 1.1em; }
 </style>\n`;
 
@@ -86,4 +88,4 @@ output += 'crossorigin="anonymous"></script>\n';
 output += '</body>\n';
 output += '</html>\n';
 
-fs.writeFileSync("test2.html", output);
+fs.writeFileSync("output/test.html", output);
