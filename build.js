@@ -71,8 +71,9 @@ output += `<style>
 @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 p { font-family: 'STIX Two Text', serif; }
 h1 { text-align: center; }
+.navbar { padding: 0 0.5rem; }
 .container-lg { max-width: 960px; }
-.card-header { padding: 0.35rem 0.7rem; }
+.card-header { padding: 0.3rem 0.7rem 0.1rem; }
 .card-header p:last-child { margin-bottom: 0; }
 .card-body { padding: 0.35rem 0.7rem; }
 .card-body p:last-child { margin-bottom: 0; }

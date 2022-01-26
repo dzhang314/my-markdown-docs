@@ -8,6 +8,10 @@
             {
                 "match": "test.md$",
                 "cmd": "node build.js"
+            },
+            {
+                "match": "dkzhang-navbar.html$",
+                "cmd": "node build.js"
             }
         ]
     }
