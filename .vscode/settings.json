@@ -1,0 +1,14 @@
+{
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "build.js$",
+                "cmd": "node build.js"
+            },
+            {
+                "match": "test.md$",
+                "cmd": "node build.js"
+            }
+        ]
+    }
+}
