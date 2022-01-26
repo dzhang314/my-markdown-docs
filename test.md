@@ -14,11 +14,14 @@ The Pythagorean theorem says that $a^2 + b^2 = c^2$, where $a$, $b$, and $c$ are
 
 ### Subsection 2.2
 
-::: definition
-**Definition:** A ___topological space___ is an ordered pair $(X, T)$ consisting of a set $X$ and a collection of subsets $T \subseteq \mathcal{P}(X)$.
-
-This is a second paragraph inside of the definition.
+:::::: card
+::: card-header
+**Definition: Topological Space** $\bm{(X, T)}$
 :::
+::: card-body
+A ___topological space___ is an ordered pair $(X, T)$ consisting of a set $X$ and a collection of subsets $T \subseteq \mathcal{P}(X)$.
+:::
+::::::
 
 ## Section 3
 
