@@ -1,0 +1,16 @@
+{
+    "Create card": {
+        "scope": "markdown",
+        "prefix": "card",
+        "body": [
+            ":::::: card",
+            "::: card-header",
+            "**${1:heading}**",
+            ":::",
+            "::: card-body",
+            "${0:content}",
+            ":::",
+            "::::::"
+        ]
+    }
+}

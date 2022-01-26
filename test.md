@@ -1,28 +1,44 @@
 # Page Title
 
-## Section 1
-
-Hello, world! This is a MarkDown test file. The quadratic formula is
-
-$$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}. $$
-
-## Section 2
-
-### Subsection 2.1
-
-The Pythagorean theorem says that $a^2 + b^2 = c^2$, where $a$, $b$, and $c$ are the side lengths of a right triangle, and $c$ is the length of the hypotenuse.
-
-### Subsection 2.2
-
 :::::: card
 ::: card-header
-**Definition: Topological Space** $\bm{(X, T)}$
+**Definition: Empty Set, $\varnothing$**
 :::
 ::: card-body
-A ___topological space___ is an ordered pair $(X, T)$ consisting of a set $X$ and a collection of subsets $T \subseteq \mathcal{P}(X)$.
+The ___empty set___, denoted by $\varnothing$, is the set that contains no elements at all.
 :::
 ::::::
 
-## Section 3
+In other words, $x \notin \varnothing$ for all $x$.
 
-Last paragraph.
+:::::: card
+::: card-header
+**Definition: Metric, Distance Function, Symmetry, Triangle Inequality**
+:::
+::: card-body
+Let $X$ be a set. A ___metric___ on $X$, also known as a ___distance function___ on $X$, is a function $d: X \times X \to \R$ that satisfies the following requirements:
+
+ * For all $x, y \in X$, we have $d(x, y) = 0$ if and only if $x = y$.
+ * ___Symmetry___: $d(x, y) = d(y, x)$ for all $x, y \in X$.
+ * ___Triangle inequality___: $d(x, z) \le d(x, y) + d(y, z)$ for all $x, y, z \in X$.
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Metric Space, Underlying Set, Point**
+:::
+::: card-body
+A ___metric space___ is an ordered pair $(X, d)$ consisting of a set $X$, called the ___underlying set___ of the metric space, and a metric $d$ on $X$. The elements of $X$ are called the ___points___ of the metric space.
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Open Ball**
+:::
+::: card-body
+Let $(X, d)$ be a metric space, $x_0 \in X$, and $r \in \R$. The ___open ball___ of radius $r$ centered at $x_0$, denoted by $B_r(x_0)$, is the subset of $X$ defined by
+$$ B_r(x_0) \coloneqq \{ x \in X : d(x, x_0) < r \}. $$
+:::
+::::::

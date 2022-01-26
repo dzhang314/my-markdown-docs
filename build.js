@@ -12,7 +12,38 @@ md.use(require('markdown-it-texmath'), {
     engine: require('katex'),
     delimiters: 'dollars',
     katexOptions: { macros: {
-        "\\R": "\\mathbb{R}"
+        "\\N": "{\\mathbb{N}}",
+        "\\Z": "{\\mathbb{Z}}",
+        "\\Q": "{\\mathbb{Q}}",
+        "\\R": "{\\mathbb{R}}",
+        "\\C": "{\\mathbb{C}}",
+        "\\alg": "\\langle {#1} \\rangle",
+        "\\va": "{\\mathbf{a}}",
+        "\\vb": "{\\mathbf{b}}",
+        "\\vc": "{\\mathbf{c}}",
+        "\\vd": "{\\mathbf{d}}",
+        "\\ve": "{\\mathbf{e}}",
+        "\\vf": "{\\mathbf{f}}",
+        "\\vg": "{\\mathbf{g}}",
+        "\\vh": "{\\mathbf{h}}",
+        "\\vi": "{\\mathbf{i}}",
+        "\\vj": "{\\mathbf{j}}",
+        "\\vk": "{\\mathbf{k}}",
+        "\\vl": "{\\mathbf{l}}",
+        "\\vm": "{\\mathbf{m}}",
+        "\\vn": "{\\mathbf{n}}",
+        "\\vo": "{\\mathbf{0}}",
+        "\\vp": "{\\mathbf{p}}",
+        "\\vq": "{\\mathbf{q}}",
+        "\\vr": "{\\mathbf{r}}",
+        "\\vs": "{\\mathbf{s}}",
+        "\\vt": "{\\mathbf{t}}",
+        "\\vu": "{\\mathbf{u}}",
+        "\\vv": "{\\mathbf{v}}",
+        "\\vw": "{\\mathbf{w}}",
+        "\\vx": "{\\mathbf{x}}",
+        "\\vy": "{\\mathbf{y}}",
+        "\\vz": "{\\mathbf{z}}",
     }}
 });
 
@@ -69,7 +100,8 @@ output += 'crossorigin="anonymous">\n';
 
 output += `<style>
 @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-p { font-family: 'STIX Two Text', serif; }
+p { font-family: 'STIX Two Text', serif; text-rendering: optimizeLegibility; }
+li { font-family: 'STIX Two Text', serif; text-rendering: optimizeLegibility; }
 h1 { text-align: center; }
 .navbar { padding: 0 0.5rem; }
 .container-lg { max-width: 960px; }
@@ -77,6 +109,11 @@ h1 { text-align: center; }
 .card-header p:last-child { margin-bottom: 0; }
 .card-body { padding: 0.35rem 0.7rem; }
 .card-body p:last-child { margin-bottom: 0; }
+.card-body ul:last-child { margin-bottom: 0; }
+.card-body ol:last-child { margin-bottom: 0; }
+.card-body p + ul { margin-top: -0.5rem; }
+.card-body p + ol { margin-top: -0.5rem; }
+.card-body .katex-display { margin: -0.5rem 0 0.5rem; }
 .katex { font-size: 1.1em; }
 </style>\n`;
 
