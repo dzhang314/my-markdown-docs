@@ -18,6 +18,7 @@ md.use(require('markdown-it-texmath'), {
         "\\R": "{\\mathbb{R}}",
         "\\C": "{\\mathbb{C}}",
         "\\alg": "\\langle {#1} \\rangle",
+        "\\vspan": "\\operatorname{span}",
         "\\va": "{\\mathbf{a}}",
         "\\vb": "{\\mathbf{b}}",
         "\\vc": "{\\mathbf{c}}",
@@ -99,11 +100,12 @@ output += 'integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUd
 output += 'crossorigin="anonymous">\n';
 
 output += `<style>
-@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-p { font-family: 'STIX Two Text', serif; text-rendering: optimizeLegibility; }
-li { font-family: 'STIX Two Text', serif; text-rendering: optimizeLegibility; }
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,500;0,700;1,500;1,700&display=swap');
+p { font-family: 'STIX Two Text', serif; font-weight: 500; text-rendering: optimizeLegibility; text-align: justify; }
+li { font-family: 'STIX Two Text', serif; font-weight: 500; text-rendering: optimizeLegibility; }
 h1 { text-align: center; }
 .navbar { padding: 0 0.5rem; }
+.navbar li { font-family: var(--bs-font-sans-serif); font-weight: normal; }
 .container-lg { max-width: 960px; }
 .card-header { padding: 0.3rem 0.7rem 0.1rem; }
 .card-header p:last-child { margin-bottom: 0; }
@@ -113,8 +115,10 @@ h1 { text-align: center; }
 .card-body ol:last-child { margin-bottom: 0; }
 .card-body p + ul { margin-top: -0.5rem; }
 .card-body p + ol { margin-top: -0.5rem; }
+.card-body ul + p { margin-top: -0.5rem; }
+.card-body ol + p { margin-top: -0.5rem; }
 .card-body .katex-display { margin: -0.5rem 0 0.5rem; }
-.katex { font-size: 1.1em; }
+.katex { font-size: 1.05em; }
 </style>\n`;
 
 output += '</head>\n';
