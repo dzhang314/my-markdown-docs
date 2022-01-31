@@ -55,4 +55,8 @@ function compileMarkdown(inputFile, title, debug, outputFile) {
 }
 
 compileMarkdown("test.md", "Test", true, "output/test.html");
-compileMarkdown("home.md", "David K. Zhang - Personal Website", true, "output/index.html");
+compileMarkdown("home.md"        , "David K. Zhang - Personal Website", true, "output/index.html"       );
+compileMarkdown("projects.md"    , "David K. Zhang - Projects"        , true, "output/projects.html"    );
+compileMarkdown("publications.md", "David K. Zhang - Publications"    , true, "output/publications.html");
+compileMarkdown("about.md"       , "David K. Zhang - About"           , true, "output/about.html"       );
+compileMarkdown("contact.md"     , "David K. Zhang - Contact"         , true, "output/contact.html"     );
