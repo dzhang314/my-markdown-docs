@@ -18,5 +18,12 @@
                 "cmd": "node build.js"
             }
         ]
-    }
+    },
+    "cSpell.words": [
+        "linkify",
+        "mathbb",
+        "mathbf",
+        "operatorname",
+        "texmath"
+    ]
 }

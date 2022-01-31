@@ -13,42 +13,9 @@ const md = require('markdown-it')({
 md.use(require('markdown-it-texmath'), {
     engine: require('katex'),
     delimiters: 'dollars',
-    katexOptions: { macros: {
-        "\\N": "{\\mathbb{N}}",
-        "\\Z": "{\\mathbb{Z}}",
-        "\\Q": "{\\mathbb{Q}}",
-        "\\R": "{\\mathbb{R}}",
-        "\\C": "{\\mathbb{C}}",
-        "\\alg": "\\langle {#1} \\rangle",
-        "\\vspan": "\\operatorname{span}",
-        "\\aff": "\\operatorname{aff}",
-        "\\va": "{\\mathbf{a}}",
-        "\\vb": "{\\mathbf{b}}",
-        "\\vc": "{\\mathbf{c}}",
-        "\\vd": "{\\mathbf{d}}",
-        "\\ve": "{\\mathbf{e}}",
-        "\\vf": "{\\mathbf{f}}",
-        "\\vg": "{\\mathbf{g}}",
-        "\\vh": "{\\mathbf{h}}",
-        "\\vi": "{\\mathbf{i}}",
-        "\\vj": "{\\mathbf{j}}",
-        "\\vk": "{\\mathbf{k}}",
-        "\\vl": "{\\mathbf{l}}",
-        "\\vm": "{\\mathbf{m}}",
-        "\\vn": "{\\mathbf{n}}",
-        "\\vo": "{\\mathbf{0}}",
-        "\\vp": "{\\mathbf{p}}",
-        "\\vq": "{\\mathbf{q}}",
-        "\\vr": "{\\mathbf{r}}",
-        "\\vs": "{\\mathbf{s}}",
-        "\\vt": "{\\mathbf{t}}",
-        "\\vu": "{\\mathbf{u}}",
-        "\\vv": "{\\mathbf{v}}",
-        "\\vw": "{\\mathbf{w}}",
-        "\\vx": "{\\mathbf{x}}",
-        "\\vy": "{\\mathbf{y}}",
-        "\\vz": "{\\mathbf{z}}",
-    }}
+    katexOptions: {
+        macros: JSON.parse(fs.readFileSync('dkzhang-macros.json', 'utf8'))
+    }
 });
 
 const mdc = require('markdown-it-container');
