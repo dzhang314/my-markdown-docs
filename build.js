@@ -11,6 +11,8 @@ const md = require('markdown-it')({
     typographer: true // replace quotes with smart quotes
 });
 
+md.use(require('markdown-it-attrs'));
+
 md.use(require('markdown-it-texmath'), {
     engine: require('katex'),
     delimiters: 'dollars',

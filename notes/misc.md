@@ -1,4 +1,4 @@
-<h1 class="page-title">Miscellaneous Thoughts</h1>
+# Miscellaneous Thoughts {.page-title}
 
 :::::: card
 ::: card-header

@@ -1,4 +1,4 @@
-<h1 class="page-title">Hey! I&rsquo;m David.</h1>
+# Hey! I'm David. {.page-title}
 
 This is where you'll find the things I do and the notes I write.
 

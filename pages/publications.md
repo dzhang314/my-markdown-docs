@@ -1,6 +1,6 @@
-<h1 class="page-title">Your new reading list.</h1>
+# Your new reading list. {.page-title}
 
-<hr>
+--------------------------------------------------------------------------------
 
 ***Binding energies and structures of two-dimensional excitonic complexes in transition metal dichalcogenides***\
 Daniel W. Kidd, David K. Zhang. and Kálmán Varga\
@@ -18,7 +18,7 @@ energies of the L=0 state showing good agreement with experimental measurements
 of biexciton binding energies. Ground and newly discussed excited state
 exciton-trions are predicted to be bound and their structures are investigated.
 
-<hr>
+--------------------------------------------------------------------------------
 
 ***Excited Biexcitons in Transition Metal Dichalcogenides***\
 David K. Zhang, Daniel W. Kidd, and Kálmán Varga\
@@ -37,7 +37,7 @@ excited state is in very good agreement with experimental data. This excited
 state corresponds to a hole attached to a negative trion and may be a possible
 resolution of the discrepancy between theory and experiment.
 
-<hr>
+--------------------------------------------------------------------------------
 
 ***Excited Biexcitons in Transition Metal Dichalcogenides*** _(contributed conference talk)_\
 David K. Zhang\
@@ -58,7 +58,7 @@ that the electron-hole correlation functions of the ground state biexciton and
 trion are remarkably similar, possibly explaining why a distinct signature of
 ground state biexcitons would not have been noticed experimentally.
 
-<hr>
+--------------------------------------------------------------------------------
 
 ***A General Algorithm for the Efficient Derivation of Linear Multistep Methods***
 _(contributed conference talk)_\

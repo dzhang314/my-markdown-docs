@@ -1,4 +1,4 @@
-<h1 class="page-title">Here&rsquo;s what I&rsquo;m working on.</h1>
+# Here's what I'm working on. {.page-title}
 
 I'm currently working with [Alex Aiken](http://theory.stanford.edu/~aiken/) to design and implement a [linear solver library](https://github.com/dzhang314/LegionSolvers) for the [Legion parallel programming system](https://legion.stanford.edu/).
 
