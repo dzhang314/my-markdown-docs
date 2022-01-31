@@ -55,9 +55,9 @@ function compileMarkdown(inputFile, title, debug, outputFile) {
     fs.writeFileSync(outputFile, output);
 }
 
-compileMarkdown("notes/test.md", "Test", true, "output/test.html");
 compileMarkdown("pages/home.md"        , "David K. Zhang - Personal Website", true, "output/index.html"       );
 compileMarkdown("pages/projects.md"    , "David K. Zhang - Projects"        , true, "output/projects.html"    );
 compileMarkdown("pages/publications.md", "David K. Zhang - Publications"    , true, "output/publications.html");
 compileMarkdown("pages/about.md"       , "David K. Zhang - About"           , true, "output/about.html"       );
 compileMarkdown("pages/contact.md"     , "David K. Zhang - Contact"         , true, "output/contact.html"     );
+compileMarkdown("notes/misc.md"        , "David K. Zhang - Misc. Thoughts"  , true, "output/misc.html"        );
