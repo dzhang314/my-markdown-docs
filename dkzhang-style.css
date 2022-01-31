@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+a:not([class]) { text-decoration: none; }
+a:not([class]):hover { text-decoration: underline; }
+
+.katex { font-size: 1.05em; }
+
+h1 { text-align: center; }
+
+p {
+    font-family: 'STIX Two Text', serif;
+    text-align: justify;
+}
+
+.sans p {
+    font-family: var(--bs-font-sans-serif);
+    text-align: justify;
+}
+
+li {
+    font-family: 'STIX Two Text', serif;
+}
+
+.navbar { padding: 0 0.5rem; }
+
+.navbar li { font-family: var(--bs-font-sans-serif); }
+
+.container-lg { max-width: 960px; }
+
+.card-header { padding: 0.3rem 0.7rem 0.1rem; }
+.card-header p:last-child { margin-bottom: 0; }
+
+.card-body {
+    padding: 0.35rem 0.7rem;
+}
+
+.card-body p:last-child { margin-bottom: 0; }
+.card-body ul:last-child { margin-bottom: 0; }
+.card-body ol:last-child { margin-bottom: 0; }
+
+.card-body p+ul { margin-top: -0.5rem; }
+.card-body p+ol { margin-top: -0.5rem; }
+.card-body ul+p { margin-top: -0.5rem; }
+.card-body ol+p { margin-top: -0.5rem; }
+
+.card-body .katex-display { margin: -0.5rem 0 0.5rem; }

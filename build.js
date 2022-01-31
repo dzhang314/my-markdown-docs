@@ -1,6 +1,8 @@
 const fs = require('fs');
 
+const template = fs.readFileSync('dkzhang-template.html', 'utf8');
 const navbar = fs.readFileSync('dkzhang-navbar.html', 'utf8');
+const style = fs.readFileSync('dkzhang-style.css', 'utf8');
 
 const md = require('markdown-it')({
     html: true,       // allow HTML tags
@@ -73,67 +75,15 @@ addContainerType('sans', /^sans$/, '<div class="sans">', '</div>');
 
 function compileMarkdown(inputFile, title, debug, outputFile) {
     const input = fs.readFileSync(inputFile, "utf8");
-    output = '<!DOCTYPE html>\n';
-    output += '<html lang="en-US">\n';
-    output += '<head>\n';
-    output += '<meta charset="UTF-8">\n';
-    output += '<meta name="viewport" content="width=device-width, initial-scale=1">\n';
-    output += '<title>' + title + '</title>\n';
-    output += '<link rel="stylesheet" ';
-    output += 'href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.3/dist/litera/bootstrap.min.css" ';
-    output += 'integrity="sha384-jWh2BIV7iyVvMfp6tT2MlPY25mY5ow68HOIK/tjzAwX3LtHpnRcXovTJ3vNx4imh" ';
-    output += 'crossorigin="anonymous">\n';
-    // output += '<link rel="stylesheet" ';
-    // output += 'href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" ';
-    // output += 'integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" ';
-    // output += 'crossorigin="anonymous">\n';
-    output += '<link rel="stylesheet" ';
-    output += 'href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" ';
-    output += 'integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" ';
-    output += 'crossorigin="anonymous">\n';
-    output += `<style>
-@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-a:not([class]) { text-decoration: none; }
-a:not([class]):hover { text-decoration: underline; }
-p { font-family: 'STIX Two Text', serif; font-weight: 400; text-rendering: optimizeLegibility; text-align: justify; }
-.sans p { font-family: var(--bs-font-sans-serif); font-weight: 400; text-align: justify; }
-li { font-family: 'STIX Two Text', serif; font-weight: 400; text-rendering: optimizeLegibility; }
-h1 { text-align: center; }
-.navbar { padding: 0 0.5rem; }
-.navbar li { font-family: var(--bs-font-sans-serif); font-weight: normal; }
-.container-lg { max-width: 960px; }
-.card-header { padding: 0.3rem 0.7rem 0.1rem; }
-.card-header p:last-child { margin-bottom: 0; }
-.card-body { padding: 0.35rem 0.7rem; }
-.card-body p:last-child { margin-bottom: 0; }
-.card-body ul:last-child { margin-bottom: 0; }
-.card-body ol:last-child { margin-bottom: 0; }
-.card-body p + ul { margin-top: -0.5rem; }
-.card-body p + ol { margin-top: -0.5rem; }
-.card-body ul + p { margin-top: -0.5rem; }
-.card-body ol + p { margin-top: -0.5rem; }
-.card-body .katex-display { margin: -0.5rem 0 0.5rem; }
-.katex { font-size: 1.05em; }
-</style>\n`;
-    output += '</head>\n';
-    output += '<body>\n';
-    output += navbar;
-    output += "<div class='container-lg'>\n";
-    output += "<div class='d-print-none' style='padding-top: 4.0rem;'>\n";
-    output += "</div>\n";
-    output += "<main>\n";
-    output += md.render(input);
-    output += "</main>\n";
-    output += "</div>\n";
-    output += '<script ';
-    output += 'src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ';
-    output += 'integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" ';
-    output += 'crossorigin="anonymous"></script>\n';
+    output = template.replace("{{{TITLE}}}", title);
+    output = output.replace("{{{STYLE}}}", style);
+    output = output.replace("{{{NAVBAR}}}", navbar);
+    output = output.replace("{{{CONTENT}}}", md.render(input));
     if (debug) {
-        output += '<script type="text/javascript" src="https://livejs.com/live.js"></script>\n';
+        output = output.replace("{{{DEBUG}}}", '<script type="text/javascript" src="https://livejs.com/live.js"></script>');
+    } else {
+        output = output.replace("{{{DEBUG}}}", "");
     }
-    output += '</body>\n';
-    output += '</html>\n';
     fs.writeFileSync(outputFile, output);
 }
 
