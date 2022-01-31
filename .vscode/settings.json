@@ -10,7 +10,7 @@
                 "cmd": "node build.js"
             },
             {
-                "match": "pages\\\\.*\\.md$",
+                "match": "(pages|notes)(\\\\|/).*\\.md$",
                 "cmd": "node build.js"
             },
             {
