@@ -10,7 +10,7 @@
                 "cmd": "node build.js"
             },
             {
-                "match": "home.md$",
+                "match": "pages\\\\.*\\.md$",
                 "cmd": "node build.js"
             },
             {

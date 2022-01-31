@@ -5,7 +5,11 @@ a:not([class]):hover { text-decoration: underline; }
 
 .katex { font-size: 1.05em; }
 
-h1 { text-align: center; }
+h1.page-title {
+    text-align: center;
+    font-size: 2.0rem;
+    padding: 1.0rem;
+}
 
 p {
     font-family: 'STIX Two Text', serif;
@@ -27,16 +31,13 @@ li {
 
 .container-lg { max-width: 960px; }
 
-.card-header { padding: 0.3rem 0.7rem 0.1rem; }
+.card-header { padding: 0.30rem 0.70rem 0.10rem; }
+.card-body   { padding: 0.35rem 0.70rem; }
+
 .card-header p:last-child { margin-bottom: 0; }
-
-.card-body {
-    padding: 0.35rem 0.7rem;
-}
-
-.card-body p:last-child { margin-bottom: 0; }
-.card-body ul:last-child { margin-bottom: 0; }
-.card-body ol:last-child { margin-bottom: 0; }
+.card-body   p:last-child { margin-bottom: 0; }
+.card-body  ul:last-child { margin-bottom: 0; }
+.card-body  ol:last-child { margin-bottom: 0; }
 
 .card-body p+ul { margin-top: -0.5rem; }
 .card-body p+ol { margin-top: -0.5rem; }

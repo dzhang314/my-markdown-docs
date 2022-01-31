@@ -1,1 +1,1 @@
-<h1 style="font-size: 2.0rem; padding: 1.0rem;">Here&rsquo;s what I&rsquo;m working on.</h1>
+<h1 class="page-title">Here&rsquo;s what I&rsquo;m working on.</h1>
