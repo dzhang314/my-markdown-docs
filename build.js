@@ -61,3 +61,10 @@ compileMarkdown("pages/publications.md", "David K. Zhang - Publications"    , tr
 compileMarkdown("pages/about.md"       , "David K. Zhang - About"           , true, "output/about.html"       );
 compileMarkdown("pages/contact.md"     , "David K. Zhang - Contact"         , true, "output/contact.html"     );
 compileMarkdown("notes/misc.md"        , "David K. Zhang - Misc. Thoughts"  , true, "output/misc.html"        );
+
+compileMarkdown("pages/home.md"        , "David K. Zhang - Personal Website", false, "../dzhang314.github.com/index.html"       );
+compileMarkdown("pages/projects.md"    , "David K. Zhang - Projects"        , false, "../dzhang314.github.com/projects.html"    );
+compileMarkdown("pages/publications.md", "David K. Zhang - Publications"    , false, "../dzhang314.github.com/publications.html");
+compileMarkdown("pages/about.md"       , "David K. Zhang - About"           , false, "../dzhang314.github.com/about.html"       );
+compileMarkdown("pages/contact.md"     , "David K. Zhang - Contact"         , false, "../dzhang314.github.com/contact.html"     );
+compileMarkdown("notes/misc.md"        , "David K. Zhang - Misc. Thoughts"  , false, "../dzhang314.github.com/misc.html"        );
