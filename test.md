@@ -190,11 +190,11 @@ As with groups, rings, and fields, it is common to denote a vector space $\alg{V
 **Definition: Linear Combination**
 :::
 ::: card-body
-Let $V$ be a vector space over a field $F$, and let $n \in \N$. A ___linear combination___ of a finite collection of vectors $\vv_1, \vv_2, \dots, \vv_n \in V$ is a vector of the form
+Let $V$ be a vector space over a field $F$, and let $n \in \N$. A ___linear combination___ of a finite sequence of vectors $\vv_1, \vv_2, \dots, \vv_n \in V$ is a vector of the form
 
 $$ a_1 \vv_1 + a_2 \vv_2 + \cdots + a_n \vv_n $$
 
-where $a_1, a_2, \dots, a_n \in F$. We call the scalars $a_1, a_2, \dots, a_n$ the ___coefficients___ of the linear combination. If $n = 0$, we define the unique linear combination of an empty collection of vectors to be $\vo$.
+where $a_1, a_2, \dots, a_n \in F$. We call the sequence of scalars $a_1, a_2, \dots, a_n$ the ___coefficients___ of the linear combination. If $n = 0$, we define the unique linear combination of the empty sequence of vectors to be $\vo$.
 :::
 ::::::
 
@@ -211,6 +211,56 @@ $$ \vspan S \coloneqq \{ a_1 \vv_1 + a_2 \vv_2 + \cdots + a_n \vv_n : n \in \N,\
 ::::::
 
 Because we defined $\vo$ to be the unique linear combination of an empty set of vectors, we always have $\vo \in \vspan S$ for *any* subset $S \subseteq V$, including the empty set.
+
+
+:::::: card
+::: card-header
+**Definition: Linear Subspace**
+:::
+::: card-body
+Let $V$ be a vector space over a field $F$. A ___linear subspace___ of $V$ is a subset $S \subseteq V$ that is closed under taking linear combinations, i.e., every linear combination of every finite sequence of vectors in $S$ is itself in $S$.
+:::
+::::::
+
+Note that the empty set $\varnothing \subseteq V$ is *not* a linear subspace! The requirement of closure under linear combinations includes the *empty* linear combination, which the empty set fails to satisfy, since $\vo \notin \varnothing$. Hence, a linear subspace must always contain the zero vector.
+
+
+:::::: card
+::: card-header
+**Pairwise Linear Combinations Suffice**
+:::
+::: card-body
+**Theorem:** Let $V$ be a vector space over a field $F$. If a subset $S \subseteq V$ has the following two properties, then $S$ is a linear subspace of $V$.
+
+ * ___Contains the zero vector___: $\vo \in S$.
+ * ___Closed under pairwise linear combinations___: For all $a, b \in F$ and $\vv, \vw \in S$, we have $a\vv + b\vw \in S$.
+:::
+::: card-body
+*Proof:* To prove that $S$ is a linear subspace of $V$, we must show that $S$ is closed under taking $n$-ary linear combinations for all $n \in \N$. The $n = 0$ case is established by the first property $\vo \in S$, and the $n = 2$ case is precisely the second property. To handle the $n = 1$ case, let $a \in F$ and $\vv \in S$ be given, and define $b \coloneqq 0 \in F$ and $\vw \coloneqq \vv \in V$. It follows that $a\vv + b\vw = a\vv + 0\vv = a\vv \in S$, as desired.
+
+The remaining cases are handled by induction on $n$. ***TODO: FINISH THIS PROOF***
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Definition: Affine Combination**
+:::
+::: card-body
+Let $V$ be a vector space over a field $F$, and let $n \in \N$. An ___affine combination___ of a finite sequence of vectors $\vv_1, \vv_2, \dots, \vv_n \in V$ is a vector of the form $a_1 \vv_1 + a_2 \vv_2 + \cdots + a_n \vv_n$ where the coefficients $a_1, a_2, \dots, a_n \in F$ satisfy $a_1 + a_2 + \cdots + a_n = 1$.
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Definition: Affine Span, Affine Hull**
+:::
+::: card-body
+Let $V$ be a vector space over a field $F$. The ___affine span___ or ___affine hull___ of a subset $S \subseteq V$, denoted by $\aff S$, is the set of all affine combinations of all finite sequences of vectors in $S$.
+:::
+::::::
 
 
 :::::: card

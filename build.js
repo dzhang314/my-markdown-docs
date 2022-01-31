@@ -19,6 +19,7 @@ md.use(require('markdown-it-texmath'), {
         "\\C": "{\\mathbb{C}}",
         "\\alg": "\\langle {#1} \\rangle",
         "\\vspan": "\\operatorname{span}",
+        "\\aff": "\\operatorname{aff}",
         "\\va": "{\\mathbf{a}}",
         "\\vb": "{\\mathbf{b}}",
         "\\vc": "{\\mathbf{c}}",
@@ -100,9 +101,9 @@ output += 'integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUd
 output += 'crossorigin="anonymous">\n';
 
 output += `<style>
-@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,500;0,700;1,500;1,700&display=swap');
-p { font-family: 'STIX Two Text', serif; font-weight: 500; text-rendering: optimizeLegibility; text-align: justify; }
-li { font-family: 'STIX Two Text', serif; font-weight: 500; text-rendering: optimizeLegibility; }
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+p { font-family: 'STIX Two Text', serif; font-weight: 400; text-rendering: optimizeLegibility; text-align: justify; }
+li { font-family: 'STIX Two Text', serif; font-weight: 400; text-rendering: optimizeLegibility; }
 h1 { text-align: center; }
 .navbar { padding: 0 0.5rem; }
 .navbar li { font-family: var(--bs-font-sans-serif); font-weight: normal; }
