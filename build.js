@@ -1,8 +1,9 @@
 const fs = require('fs');
 
-const template = fs.readFileSync('dkzhang-template.html', 'utf8');
-const navbar = fs.readFileSync('dkzhang-navbar.html', 'utf8');
-const style = fs.readFileSync('dkzhang-style.css', 'utf8');
+const template = fs.readFileSync("templates/dkzhang-template.html", 'utf8');
+const navbar   = fs.readFileSync("templates/dkzhang-navbar.html"  , 'utf8');
+const style    = fs.readFileSync("templates/dkzhang-style.css"    , 'utf8');
+const macros   = fs.readFileSync("templates/dkzhang-macros.json"  , 'utf8');
 
 const md = require('markdown-it')({
     html: true,       // allow HTML tags
@@ -14,7 +15,7 @@ md.use(require('markdown-it-texmath'), {
     engine: require('katex'),
     delimiters: 'dollars',
     katexOptions: {
-        macros: JSON.parse(fs.readFileSync('dkzhang-macros.json', 'utf8'))
+        macros: JSON.parse(macros)
     }
 });
 
@@ -54,9 +55,9 @@ function compileMarkdown(inputFile, title, debug, outputFile) {
     fs.writeFileSync(outputFile, output);
 }
 
-compileMarkdown("test.md", "Test", true, "output/test.html");
-compileMarkdown("home.md"        , "David K. Zhang - Personal Website", true, "output/index.html"       );
-compileMarkdown("projects.md"    , "David K. Zhang - Projects"        , true, "output/projects.html"    );
-compileMarkdown("publications.md", "David K. Zhang - Publications"    , true, "output/publications.html");
-compileMarkdown("about.md"       , "David K. Zhang - About"           , true, "output/about.html"       );
-compileMarkdown("contact.md"     , "David K. Zhang - Contact"         , true, "output/contact.html"     );
+compileMarkdown("notes/test.md", "Test", true, "output/test.html");
+compileMarkdown("pages/home.md"        , "David K. Zhang - Personal Website", true, "output/index.html"       );
+compileMarkdown("pages/projects.md"    , "David K. Zhang - Projects"        , true, "output/projects.html"    );
+compileMarkdown("pages/publications.md", "David K. Zhang - Publications"    , true, "output/publications.html");
+compileMarkdown("pages/about.md"       , "David K. Zhang - About"           , true, "output/about.html"       );
+compileMarkdown("pages/contact.md"     , "David K. Zhang - Contact"         , true, "output/contact.html"     );
