@@ -6,15 +6,11 @@
                 "cmd": "node build.js"
             },
             {
-                "match": "test.md$",
-                "cmd": "node build.js"
-            },
-            {
                 "match": "(pages|notes)(\\\\|/).*\\.md$",
                 "cmd": "node build.js"
             },
             {
-                "match": "dkzhang-navbar.html$",
+                "match": "(templates)(\\\\|/).*\\.(html|css|json)$",
                 "cmd": "node build.js"
             }
         ]
@@ -23,6 +19,7 @@
         "linkify",
         "mathbb",
         "mathbf",
+        "nanolett",
         "operatorname",
         "texmath"
     ]
