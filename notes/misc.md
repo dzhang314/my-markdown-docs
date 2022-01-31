@@ -1,4 +1,4 @@
-# Page Title
+<h1 class="page-title">Miscellaneous Thoughts</h1>
 
 :::::: card
 ::: card-header
@@ -222,7 +222,7 @@ Let $V$ be a vector space over a field $F$. A ___linear subspace___ of $V$ is a 
 :::
 ::::::
 
-Note that the empty set $\varnothing \subseteq V$ is *not* a linear subspace! The requirement of closure under linear combinations includes the *empty* linear combination, which the empty set fails to satisfy, since $\vo \notin \varnothing$. Hence, a linear subspace must always contain the zero vector.
+Note that the empty set $\varnothing \subseteq V$ is *not* a linear subspace! The requirement of closure under linear combinations includes the *empty* linear combination, which the empty set fails to satisfy, since $\vo \notin \varnothing$. Because of this requirement, a linear subspace must always contain the zero vector.
 
 
 :::::: card
