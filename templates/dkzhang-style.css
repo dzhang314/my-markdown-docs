@@ -45,3 +45,4 @@ li {
 .card-body ol+p { margin-top: -0.5rem; }
 
 .card-body .katex-display { margin: -0.5rem 0 0.5rem; }
+.card hr { margin: 0.15rem 0; }
