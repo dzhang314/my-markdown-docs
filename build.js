@@ -57,16 +57,15 @@ function compileMarkdown(inputFile, title, debug, outputFile) {
     fs.writeFileSync(outputFile, output);
 }
 
-compileMarkdown("pages/home.md"        , "David K. Zhang - Personal Website", true, "output/index.html"       );
-compileMarkdown("pages/projects.md"    , "David K. Zhang - Projects"        , true, "output/projects.html"    );
-compileMarkdown("pages/publications.md", "David K. Zhang - Publications"    , true, "output/publications.html");
-compileMarkdown("pages/about.md"       , "David K. Zhang - About"           , true, "output/about.html"       );
-compileMarkdown("pages/contact.md"     , "David K. Zhang - Contact"         , true, "output/contact.html"     );
-compileMarkdown("notes/misc.md"        , "David K. Zhang - Misc. Thoughts"  , true, "output/misc.html"        );
+function compilePage(inputFile, title, outputFile) {
+    compileMarkdown(inputFile, title, true , "output/"                  + outputFile);
+    compileMarkdown(inputFile, title, false, "../dzhang314.github.com/" + outputFile);
+}
 
-compileMarkdown("pages/home.md"        , "David K. Zhang - Personal Website", false, "../dzhang314.github.com/index.html"       );
-compileMarkdown("pages/projects.md"    , "David K. Zhang - Projects"        , false, "../dzhang314.github.com/projects.html"    );
-compileMarkdown("pages/publications.md", "David K. Zhang - Publications"    , false, "../dzhang314.github.com/publications.html");
-compileMarkdown("pages/about.md"       , "David K. Zhang - About"           , false, "../dzhang314.github.com/about.html"       );
-compileMarkdown("pages/contact.md"     , "David K. Zhang - Contact"         , false, "../dzhang314.github.com/contact.html"     );
-compileMarkdown("notes/misc.md"        , "David K. Zhang - Misc. Thoughts"  , false, "../dzhang314.github.com/misc.html"        );
+compilePage("pages/home.md"        , "David K. Zhang - Personal Website", "index.html"       );
+compilePage("pages/projects.md"    , "David K. Zhang - Projects"        , "projects.html"    );
+compilePage("pages/publications.md", "David K. Zhang - Publications"    , "publications.html");
+compilePage("pages/about.md"       , "David K. Zhang - About"           , "about.html"       );
+compilePage("pages/contact.md"     , "David K. Zhang - Contact"         , "contact.html"     );
+compilePage("notes/linalg.md"      , "David K. Zhang - Linear Algebra"  , "linalg.html"      );
+compilePage("notes/misc.md"        , "David K. Zhang - Misc. Thoughts"  , "misc.html"        );
