@@ -98,6 +98,8 @@ Let $V$ be a vector space over a field $F$, and let $n \in \N$. An ___affine com
 :::
 ::::::
 
+Note that, unlike linear combinations, there is no such thing as an empty affine combination. The sum of an empty sequence of scalars is $0$, and by the definition of a field, $0 \ne 1$.
+
 
 :::::: card
 ::: card-header
@@ -105,6 +107,80 @@ Let $V$ be a vector space over a field $F$, and let $n \in \N$. An ___affine com
 :::
 ::: card-body
 Let $V$ be a vector space over a field $F$. The ___affine span___ or ___affine hull___ of a subset $S \subseteq V$, denoted by $\aff S$, is the set of all affine combinations of all finite sequences of vectors in $S$.
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Definition: Affine Set**
+:::
+::: card-body
+Let $V$ be a vector space over a field $F$. An ___affine set___ in $V$ is a subset $S \subseteq V$ that is closed under taking affine combinations, i.e., every affine combination of every finite sequence of vectors in $S$ is itself in $S$.
+:::
+::::::
+
+Because there are no empty affine combinations, the empty set $\varnothing \in V$ _does_ (vacuously) qualify as an affine set.
+
+
+:::::: card
+::: card-header
+**Definition: Conic Combination**
+:::
+::: card-body
+Let $V$ be a vector space over an ordered field $(F, <)$, and let $n \in \N$. A ___conic combination___ of a finite sequence of vectors $\vv_1, \vv_2, \dots, \vv_n \in V$ is a vector of the form $a_1 \vv_1 + a_2 \vv_2 + \cdots + a_n \vv_n$ where the coefficients $a_1, a_2, \dots, a_n \in F$ are all nonnegative, i.e., $a_i \ge 0$ for all $i \in \{1, 2, \dots, n \}$.
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Definition: Conic Hull**
+:::
+::: card-body
+Let $V$ be a vector space over an ordered field $(F, <)$. The ___conic hull___ of a set $S \subseteq V$, denoted by $\cone S$, is the set of all conic combinations of all finite sequences of vectors in $S$.
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Definition: Cone**
+:::
+::: card-body
+Let $V$ be a vector space over an ordered field $(F, <)$. A ___cone___ in $V$ is a subset $S \subseteq V$ that is closed under scalar multiplication by nonnegative scalars, i.e., if $a \in F$ satisfies $a \ge 0$ and $\vv \in S$, then $a\vv \in S$.
+:::
+::::::
+
+Note that a cone is not necessarily closed under taking conic combinations!
+
+
+:::::: card
+::: card-header
+**Definition: Convex Combination**
+:::
+::: card-body
+Let $V$ be a vector space over an ordered field $(F, <)$, and let $n \in \N$. A ___convex combination___ of a finite sequence of vectors $\vv_1, \vv_2, \dots, \vv_n \in V$ is a vector of the form $a_1 \vv_1 + a_2 \vv_2 + \cdots + a_n \vv_n$ where the coefficients $a_1, a_2, \dots, a_n \in F$ satisfy $a_1 + a_2 + \cdots + a_n = 1$ and are all nonnegative, i.e., $a_i \ge 0$ for all $i \in \{1, 2, \dots, n \}$.
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Definition: Convex Hull**
+:::
+::: card-body
+Let $V$ be a vector space over an ordered field $(F, <)$. The ___convex hull___ of a set $S \subseteq V$, denoted by $\conv S$, is the set of all convex combinations of all finite sequences of vectors in $S$.
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Definition: Convex Set**
+:::
+::: card-body
+Let $V$ be a vector space over an ordered field $(F, <)$. A ___convex set___ in $V$ is a subset $S \subseteq V$ that is closed under taking convex combinations, i.e., every convex combination of every finite sequence of vectors in $S$ is itself in $S$.
 :::
 ::::::
 

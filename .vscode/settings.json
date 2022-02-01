@@ -16,10 +16,12 @@
         ]
     },
     "cSpell.words": [
+        "linalg",
         "linkify",
         "mathbb",
         "mathbf",
         "nanolett",
+        "normalin",
         "operatorname",
         "texmath"
     ]
