@@ -1,5 +1,10 @@
 # Miscellaneous Thoughts {.page-title}
 
+<div class="text-center">
+    David K. Zhang<br>
+    Last Modified &today;
+</div><br>
+
 :::::: card
 ::: card-header
 **Definition: Empty Set, $\varnothing$**

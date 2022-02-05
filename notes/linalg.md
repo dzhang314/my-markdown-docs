@@ -1,3 +1,10 @@
+# Notes on Linear Algebra {.page-title}
+
+<div class="text-center">
+    David K. Zhang<br>
+    Last Modified &today;
+</div><br>
+
 :::::: card
 ::: card-header
 **Definition: Vector Space, Vector, Scalar**
@@ -27,7 +34,7 @@ In these notes, we will use boldface upright letters, such as $\vv$ and $\vw$, t
 
 Adopting this convention also provides another benefit: namely, we no longer need to distinguish between the operations of scalar addition $+_F: F \times F \to F$ and vector addition $+_V: V \times V \to V$. Instead, we proceed with the implicit understanding that whenever the $+$ sign occurs between two scalars, as in $a + b$, it refers to scalar addition. Likewise, whenever it occurs between two vectors, as in $\vv + \vw$, it refers to vector addition.
 
-The same goes for the two multiplication operations $\cdot_F: F \times F \to F$ and $\cdot_V: F \times V \to V$. Moving forward, these operations will be denoted by juxtaposition, as in $ab$ and $a\vv$. The requirement of multiplicative compatibility allows us to write $ab\vv$ without ambiguity, and the identity property allows us to freely insert and omit factors of $1$.
+The same goes for the two multiplication operations $\cdot_F: F \times F \to F$ and $\cdot_V: F \times V \to V$. Moving forward, these operations will be denoted by juxtaposition, as in $ab$ and $a\vv$. The requirement of multiplicative compatibility allows us to write $ab\vv$ without ambiguity, and the identity property allows us to freely insert and remove factors of $1$.
 
 As with groups, rings, and fields, it is common to denote a vector space $\alg{V; \vo_V, -_V, +_V, \cdot_V}$ simply by the name of its underlying set $V$. Thus, we will often say "let $V$ be a vector space over a field $F$."
 
@@ -84,7 +91,7 @@ Note that the empty set $\varnothing \subseteq V$ is *not* a linear subspace! Th
 :::
 ------
 ::: card-body
-*Proof sketch:* We prove by induction on $n \in \N$ that $S$ is closed under taking $n$-ary linear combinations. The first property handles the base case $n = 0$, and the second property handles the inductive step, using the fact that an $n$-ary linear combination can be written as a binary linear combination of a vector and an $(n-1)$-ary linear combination. <span class="float-end">&#8718;</span>
+*Proof sketch:* We prove by induction on $n \in \N$ that $S$ is closed under taking $n$-ary linear combinations. The first property handles the base case $n = 0$, and the second property handles the inductive step, using the fact that an $n$-ary linear combination can be written as a binary linear combination of a vector and an $(n-1)$-ary linear combination. &qed;
 :::
 ::::::
 

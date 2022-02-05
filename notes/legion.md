@@ -1,4 +1,4 @@
-# Notes on Topology {.page-title}
+# Notes on Programming in Legion {.page-title}
 
 <div class="text-center">
     David K. Zhang<br>
