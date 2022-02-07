@@ -69,8 +69,10 @@ function compilePage(inputFile, title, outputFile) {
         const preprocessedInput = input
             .replaceAll('&qed;', '<span class="float-end">&#8718;</span>')
             .replaceAll('&today;', today.toISOString().split('T')[0]);
-        compileMarkdown(preprocessedInput, title, true , "output/"                  + outputFile);
-        compileMarkdown(preprocessedInput, title, false, "../dzhang314.github.com/" + outputFile);
+        compileMarkdown(preprocessedInput, title, true, "output/" + outputFile);
+        if (fs.existsSync("../dzhang314.github.com")) {
+            compileMarkdown(preprocessedInput, title, false, "../dzhang314.github.com/" + outputFile);
+        }
         hashes[inputFile] = hash;
     }
 }
