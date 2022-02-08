@@ -46,3 +46,18 @@ li {
 
 .card-body .katex-display { margin: -0.5rem 0 0.5rem; }
 .card hr { margin: 0.15rem 0; }
+
+pre {
+    color: black;
+    background-color: var(--bs-gray-100);
+    font-size: 1.0rem;
+}
+
+code {
+    color: black;
+    background-color: var(--bs-gray-100);
+    font-size: 1.0rem;
+}
+
+.func-name { color: var(--bs-indigo); }
+.arg { color: var(--bs-purple); }
