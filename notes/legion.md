@@ -84,8 +84,8 @@ All of the above `destroy_*` methods in Legion take an optional `bool unordered 
     <b class="return-type">bool</b> rt-><b class="func-name">is_index_partition_complete</b>(IndexPartition P);
     <b class="return-type">bool</b> rt-><b class="func-name">has_parent_index_partition</b>(IndexSpace I);
     <b class="return-type">size_t</b> rt-><b class="func-name">get_field_size</b>(FieldSpace F, FieldID fid);
-    <b class="return-type">void</b> rt-><b class="func-name">get_field_space_fields</b>(FieldSpace F, std::vector&lt;FieldID&gt; &fids);
-    <b class="return-type">void</b> rt-><b class="func-name">get_field_space_fields</b>(FieldSpace F, std::set&lt;FieldID&gt; &fids);
+    <b class="return-type">void</b> rt-><b class="func-name">get_field_space_fields</b>(FieldSpace F, std::vector&lt;FieldID&gt; &amp;fids);
+    <b class="return-type">void</b> rt-><b class="func-name">get_field_space_fields</b>(FieldSpace F, std::set&lt;FieldID&gt; &amp;fids);
     <b class="return-type">bool</b> rt-><b class="func-name">has_parent_logical_partition</b>(LogicalRegion handle);
     <b class="return-type">LogicalRegion</b> rt-><b class="func-name">get_parent_logical_region</b>(LogicalPartition handle);
     <b class="return-type">LogicalPartition</b> rt-><b class="func-name">get_parent_logical_partition</b>(LogicalRegion handle);
