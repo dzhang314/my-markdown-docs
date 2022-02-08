@@ -65,7 +65,7 @@ In C, every call to `malloc` should be matched with a corresponding call to `fre
 
 </code></pre>
 
-All of the above `destroy_*` methods in Legion take an optional `bool unordered = false` parameter. Setting `unordered = true` informs Legion that this call to `destroy_*` may occur simultaneously with use of the resource being destroyed. This is used when the call to `destroy_*` is performed by a thread other than the one using the resource being destroyed, e.g., a garbage collector. In addition, `destroy_index_space` and `destroy_index_partition` take another optional parameter `bool recurse = true` that controls whether subspaces of the given index space $I$ (i.e., children of $I$ in the index tree) should also be destroyed.
+All of the above `destroy_*` methods in Legion take an optional `bool unordered = false` parameter. Setting `unordered = true` informs Legion that this call to `destroy_*` may occur simultaneously with use of the resource being destroyed. This is necessary when the call to `destroy_*` is performed by a thread other than the one using the resource being destroyed, e.g., a garbage collector. In addition, `destroy_index_space` and `destroy_index_partition` take another optional parameter `bool recurse = true` that controls whether subspaces of the given index space $I$ (i.e., children of $I$ in the index tree) should also be destroyed.
 
 ### Reference Counting
 
