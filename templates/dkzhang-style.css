@@ -59,5 +59,7 @@ code {
     font-size: 1.0rem;
 }
 
-.func-name { color: var(--bs-indigo); }
+.keyword { color: var(--bs-blue); filter: brightness(0.6); }
+.return-type { color: var(--bs-green); filter: brightness(0.5); }
+.func-name { color: var(--bs-red); filter: brightness(0.5); }
 .arg { color: var(--bs-purple); }
