@@ -11,6 +11,7 @@
     "\\aff": "\\operatorname{aff}",
     "\\cone": "\\operatorname{cone}",
     "\\conv": "\\operatorname{conv}",
+    "\\fchar": "\\operatorname{char}",
     "\\va": "{\\mathbf{a}}",
     "\\vb": "{\\mathbf{b}}",
     "\\vc": "{\\mathbf{c}}",

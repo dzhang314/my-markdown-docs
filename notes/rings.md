@@ -1,4 +1,4 @@
-# Notes on Ring Theory {.page-title}
+# Notes on Ring Theory and Field Theory {.page-title}
 
 <div class="text-center">
     David K. Zhang<br>
@@ -112,3 +112,18 @@ Let $R$ be a ring. An element $r \in R$ is ___irreducible___ if $r \notin R^\tim
 ::::::
 
 Note that, while the notion of an irreducible element is defined in any ring, the notion of a prime element is only defined in a *commutative* ring.
+
+:::::: card
+::: card-header
+**Definition: Characteristic, $\fchar R$**
+:::
+::: card-body
+Let $R$ be a ring. The ___characteristic___ of $R$, denoted by $\fchar R$, is the smallest positive integer $n$ such that
+
+$$ \underbrace{1_R + 1_R + \cdots + 1_R}_{n \text{ copies of } 1_R} = 0_R. $$
+
+If no such $n$ exists, then we define $\fchar R \coloneqq 0$.
+:::
+::::::
+
+For example, $\fchar \Z = 0$ and $\fchar(\Z / 4\Z) = 4$.

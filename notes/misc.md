@@ -51,39 +51,6 @@ $$ B_r(x_0) \coloneqq \{ x \in X : d(x, x_0) < r \}. $$
 
 :::::: card
 ::: card-header
-**Definition: Group**
-:::
-::: card-body
-A ___group___ is an algebraic structure $\alg{G; 1, {}^{-1}, \cdot}$ consisting of:
-
- * a set $G$, called the ___underlying set___;
- * a distinguished element $1 \in G$, called the ___identity element___;
- * a unary operation ${}^{-1}: G \to G$, written as $x \mapsto x^{-1}$, called ___inversion___;
- * a binary operation $\cdot : G \times G \to G$, written as $(x, y) \mapsto x \cdot y$, called the ___group operation___ or ___group product___;
-
-satisfying the following requirements:
-
- * ___Associative property___: $(x \cdot y) \cdot z = x \cdot (y \cdot z)$ for all $x, y, z \in G$.
- * ___Identity property___: $1 \cdot x = x \cdot 1 = x$ for all $x \in G$.
- * ___Inverse property___: $x \cdot x^{-1} = x^{-1} \cdot x = 1$ for all $x \in G$.
-:::
-::::::
-
-
-:::::: card
-::: card-header
-**Definition: Abelian Group**
-:::
-::: card-body
-An ___abelian group___ is a group $\alg{G; 1, {}^{-1}, \cdot}$ that satisfies the following additional requirement:
-
- * ___Commutative property___: $x \cdot y = y \cdot x$ for all $x, y \in G$.
-:::
-::::::
-
-
-:::::: card
-::: card-header
 **Definition: Rng**
 :::
 ::: card-body
