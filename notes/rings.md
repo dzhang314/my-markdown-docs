@@ -7,6 +7,102 @@
 
 
 
+# Introduction
+
+In these notes, we introduce a new class of algebraic structures, called rngs and rings, whose study is collectively called ___ring theory___. Rngs and rings are more complicated than groups because their definition involves not one, but two binary operations.
+
+:::::: card
+::: card-header
+**Definition: Rng**
+:::
+::: card-body
+A ___rng___ (pronounced as "rung") is an algebraic structure $\alg{R; 0, -, +, \cdot}$ consisting of:
+
+ * a set $R$, called the ___underlying set___;
+ * a distinguished element $0 \in R$, called the ___zero element___;
+ * a unary operation $-: R \to R$, written as $x \mapsto -x$, called ___negation___;
+ * a binary operation $+: R \times R \to R$, written as $(x, y) \mapsto x + y$, called ___addition___;
+ * a binary operation $\cdot: R \times R \to R$, written as $(x, y) \mapsto x \cdot y$, called ___multiplication___;
+
+satisfying the following requirements:
+
+ * ___Additive structure___: $\alg{R; 0, -, +}$ is an abelian group.
+ * ___Associativity___: $(x \cdot y) \cdot z = x \cdot (y \cdot z)$ for all $x, y, z \in R$.
+ * ___Left distributivity___: $x \cdot (y + z) = (x \cdot y) + (x \cdot z)$ for all $x, y, z \in R$.
+ * ___Right distributivity___: $(x + y) \cdot z = (x \cdot z) + (y \cdot z)$ for all $x, y, z \in R$.
+:::
+::::::
+
+The key ingredient in the definition of a rng is distributivity, which establishes a link between two different binary operations. We begin our study of rngs by proving a simple (but important) result to demonstrate the utility of the distributive property.
+
+:::::: card
+::: card-header
+**Multiplying by Zero Yields Zero**
+:::
+::: card-body
+**Theorem:** To do.
+:::
+------
+::: card-body
+*Proof:* To do. &qed;
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Zero Rng**
+:::
+::: card-body
+The ___zero rng___ is the rng $\alg{\{0\}; 0, -, +, \cdot}$ consisting of a single element $0$. The negation, addition, and multiplication operations in the zero rng are defined by $-0 = 0 + 0 = 0 \cdot 0 = 0$.
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Trivial Rng, Nontrivial Rng**
+:::
+::: card-body
+ * A rng is ___trivial___ if its underlying set contains only one element.
+ * A rng is ___nontrivial___ if its underlying set contains more than one element.
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Commutative Rng**
+:::
+::: card-body
+A ___commutative rng___ is a rng $\alg{R; 0, -, +, \cdot}$ that satisfies the following additional requirement:
+
+* ___Commutativity___: $x \cdot y = y \cdot x$ for all $x, y \in R$.
+:::
+::::::
+
+The word "commutative" in the term "commutative rng" emphasizes that the *multiplication* operation is commutative. By definition, the addition operation is always commutative in every rng.
+
+:::::: card
+::: card-header
+**Definition: Ring**
+:::
+::: card-body
+A ___ring___ is an algebraic structure $\alg{R; 0, 1, -, +, \cdot}$ consisting of:
+
+ * a set $R$, called the ___underlying set___;
+ * a distinguished element $0 \in R$, called the ___zero element___;
+ * a distinguished element $1 \in R$, called the ___identity element___;
+ * a unary operation $-: R \to R$, written as $x \mapsto -x$, called ___negation___;
+ * a binary operation $+: R \times R \to R$, written as $(x, y) \mapsto x + y$, called ___addition___;
+ * a binary operation $\cdot: R \times R \to R$, written as $(x, y) \mapsto x \cdot y$, called ___multiplication___;
+
+satisfying the following requirements:
+
+ * ___Rng structure___: $\alg{R; 0, -, +, \cdot}$ is a rng.
+ * ___Identity___: $1 \cdot x = x \cdot 1 = x$ for all $x \in R$.
+:::
+::::::
+
+
+
 ## Zero Divisors and Inverses
 
 Every rng $R$ has a distinguished element $0_R$. The rng axioms specify what happens when $0_R$ is fed _into_ the operations of addition and multiplication, but they leave unspecified when $0_R$ is produced as an _output_. This is the topic that we will study in this section.
