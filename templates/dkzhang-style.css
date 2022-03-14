@@ -5,9 +5,13 @@ a:not([class]):hover { text-decoration: underline; }
 
 .katex { font-size: 1.05em; }
 
+h1 {
+    font-size: 2.0rem;
+}
+
 h1.page-title {
     text-align: center;
-    font-size: 2.0rem;
+    font-size: 2.5rem;
     padding: 1.0rem;
 }
 

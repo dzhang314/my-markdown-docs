@@ -103,11 +103,11 @@ satisfying the following requirements:
 
 
 
-## Zero Divisors and Inverses
+# Zero Divisors and Inverses
 
 Every rng $R$ has a distinguished element $0_R$. The rng axioms specify what happens when $0_R$ is fed _into_ the operations of addition and multiplication, but they leave unspecified when $0_R$ is produced as an _output_. This is the topic that we will study in this section.
 
-The equation $x + y = 0_R$ is familiar territory---this simply means that $x$ and $y$ are additive inverses, i.e., $x = -y$. On the other hand, the equation $xy = 0_R$ is far more interesting. In the familiar rngs of grade-school arithmetic, including $\Z$, $\Q$, $\R$, and $\C$, the equation $xy = 0$ implies that $x = 0$ or $y = 0$. However, when we study rngs in general, it turns out to be possible for two nonzero elements to multiply into zero. This situation is completely foreign and allows bizarre things to happen in general rngs that have no analogue in $\Z$, $\Q$, $\R$, or $\C$. This phenomenon is so dangerous that mathematicians have assigned it a cautionary name.
+The equation $x + y = 0_R$ is familiar territory---this simply means that $x$ and $y$ are additive inverses, i.e., $x = -y$. On the other hand, the equation $xy = 0_R$ is far more interesting. In the familiar rngs of grade-school arithmetic, including $\Z$, $\Q$, $\R$, and $\C$, the equation $xy = 0$ implies that $x = 0$ or $y = 0$. However, when we study rngs in general, it turns out to be possible for two nonzero elements to multiply into zero. This situation is completely foreign and allows bizarre things to happen in general rngs that have no analogue in $\Z$, $\Q$, $\R$, or $\C$. In fact, this phenomenon is so dangerous that mathematicians have assigned it a cautionary name.
 
 :::::: card
 ::: card-header
@@ -121,7 +121,7 @@ Let $R$ be a rng.
  * An element of $R$ is a ___two-sided zero divisor___ if is it both a left zero divisor and a right zero divisor.
 ::::::
 
-The name "zero divisor" is a rather unfortunate historical convention. We will later learn a definition of the word "divides" under which every element of a rng divides $0_R$. (In fact, you may have already learned this definition if you have previously studied number theory.) You need to remember that, in the context of rng theory, the phrase "zero divisor" is not synonymous with "divides $0_R$."
+The name "zero divisor" is a rather unfortunate historical convention. We will later learn a definition of the word "divides" under which every element of a rng divides $0_R$. (You may have already learned this definition if you have previously studied number theory.) You need to remember that, in the context of rng theory, the phrase "zero divisor" is not synonymous with "divides $0_R$."
 
 Zero divisors are so pernicious that mathematicians have concocted a series of names for rings in which they don't exist. Note that these names apply to _rings_, not _rngs_.
 
