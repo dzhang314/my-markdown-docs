@@ -67,7 +67,7 @@ function compilePage(inputFile, title, outputFile) {
         console.log("Compiling " + inputFile + " to " + outputFile + "...");
         const today = new Date();
         const preprocessedInput = input
-            .replaceAll('&qed;', '<span class="float-end">&#8718;</span>')
+            .replaceAll('&qed;', '<span class="float-end">&#9633;</span>')
             .replaceAll('&today;', today.toISOString().split('T')[0]);
         compileMarkdown(preprocessedInput, title, true, "output/" + outputFile);
         if (fs.existsSync("../dzhang314.github.com")) {
