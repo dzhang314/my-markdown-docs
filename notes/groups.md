@@ -6,6 +6,9 @@
 </div><br>
 
 
+
+# Introduction
+
 Group theory is the first subject in a branch of mathematics known as ___abstract algebra___ (or ___modern algebra___). Abstract algebra is one of the main branches of modern pure mathematics, and it is a standard requirement in the university mathematics curriculum. Every professional mathematician and theoretically-oriented physical scientist (i.e., physicists and chemists) should know a thing or two about group theory.
 
 The goal of abstract algebra is to study the general properties of algebraic systems and the interrelations between them. That might not mean a lot if you haven't studied abstract algebra before, so let me contextualize this statement.

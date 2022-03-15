@@ -5,6 +5,10 @@
     Last Modified &today;
 </div><br>
 
+
+
+# Introduction
+
 :::::: card
 ::: card-header
 **Definition: Topology**
@@ -39,7 +43,7 @@ Let $(X, T)$ be a topological space. A subset $F \subseteq X$ is ___closed___ if
 
 In other words, a set is closed if and only if its complement is open. Because taking complements is an involution (i.e., $X \setminus (X \setminus A) = A$ for all $A \subseteq X$), the converse is also true: a set is open if and only if its complement is closed.
 
-Note that, in topology, **"open" and "closed" are not opposites!** It is possible for a set to be both open and closed, and it is also possible for a set to be neither open nor closed. In fact, there is a special name for sets that are both open and closed.
+Note that, in topology, **"open" and "closed" are not opposites!** It is possible for a set to be both open and closed, and it is also possible for a set to be neither. In fact, there is a special name for sets that are both open and closed.
 
 :::::: card
 ::: card-header
