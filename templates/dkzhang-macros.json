@@ -11,6 +11,7 @@
     "\\aff": "\\operatorname{aff}",
     "\\cone": "\\operatorname{cone}",
     "\\conv": "\\operatorname{conv}",
+    "\\Vol": "\\operatorname{Vol}",
     "\\fchar": "\\operatorname{char}",
     "\\powerset": "\\mathcal{P}({#1})",
     "\\abs": "\\left\\lvert {#1} \\right\\rvert",

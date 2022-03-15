@@ -77,15 +77,16 @@ function compilePage(inputFile, title, outputFile) {
     }
 }
 
-compilePage("pages/home.md"        , "David K. Zhang - Personal Website"  , "index.html"       );
-compilePage("pages/projects.md"    , "David K. Zhang - Projects"          , "projects.html"    );
-compilePage("pages/publications.md", "David K. Zhang - Publications"      , "publications.html");
-compilePage("pages/about.md"       , "David K. Zhang - About"             , "about.html"       );
-compilePage("pages/contact.md"     , "David K. Zhang - Contact"           , "contact.html"     );
-compilePage("notes/groups.md"      , "David K. Zhang - Group Theory"      , "groups.html"      );
-compilePage("notes/rings.md"       , "David K. Zhang - Ring Theory"       , "rings.html"       );
-compilePage("notes/linalg.md"      , "David K. Zhang - Linear Algebra"    , "linalg.html"      );
-compilePage("notes/topology.md"    , "David K. Zhang - Topology"          , "topology.html"    );
-compilePage("notes/misc.md"        , "David K. Zhang - Misc. Thoughts"    , "misc.html"        );
-compilePage("notes/legion.md"      , "David K. Zhang - Legion Programming", "legion.html"      );
+compilePage("pages/home.md"        , "David K. Zhang - Personal Website"      , "index.html"       );
+compilePage("pages/projects.md"    , "David K. Zhang - Projects"              , "projects.html"    );
+compilePage("pages/publications.md", "David K. Zhang - Publications"          , "publications.html");
+compilePage("pages/about.md"       , "David K. Zhang - About"                 , "about.html"       );
+compilePage("pages/contact.md"     , "David K. Zhang - Contact"               , "contact.html"     );
+compilePage("notes/groups.md"      , "David K. Zhang - Group Theory"          , "groups.html"      );
+compilePage("notes/rings.md"       , "David K. Zhang - Ring Theory"           , "rings.html"       );
+compilePage("notes/linalg.md"      , "David K. Zhang - Linear Algebra"        , "linalg.html"      );
+compilePage("notes/topology.md"    , "David K. Zhang - Topology"              , "topology.html"    );
+compilePage("notes/misc.md"        , "David K. Zhang - Misc. Thoughts"        , "misc.html"        );
+compilePage("notes/ecc.md"         , "David K. Zhang - Error-Correcting Codes", "ecc.html"         );
+compilePage("notes/legion.md"      , "David K. Zhang - Legion Programming"    , "legion.html"      );
 fs.writeFileSync("hashes.json", JSON.stringify(hashes, null, 4));
