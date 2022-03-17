@@ -4,6 +4,7 @@
     "\\Q": "{\\mathbb{Q}}",
     "\\R": "{\\mathbb{R}}",
     "\\C": "{\\mathbb{C}}",
+    "\\F": "{\\mathbb{F}}",
     "\\alg": "\\langle {#1} \\rangle",
     "\\gen": "\\langle {#1} \\rangle",
     "\\normalin": "\\trianglelefteq",

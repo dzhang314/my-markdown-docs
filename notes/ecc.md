@@ -85,7 +85,7 @@ Let $\Sigma$ be an alphabet, and let $n \in \N$.
  * The ___rate___ of a code $C \subseteq \Sigma^n$ is the quantity $(\log_{\abs{\Sigma}} \abs{C}) / n$.
  * The ___minimum distance___ (or simply ___distance___) of a code $C \subseteq \Sigma^n$ is the minimum Hamming distance between its distinct codewords, i.e., $\min\,\{ \Delta(c, c') : c, c' \in C \text{ and } c \ne c' \}$.
 
-A code $C \subseteq \Sigma^n$ with message length $k$ and distance $d$ is called an $(n, k, d)_{\abs{\Sigma}}$-code.
+A code $C \subseteq \Sigma^n$ with message length $k$ and minimum distance $d$ is called an $(n, k, d)_{\abs{\Sigma}}$-code.
 :::
 ::::::
 
@@ -110,6 +110,15 @@ $$ \Vol_q(r, n) = 1 + \binom{n}{1} (q - 1) + \binom{n}{2} (q - 1)^2 + \cdots + \
 
 :::::: card
 ::: card-header
+**Definition: Erasure, Error**
+:::
+::: card-body
+**TODO**
+:::
+::::::
+
+:::::: card
+::: card-header
 **Minimum Distance is a Proxy for Robustness**
 :::
 ::: card-body
@@ -118,6 +127,10 @@ $$ \Vol_q(r, n) = 1 + \binom{n}{1} (q - 1) + \binom{n}{2} (q - 1)^2 + \cdots + \
  * $C$ can correct $\le d - 1$ erasures.
  * $C$ can detect $\le d - 1$ errors.
  * $C$ can correct $\le \lfloor \frac{d-1}{2} \rfloor$ errors.
+:::
+------
+::: card-body
+*Proof:* **TODO**
 :::
 ::::::
 
@@ -128,12 +141,35 @@ $$ \Vol_q(r, n) = 1 + \binom{n}{1} (q - 1) + \binom{n}{2} (q - 1)^2 + \cdots + \
 ::: card-body
 **Theorem:** Let $\Sigma$ be an alphabet, and let $n \in \N$. If a code $C \subseteq \Sigma^n$ has minimum distance $d$, then its rate $R$ is bounded above by
 
-$$ R \coloneqq \frac{\log_{\abs{\Sigma}} \abs{C}}{n} \le 1 - \frac{\log_{\abs{\Sigma}} \! \left( \Vol_{\abs{\Sigma}} \! \left( \left\lfloor \frac{d-1}{2} \right\rfloor, n \right) \right)}{n} $$
+$$ R \coloneqq \frac{\log_{\abs{\Sigma}} \abs{C}}{n} \le 1 - \frac{\log_{\abs{\Sigma}} \! \left( \Vol_{\abs{\Sigma}} \! \left( \left\lfloor \frac{d-1}{2} \right\rfloor\!, n \right) \right)}{n} $$
 :::
 ------
 ::: card-body
-*Proof:* Let $\mathcal{B} \coloneqq \{ B_{\Sigma^n}(c, \lfloor \frac{d-1}{2} \rfloor) : c \in C \}$ denote the collection of Hamming balls of radius $\lfloor \frac{d-1}{2} \rfloor$ about each codeword in $C$
+*Proof:* Let $\mathcal{B} \coloneqq \{ B_{\Sigma^n}(c, \lfloor\!\frac{d-1}{2}\!\rfloor) : c \in C \}$ denote the collection of Hamming balls of radius $\lfloor\!\frac{d-1}{2}\!\rfloor$ about each codeword in $C$. Observe that the members of $\mathcal{B}$ are pairwise disjoint. Indeed, if there were two distinct codewords $c, c' \in C$ whose Hamming balls intersect, say at $\tilde{c} \in B_{\Sigma^n}(c, \lfloor\!\frac{d-1}{2}\!\rfloor) \cap B_{\Sigma^n}(c', \lfloor\!\frac{d-1}{2}\!\rfloor)$, then by definition, we would have $\Delta(c, \tilde{c}) \le \lfloor\!\frac{d-1}{2}\!\rfloor$ and $\Delta(\tilde{c}, c') \le \lfloor\!\frac{d-1}{2}\!\rfloor$. The triangle inequality would then imply
+
+$$ \Delta(c, c') \le \Delta(c, \tilde{c}) + \Delta(\tilde{c}, c') \le \left\lfloor \frac{d-1}{2} \right\rfloor + \left\lfloor \frac{d-1}{2} \right\rfloor \le d - 1, $$
+
+contradicting the hypothesis that $C$ has minimum distance $d$. Now, the members of $\mathcal{B}$ are all subsets of $\Sigma^n$, so it follows that the total cardinality of all of the balls in $\mathcal{B}$ is bounded above by $\abs{\Sigma}^n$.
+
+$$ \abs{C} \Vol_{\abs{\Sigma}} \! \left( \left\lfloor \frac{d-1}{2} \right\rfloor\!, n \right) \le \abs{\Sigma}^n $$
+
+Taking the base-$\abs{\Sigma}$ logarithm of both sides, we obtain:
+
+$$ \log_{\abs{\Sigma}} \abs{C} + \log_{\abs{\Sigma}} \! \left( \Vol_{\abs{\Sigma}} \! \left( \left\lfloor \frac{d-1}{2} \right\rfloor\!, n \right) \right) \le n $$
+
+Dividing both sides by $n$ yields the desired result. &qed;
 ::::::
+
+:::::: card
+::: card-header
+**Definition: Perfect Code**
+:::
+::: card-body
+Let $\Sigma$ be an alphabet, and let $n \in \N$. A code $C \subseteq \Sigma^n$ is ___perfect___ if the collection of Hamming balls $\{ B_{\Sigma^n}(c, \lfloor\!\frac{d-1}{2}\!\rfloor) : c \in C \}$ covers $\Sigma^n$, where $d$ denotes the minimum distance of $C$.
+:::
+::::::
+
+In other words, a code is perfect if it saturates the Hamming bound.
 
 :::::: card
 ::: card-header
@@ -162,3 +198,24 @@ Here, $\langle \cdot, \cdot \rangle$ denotes the standard inner product on $F^n$
 ::::::
 
 Because every vector space has a basis, every linear code $C \subseteq F^n$ admits a generator matrix (whose columns are the basis vectors for $C$). In fact, up to permutations of symbol positions within codewords, every linear code admits a generator matrix whose first $k$ rows coincide with the $k \times k$ identity matrix. Such a generator matrix defines a systematic encoding map.
+
+:::::: card
+::: card-header
+**Gilbert--Varshamov Bound**
+:::
+::: card-body
+**Theorem:** Let $q \in \N$ be a prime power, and let $n, d \in \N$ with $d \le n$. There exists a linear code $C \subseteq (\F_q)^n$ of minimum distance $d$ and rate
+
+$$ R \ge 1 - \frac{\lfloor \log_q(\Vol_q(d - 1, n)) \rfloor + 1}{n}. $$
+:::
+------
+::: card-body
+*Proof:* Let $C$ be a uniformly random linear subspace of $(\F_q)^n$ of dimension $k \coloneqq n - \lfloor \log_q(\Vol_q(d-1, n)) \rfloor - 1$. Note that there are only finitely many such subspaces, so this uniform distribution makes sense. We will show that $C$ has minimum distance $\ge d$ with probability $> 0$.
+
+Let $G \in (\F_q)^{n \times k}$ be a uniformly random generator matrix for $C$. Observe that, for any fixed $\vx \in (\F_q)^n \setminus \{\vo\}$, the vector $G\vx$ is uniformly distributed in $(\F_q)^n \setminus \{\vo\}$. Indeed, all of the random choices we have made so far are invariant under a linear isomorphism of $(\F_q)^n$, and there exist isomorphisms of $(\F_q)^n$ that send any nonzero vector to any other nonzero vector, so this random process cannot favor any nonzero vector.
+
+**TODO**
+:::
+::::::
+
+**Remark:** The Gilbert-Varshamov bound actually holds for any $q \in \N$, not just prime powers. A proof of this stronger result requires a different construction, and the resulting codes are not linear codes.
