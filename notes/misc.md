@@ -66,3 +66,25 @@ $$ \begin{bmatrix}
    y_1^{(n-1)}(t) & y_2^{(n-1)}(t) & \cdots & y_n^{(n-1)}(t)
 \end{bmatrix} \begin{bmatrix} u_1'(t) \\ u_2'(t) \\ \vdots \\ u_n'(t) \end{bmatrix}
 = \begin{bmatrix} 0 \\ \vdots \\ 0 \\ f(t) \end{bmatrix} $$
+
+--------------------------------------------------------------------------------
+
+:::::: card
+::: card-header
+**Definition: Hausdorff Space**
+:::
+::: card-body
+A ___Hausdorff space___ is a topological space $(X, T)$ that has the following property: for all $x, y \in X$, if $x \ne y$, then there exist $U, V \in T$ such that $x \in U$, $y \in V$, and $U \cap V = \varnothing$.
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Manifold, Dimension**
+:::
+::: card-body
+A ___manifold___ of ___dimension___ $n \in \N$, also called an ___$\boldsymbol{n}$-manifold___, is a second-countable locally Euclidean Hausdorff space.
+:::
+::::::
+
+If manifolds were not required to be Hausdorff, then the line with two origins would be a one-dimensional manifold. Similarly, if manifolds were not required to be second-countable, then the long line would be a one-dimensional manifold.
