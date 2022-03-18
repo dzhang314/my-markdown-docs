@@ -71,10 +71,89 @@ $$ \begin{bmatrix}
 
 :::::: card
 ::: card-header
+**Definition: Relation, Binary Relation, $a \mathrel{R} b$**
+:::
+::: card-body
+Let $A$ and $B$ be sets. A ___relation___ between $A$ and $B$, also known as a ___binary relation___, is a subset of the Cartesian product $A \times B$. Given a relation $R \subseteq A \times B$ and two elements $a \in A$ and $b \in B$, we write $a \mathrel{R} b$ to denote that $(a, b) \in R$.
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Converse, Inverse**
+:::
+::: card-body
+Let $A$ and $B$ be sets. The ___converse___ or ___inverse___ of a relation $R \subseteq A \times B$ is the relation $R^{-1} \subseteq B \times A$ defined by
+$$ R^{-1} \coloneqq \{ (b, a) \in B \times A : (a, b) \in R \}. $$
+:::
+::::::
+
+In other words, $b \mathrel{R^{-1}} a$ if and only if $a \mathrel{R} b$.
+
+:::::: card
+::: card-header
+**Definition: Function, Map, Domain, Codomain, $f: A \to B$, $f(a)$, Maps**
+:::
+::: card-body
+Let $A$ and $B$ be sets. A ___function___ from $A$ to $B$, also known as a ___map___, is a relation $f \subseteq A \times B$ that has the following property: for every $a \in A$, there exists a unique $b \in B$ such that $a \mathrel{f} b$. We call the set $A$ the ___domain___ of $f$, we call the set $B$ the ___codomain___ of $f$, and we write $f: A \to B$ to denote that $f$ is a function from $A$ to $B$. Given $a \in A$, we write $f(a)$ to denote the unique element of $B$ that $a$ is related to, and we say that $f$ ___maps___ $a$ to $f(a)$.
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Injective, Injection, $f: A \injto B$**
+:::
+::: card-body
+Let $A$ and $B$ be sets. A function $f: A \to B$ is ___injective___ if $a_1 \ne a_2$ implies $f(a_1) \ne f(a_2)$ for all $a_1, a_2 \in A$. We call an injective function an ___injection___, and we write $f: A \injto B$ to denote that $f$ is an injective function from $A$ to $B$.
+:::
+::::::
+
+In other words, a function is injective if it maps distinct elements of its domain to distinct elements of its codomain.
+
+:::::: card
+::: card-header
+**Definition: Surjective, Surjection, $f: A \surjto B$**
+:::
+::: card-body
+Let $A$ and $B$ be sets. A function $f: A \to B$ is ___surjective___ if, for every $b \in B$, there exists $a \in A$ such that $f(a) = b$. We call a surjective function a ___surjection___, and we write $f: A \surjto B$ to denote that $f$ is a surjective function from $A$ to $B$.
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Bijective, Bijection, $f: A \bijto B$**
+:::
+::: card-body
+Let $A$ and $B$ be sets. A function $f: A \to B$ is ___bijective___ if it is both injective and surjective. We call a bijective function a ___bijection___, and we write $f: A \bijto B$ to denote that $f$ is a bijective function from $A$ to $B$.
+:::
+::::::
+
+:::::: card
+::: card-header
 **Definition: Hausdorff Space**
 :::
 ::: card-body
 A ___Hausdorff space___ is a topological space $(X, T)$ that has the following property: for all $x, y \in X$, if $x \ne y$, then there exist $U, V \in T$ such that $x \in U$, $y \in V$, and $U \cap V = \varnothing$.
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Basis**
+:::
+::: card-body
+Let $(X, T)$ be a topological space. A ___basis___ of $(X, T)$ is a collection of open sets $B \subseteq T$ that has the following property: for every open set $U \in T$, there exists a sub-collection $C \subseteq B$ such that $U = \bigcup C$.
+:::
+::::::
+
+In other words, a basis is a collection of open sets that allows every open set to be written as a union of basis elements.
+
+:::::: card
+::: card-header
+**Definition: Second-Countable**
+:::
+::: card-body
+A topological space is ___second-countable___ if it admits a countable basis.
 :::
 ::::::
 
