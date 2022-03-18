@@ -59,7 +59,7 @@ function compileMarkdown(input, title, debug, outputFile) {
 }
 
 function compilePage(inputFile, title, outputFile) {
-    const input = fs.readFileSync(inputFile, "utf8");
+    const input = fs.readFileSync(inputFile, "utf8").replaceAll("\r\n", "\n");
     const hash = crypto.createHash('sha384').update(input).digest('hex');
     if (hashes[inputFile] === hash) {
         console.log("Skipping " + inputFile + " because it has not changed.");
