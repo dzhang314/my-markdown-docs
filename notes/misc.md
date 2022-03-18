@@ -130,6 +130,20 @@ Let $A$ and $B$ be sets. A function $f: A \to B$ is ___bijective___ if it is bot
 
 :::::: card
 ::: card-header
+**Only Bijections have Inverses**
+:::
+::: card-body
+**Theorem:** Let $A$ and $B$ be sets, and let $f: A \to B$ be a function. The converse relation $f^{-1}$ is a function if and only if $f$ is a bijection.
+:::
+------
+::: card-body
+*Proof:* Suppose $f^{-1}$ is a function. This means that, for every $b \in B$, there exists a unique $a \in A$ such that $b \mathrel{f^{-1}} a$, or equivalently, $a \mathrel{f} b$. The existence of $a$ implies that $f$ is surjective, and the uniqueness of $a$ implies that $f$ is injective.
+
+Conversely, suppose $f$ is a bijection. For every $b \in B$, the surjectivity of $f$ implies that there exists an $a \in A$ such that $a \mathrel{f} b$, and the injectivity of $f$ implies that this $a$ is unique. Hence, $f^{-1}$ is a function. &qed;
+::::::
+
+:::::: card
+::: card-header
 **Definition: Hausdorff Space**
 :::
 ::: card-body
