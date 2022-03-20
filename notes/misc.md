@@ -237,17 +237,51 @@ If manifolds were not required to be Hausdorff, then the line with two origins w
 
 --------------------------------------------------------------------------------
 
+:::::: card
+::: card-header
+**Definition: Factorial**
+:::
+::: card-body
+Let $n \in \N$. The ___factorial___ of $n$, denoted by $n!$, is the product of the numbers $\{1, 2, \dots, n\}$. In other words,
 
+$$ n! \coloneqq 1 \times 2 \times \dots \times n. $$
 
-___Stirling numbers of the second kind___
+We define $0! \coloneqq 1$ in accordance with the convention that the product of the empty set $\varnothing$ is the multiplicative identity $1$.
+:::
+::::::
 
-$$ {n \brace k} \coloneqq \frac{1}{k!} \sum_{i=0}^k (-1)^i {k \choose i} (k-i)^n $$
+:::::: card
+::: card-header
+**Definition: Gauss's Pi Function**
+:::
+::: card-body
+___Gauss's Pi function___ is the function $\Pi: \{ z \in \C : \Re(z) > -1 \} \to \C$ defined on the half-plane $\Re(z) > -1$ by the absolutely convergent improper integral
+
+$$ \Pi(z) \coloneqq \int_0^\infty t^z e^{-t} \,\mathrm{d}t. $$
+:::
+::::::
+
+Note that $\Pi(z)$ is holomorphic on the half-plane $\Re(z) > -1$ because the integral representation of its derivative, i.e.,
+
+$$ \Pi'(z) = \int_0^\infty t^z e^{-t} \log t \,\mathrm{d}t, $$
+
+converges absolutely.
+
+$$ \Pi(0) = \int_0^\infty e^{-t} \,\mathrm{d}t = -(e^{-\infty} - e^0) = 1 $$
+
+For $\Re(z) > -1$, integration by parts gives
+
+$$ \Pi(z + 1) = \int_0^\infty t^{z + 1} e^{-t} \,\mathrm{d}t = (z + 1) \int_0^\infty t^z e^{-t} \,\mathrm{d}t = (z + 1) \Pi(z) $$
 
 ${n \choose k}$ is the number of $k$-element subsets of $[n]$.
 
 ${n \brack k}$ is the number of permutations of $[n]$ that have $k$ disjoint cycles.
 
 ${n \brace k}$ is the number of partitions of $[n]$ into $k$ non-empty subsets.
+
+$$ {n \choose k} \coloneqq \frac{n!}{k!(n-k)!} $$
+
+$$ {n \brace k} \coloneqq \frac{1}{k!} \sum_{i=0}^k (-1)^i {k \choose i} (k-i)^n $$
 
 $k! {n \brace k}$ is the number of surjective functions $[n] \to [k]$.
 
