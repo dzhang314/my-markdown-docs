@@ -80,6 +80,28 @@ Let $A$ and $B$ be sets. A ___relation___ between $A$ and $B$, also known as a _
 
 :::::: card
 ::: card-header
+**Definition: Reflexive, Symmetric, Antisymmetric, Transitive**
+:::
+::: card-body
+Let $A$ be a set.
+ * A binary relation $R \subseteq A \times A$ is ___reflexive___ if $a \mathrel{R} a$ for all $a \in A$.
+ * A binary relation $R \subseteq A \times A$ is ___symmetric___ if $a \mathrel{R} b$ implies $b \mathrel{R} a$ for all $a, b \in A$.
+ * A binary relation $R \subseteq A \times A$ is ___antisymmetric___ if $a \mathrel{R} b$ and $b \mathrel{R} a$ implies $a = b$ for all $a, b \in A$.
+ * A binary relation $R \subseteq A \times A$ is ___transitive___ if $a \mathrel{R} b$ and $b \mathrel{R} c$ implies $a \mathrel{R} c$ for all $a, b, c \in A$.
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Equivalence Relation**
+:::
+::: card-body
+An ___equivalence relation___ on a set $A$ is a binary relation $R \subseteq A \times A$ that is reflexive, symmetric, and transitive.
+:::
+::::::
+
+:::::: card
+::: card-header
 **Definition: Converse, Inverse**
 :::
 ::: card-body
@@ -144,6 +166,37 @@ Conversely, suppose $f$ is a bijection. For every $b \in B$, the surjectivity of
 
 :::::: card
 ::: card-header
+**Definition: Composition, $g \circ f$**
+:::
+::: card-body
+Let $A$, $B$, and $C$ be sets. The ___composition___ of two functions $f: A \to B$ and $g: B \to C$ is the function $g \circ f: A \to C$ defined by
+
+$$ (g \circ f)(a) \coloneqq g(f(a)) \text{ for all } a \in A. $$
+:::
+::::::
+
+:::::: card
+::: card-header
+**Composition Preserves Injectivity and Surjectivity**
+:::
+::: card-body
+**Theorem:** Let $A$, $B$, and $C$ be sets. Let $f: A \to B$ and $g: B \to C$.
+
+ * If $f$ and $g$ are both injective, then $g \circ f$ is injective.
+ * If $f$ and $g$ are both surjective, then $g \circ f$ is surjective.
+:::
+------
+::: card-body
+*Proof:*
+
+ * Let $a_1, a_2 \in A$ be given. If $a_1 \ne a_2$, then by the injectivity of $f$, we have $f(a_1) \ne f(a_2)$. It follows by the injectivity of $g$ that $g(f(a_1)) \ne g(f(a_2))$, or equivalently, $(g \circ f)(a_1) \ne (g \circ f)(a_2)$.
+ * Let $c \in C$ be given. By the surjectivity of $g$, there exists $b \in B$ such that $g(b) = c$. Now, by the surjectivity of $f$, there exists $a \in A$ such that $f(a) = b$. Hence, we have $(g \circ f)(a) = g(f(a)) = g(b) = c$. &qed;
+::::::
+
+--------------------------------------------------------------------------------
+
+:::::: card
+::: card-header
 **Definition: Hausdorff Space**
 :::
 ::: card-body
@@ -181,3 +234,23 @@ A ___manifold___ of ___dimension___ $n \in \N$, also called an ___$\boldsymbol{n
 ::::::
 
 If manifolds were not required to be Hausdorff, then the line with two origins would be a one-dimensional manifold. Similarly, if manifolds were not required to be second-countable, then the long line would be a one-dimensional manifold.
+
+--------------------------------------------------------------------------------
+
+
+
+___Stirling numbers of the second kind___
+
+$$ {n \brace k} \coloneqq \frac{1}{k!} \sum_{i=0}^k (-1)^i {k \choose i} (k-i)^n $$
+
+${n \choose k}$ is the number of $k$-element subsets of $[n]$.
+
+${n \brack k}$ is the number of permutations of $[n]$ that have $k$ disjoint cycles.
+
+${n \brace k}$ is the number of partitions of $[n]$ into $k$ non-empty subsets.
+
+$k! {n \brace k}$ is the number of surjective functions $[n] \to [k]$.
+
+$x^{\underline{n}}$
+
+$x^{\overline{n}}$
