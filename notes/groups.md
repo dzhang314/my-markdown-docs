@@ -43,11 +43,100 @@ satisfying the following requirements:
 
 :::::: card
 ::: card-header
+**Definition: Subgroup**
+:::
+::: card-body
+**TODO**
+:::
+::::::
+
+
+:::::: card
+::: card-header
 **Definition: Abelian Group**
 :::
 ::: card-body
 An ___abelian group___ is a group $\alg{G; 1, {}^{-1}, \cdot}$ that satisfies the following additional requirement:
 
  * ___Commutative property___: $x \cdot y = y \cdot x$ for all $x, y \in G$.
+:::
+::::::
+
+
+--------------------------------------------------------------------------------
+
+
+:::::: card
+::: card-header
+**Definition: Normal Subgroup**
+:::
+::: card-body
+Let $G$ be a group. We say that a subgroup $H \le G$ is ___normal___ if for all $g \in G$ and $h \in H$, we have $g^{-1}hg \in H$.
+:::
+::::::
+
+___left conjugation___ --- this is a left action
+$$ {}^g x \coloneqq g x g^{-1} $$
+$$ {}^h ({}^g x) = {}^h (g x g^{-1}) = h (g x g^{-1}) h^{-1} = (hg) x (hg)^{-1} = {}^{hg} x $$
+
+___right conjugation___ --- this is a right action
+$$ x^g \coloneqq g^{-1} x g $$
+$$ (x^g)^h = (g^{-1} x g)^h = h^{-1} (g^{-1} x g) h = (gh)^{-1} x (gh) = x^{gh} $$
+
+
+:::::: card
+::: card-header
+**Definition: Central Element, Center, $Z(G)$**
+:::
+::: card-body
+Let $G$ be a group. An element $g \in G$ is ___central___ if $g$ commutes with every element of $G$. The set of all central elements of $G$ is called the ___center___ of $G$, and is denoted by $Z(G)$.
+
+$$ Z(G) \coloneqq \{ g \in G : \forall h \in G,\ gh = hg \} $$
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Center is a Subgroup**
+:::
+::: card-body
+**Theorem:** Let $G$ be a group. Its center $Z(G)$ is a subgroup of $G$.
+:::
+------
+::: card-body
+*Proof:* We must show that $Z(G)$ contains the identity element $1$ and is closed under taking inverses and products.
+
+ * Clearly, $1 \in Z(G)$, since the identity element $1$ commutes with everything.
+ * Let $a \in Z(G)$ and $g \in G$. By definition, we have $ag = ga$. By multiplying on the left and right by $a^{-1}$, we obtain $ga^{-1} = a^{-1}g$. Hence, $a^{-1}$ commutes with $g$. Since $g \in G$ was arbitrary, this proves that $a^{-1} \in Z(G)$.
+ * Let $a, b \in Z(G)$ and $g \in G$. Because $a$ and $b$ are central, we can write $abg = agb = gab$. Hence, $ab$ commutes with $g$. Again, because $g \in G$ was arbitrary, this proves that $ab \in Z(G)$. &qed;
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Center is a Normal Subgroup**
+:::
+::: card-body
+**Theorem:** Let $G$ be a group. Its center $Z(G)$ is a normal subgroup of $G$.
+:::
+------
+::: card-body
+*Proof:* Let $g \in G$ and $z \in Z(G)$. Because $z$ is central, we have $g^{-1}zg = zg^{-1}g = z \in Z(G)$. &qed;
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Center is a Normal Subgroup**
+:::
+::: card-body
+**Theorem:** Let $G$ be a group. Its center $Z(G)$ is a normal subgroup of $G$.
+:::
+------
+::: card-body
+*Proof:* TODO
 :::
 ::::::

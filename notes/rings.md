@@ -289,7 +289,7 @@ The divisibility relation $\mid$ is always reflexive in a ring, but can fail to 
 :::
 ------
 ::: card-body
-Let $R$ be a rng, and let $a, b, c \in R$. If $a \mid b$ and $b \mid c$, then there exist $x, y \in R$ sch that $b = xa$ and $c = yb$. It follows that $c = yxa$, which proves that $a \mid c$. <span class="float-end">&#8718;</span>
+*Proof:* Let $R$ be a rng, and let $a, b, c \in R$. If $a \mid b$ and $b \mid c$, then there exist $x, y \in R$ sch that $b = xa$ and $c = yb$. It follows that $c = yxa$, which proves that $a \mid c$. &qed;
 :::
 ::::::
 
