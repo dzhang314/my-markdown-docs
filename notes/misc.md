@@ -162,6 +162,7 @@ Let $A$ and $B$ be sets. A function $f: A \to B$ is ___bijective___ if it is bot
 *Proof:* Suppose $f^{-1}$ is a function. This means that, for every $b \in B$, there exists a unique $a \in A$ such that $b \mathrel{f^{-1}} a$, or equivalently, $a \mathrel{f} b$. The existence of $a$ implies that $f$ is surjective, and the uniqueness of $a$ implies that $f$ is injective.
 
 Conversely, suppose $f$ is a bijection. For every $b \in B$, the surjectivity of $f$ implies that there exists an $a \in A$ such that $a \mathrel{f} b$, and the injectivity of $f$ implies that this $a$ is unique. Hence, $f^{-1}$ is a function. &qed;
+:::
 ::::::
 
 :::::: card
@@ -191,6 +192,7 @@ $$ (g \circ f)(a) \coloneqq g(f(a)) \text{ for all } a \in A. $$
 
  * Let $a_1, a_2 \in A$ be given. If $a_1 \ne a_2$, then by the injectivity of $f$, we have $f(a_1) \ne f(a_2)$. It follows by the injectivity of $g$ that $g(f(a_1)) \ne g(f(a_2))$, or equivalently, $(g \circ f)(a_1) \ne (g \circ f)(a_2)$.
  * Let $c \in C$ be given. By the surjectivity of $g$, there exists $b \in B$ such that $g(b) = c$. Now, by the surjectivity of $f$, there exists $a \in A$ such that $f(a) = b$. Hence, we have $(g \circ f)(a) = g(f(a)) = g(b) = c$. &qed;
+:::
 ::::::
 
 --------------------------------------------------------------------------------
@@ -255,7 +257,7 @@ We define $0! \coloneqq 1$ in accordance with the convention that the product of
 **Definition: Gauss's Pi Function**
 :::
 ::: card-body
-___Gauss's Pi function___ is the function $\Pi: \{ z \in \C : \Re(z) > -1 \} \to \C$ defined on the half-plane $\Re(z) > -1$ by the absolutely convergent improper integral
+___Gauss's pi function___ is the function $\Pi: \{ z \in \C : \Re(z) > -1 \} \to \C$ defined on the half-plane $\Re(z) > -1$ by the absolutely convergent improper integral
 
 $$ \Pi(z) \coloneqq \int_0^\infty t^z e^{-t} \,\mathrm{d}t. $$
 :::
@@ -272,6 +274,23 @@ $$ \Pi(0) = \int_0^\infty e^{-t} \,\mathrm{d}t = -(e^{-\infty} - e^0) = 1 $$
 For $\Re(z) > -1$, integration by parts gives
 
 $$ \Pi(z + 1) = \int_0^\infty t^{z + 1} e^{-t} \,\mathrm{d}t = (z + 1) \int_0^\infty t^z e^{-t} \,\mathrm{d}t = (z + 1) \Pi(z) $$
+
+By putting these results together, we conclude that Gauss's pi function interpolates the factorial function.
+
+:::::: card
+::: card-header
+**Bohr--Mollerup Theorem**
+:::
+::: card-body
+**Theorem:** The gamma function is the unique function $f: (0, \infty) \to (0, \infty)$ that has the following properties:
+
+ * $f(1) = 1$.
+ * $f(x + 1) = xf(x)$ for all $x > 0$.
+ * $\log f$ is convex.
+:::
+::::::
+
+--------------------------------------------------------------------------------
 
 ${n \choose k}$ is the number of $k$-element subsets of $[n]$.
 
