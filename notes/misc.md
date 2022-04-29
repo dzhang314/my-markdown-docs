@@ -292,6 +292,14 @@ By putting these results together, we conclude that Gauss's pi function interpol
 
 --------------------------------------------------------------------------------
 
+$$
+\begin{CD}
+A @>>> B
+\end{CD}
+$$
+
+--------------------------------------------------------------------------------
+
 ${n \choose k}$ is the number of $k$-element subsets of $[n]$.
 
 ${n \brack k}$ is the number of permutations of $[n]$ that have $k$ disjoint cycles.

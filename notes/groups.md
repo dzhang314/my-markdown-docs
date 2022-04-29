@@ -68,6 +68,62 @@ An ___abelian group___ is a group $\alg{G; 1, {}^{-1}, \cdot}$ that satisfies th
 
 :::::: card
 ::: card-header
+**Definition: Left Coset, Right Coset, $G/H$, $H \backslash G$**
+:::
+::: card-body
+Let $G$ be a group, and let $H \le G$ be a subgroup. A ___left coset___ of $H$ is a set of the form
+
+$$ gH \coloneqq \{ gh : h \in H \} $$
+
+for some fixed element $g \in G$. Similarly, a ___right coset___ of $H$ is a set of the form
+
+$$ Hg \coloneqq \{ hg : h \in H \} $$
+
+for some fixed element $g \in G$. The collection of all left cosets of $H$ is denoted by $G/H$, while the collection of all right cosets of $H$ is denoted by $H \backslash G$.
+:::
+::::::
+
+
+This definition introduces a new notational convention. Whenever we apply a group operation, such as $gH$ or $H^{-1}$, to a _subset_ of a group, we mean the set formed by applying that operation to each element of the subset. For example:
+
+$$ \begin{aligned}
+gH &\coloneqq \{ gh : h \in H \} \\
+H^{-1} &\coloneqq \{ h^{-1} : h \in H \} \\
+g_1 H g_2 &\coloneqq \{ g_1 h g_2 : h \in H \}
+\end{aligned} $$
+
+Note that we can write $g_1 H g_2$ without ambiguity, since the associative property guarantees that $(g_1 H) g_2 = g_1 (H g_2)$.
+
+
+:::::: card
+::: card-header
+**Definition: Index, $\abs{G:H}$**
+:::
+::: card-body
+Let $G$ be a group, and let $H \le G$ be a subgroup. The ___index___ of $H$ in $G$, denoted by $\abs{G:H}$, is the cardinality of the
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Cosets Partition a Group**
+:::
+::: card-body
+**Theorem:** Let $G$ be a group, and let $H \le G$ be a subgroup.
+:::
+------
+::: card-body
+*Proof:*
+
+Suppose two cosets $xH$ and $yH$ of $H$ intersect, i.e., there exists an element $z \in xH \cap yH$
+
+:::
+::::::
+
+
+:::::: card
+::: card-header
 **Definition: Normal Subgroup**
 :::
 ::: card-body
@@ -127,7 +183,6 @@ $$ Z(G) \coloneqq \{ g \in G : \forall h \in G,\ gh = hg \} $$
 :::
 ::::::
 
-
 :::::: card
 ::: card-header
 **Center is a Normal Subgroup**
@@ -137,6 +192,6 @@ $$ Z(G) \coloneqq \{ g \in G : \forall h \in G,\ gh = hg \} $$
 :::
 ------
 ::: card-body
-*Proof:* TODO
+*Proof:* Let $g \in G$ and $z \in Z(G)$. Because $z$ is central, we have $g^{-1}zg = zg^{-1}g = z \in Z(G)$. &qed;
 :::
 ::::::
