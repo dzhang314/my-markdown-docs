@@ -44,5 +44,6 @@
     "\\vw": "{\\mathbf{w}}",
     "\\vx": "{\\mathbf{x}}",
     "\\vy": "{\\mathbf{y}}",
-    "\\vz": "{\\mathbf{z}}"
+    "\\vz": "{\\mathbf{z}}",
+    "\\legendre": "{\\genfrac{(}{)}{}{}{#1}{#2}}"
 }
