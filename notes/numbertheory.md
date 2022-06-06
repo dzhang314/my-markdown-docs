@@ -109,3 +109,81 @@ Thus, we have proven $b^2 - 4ac \equiv (2axz + b)^2 \pmod{k}$, which shows that 
 
 :::
 ::::::
+
+--------------------------------------------------------------------------------
+
+:::::: card
+::: card-header
+**Definition: Diophantine Equation**
+:::
+::: card-body
+A ___Diophantine equation___ is a polynomial equation with integer coefficients, in any (finite) number of variables, for which we seek integer solutions.
+:::
+::::::
+
+For example, the following equations could all be Diophantine equations (if we add the stipulation that we are looking for integer solutions):
+
+$$ x + y = 5 $$
+$$ a^2 + b^2 = c^2 $$
+$$ 3x^2 y^4 + 10z(5 - xz) = 6xyz^2 $$
+
+However, the following equations are not considered Diophantine equations, even if we stipulate that we are only interested in integer solutions:
+
+$$ 2^x + y = 31 $$
+$$ \sin(a) + \exp(b) = 0 $$
+$$ \frac{1}{4} x^2 + \pi y^3 z = \sqrt{2z} $$
+
+Note that, by moving all terms to the left-hand side, every Diophantine equation can be written in the form
+
+$$ P(x_1, \dots, x_n) = 0 $$
+
+for some polynomial $P \in \Z[x_1, \dots, x_n]$. Unless otherwise specified, we will assume that all Diophantine equations are presented in this form.
+
+:::::: card
+::: card-header
+**Definition: Solution, Satisfiable, Unsatisfiable**
+:::
+::: card-body
+Let $n \in \N$ and $P \in \Z[x_1, \dots, x_n]$. A ___solution___ of the Diophantine equation $P(x_1, \dots, x_n) = 0$ is a point $(s_1, \dots, s_n) \in \Z^n$ for which $P(s_1, \dots, s_n) = 0$. We say that the Diophantine equation $P(x_1, \dots, x_n) = 0$ is ___satisfiable___ if it has a solution in $\Z^n$; otherwise, we say that the equation $P(x_1, \dots, x_n) = 0$ is ___unsatisfiable___.
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Linear Variable, Occurs Linearly**
+:::
+::: card-body
+Let $n \in \N$. We say that a polynomial $P \in \Z[x_1, \dots, x_n]$ contains a ___linear variable___ if, after some permutation of the variables $x_1, \dots, x_n$, we can write $P(x_1, \dots, x_n)$ in the form
+
+$$ P(x_1, \dots, x_n) = a x_1 x_2^{j_2} \cdots x_k^{j_k} + Q(x_{k+1}, \dots, x_n) $$
+
+for some $a \in \Z$, $k, j_2, \dots, j_k \in \N$, and $Q \in \Z[x_{k+1}, \dots, x_n]$. If this is the case, then we say that the variable $x_1$ ___occurs linearly___ in $P$.
+:::
+::::::
+
+Note that this notion of "linearity" is **not** equivalent to $x_1$ having degree $1$ in $P$, which is necessary but not sufficient.
+
+If a polynomial $P \in \Z[x_1, \dots, x_n]$ contains a linear variable, say $x_1$, then the corresponding Diophantine equation
+
+$$ P(x_1, \dots, x_n) = a x_1 x_2^{j_2} \cdots x_k^{j_k} + Q(x_{k+1}, \dots, x_n) = 0 $$
+
+is satisfiable if and only if it is possible for $Q(x_{k+1}, \dots, x_n)$ to be a multiple of $a$. This can be tested algorithmically by computing $Q(x_{k+1}, \dots, x_n)$ modulo $a$ for all values of $x_{k+1}, \dots, x_n \in \{0, \dots, a - 1\}$.
+
+:::::: card
+::: card-header
+**Definition: Divisible Variable, Occurs Divisibly**
+:::
+::: card-body
+Let $n \in \N$. We say that a polynomial $P \in \Z[x_1, \dots, x_n]$ contains a ___divisible variable___ if, after some permutation of the variables $x_1, \dots, x_n$, we can write $P(x_1, \dots, x_n)$ in the form
+
+$$ P(x_1, \dots, x_n) = x_1 Q(x_2, \dots, x_n) + a $$
+
+for some $a \in \Z$ and $Q \in \Z[x_2, \dots, x_n]$. If this is the case, then we say that the variable $x_1$ ___occurs divisibly___ in $P$.
+:::
+::::::
+
+If a polynomial $P \in \Z[x_1, \dots, x_n]$ contains a divisible variable, say $x_1$, then the corresponding Diophantine equation
+
+$$ P(x_1, \dots, x_n) = x_1 Q(x_2, \dots, x_n) + a = 0 $$
+
+is satisfiable if and only if it is possible for $Q(x_2, \dots, x_n)$ to be a (positive or negative) divisor of $a$. This reduces the original Diophantine equation $P(x_1, \dots, x_n) = 0$ to a finite disjunction of Diophantine equations $Q(x_2, \dots, x_n) - b = 0$ in one fewer variable, one for each divisor $b$ of $a$.
