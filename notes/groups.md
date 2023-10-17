@@ -9,15 +9,11 @@
 
 # Introduction
 
-Group theory is the first subject in a branch of mathematics known as ___abstract algebra___ (or ___modern algebra___). Abstract algebra is one of the main branches of modern pure mathematics, and it is a standard requirement in the university mathematics curriculum. Every professional mathematician and theoretically-oriented physical scientist (i.e., physicists and chemists) should know a thing or two about group theory.
+Group theory is the first subject in a branch of mathematics known as ___abstract algebra___ or ___modern algebra___. Abstract algebra is one of the main branches of modern pure mathematics, and every mathematician, scientist, or engineer who wants a deep understanding of theoretical foundations should know a thing or two about group theory.
 
-The goal of abstract algebra is to study the general properties of algebraic systems and the interrelations between them. That might not mean a lot if you haven't studied abstract algebra before, so let me contextualize this statement.
+The goal of abstract algebra is to study the properties of algebraic systems and the interrelations between them. For example, you probably know about a handful of different number systems, including the integers $\Z$, the rational numbers $\Q$, the real numbers $\R$, and possibly the complex numbers $\C$. You may have learned that there are several ___algebraic properties___ that these systems satisfy, such as the ___commutative property___ of addition, $x + y = y + x$, and the ___associative property___ of multiplication, $x \cdot (y \cdot z) = (x \cdot y) \cdot z$.
 
-In grade school, you learned about a handful of different number systems, including the integers $\Z$, the rational numbers $\Q$, the real numbers $\R$, and possibly (if you were an advanced student) the complex numbers $\C$. You also learned that there are several ___algebraic properties___ that these systems satisfy, such as the ___commutative property___ of addition, $x + y = y + x$, and the ___associative property___ of multiplication, $x \cdot (y \cdot z) = (x \cdot y) \cdot z$.
-
-In abstract algebra, we ask what other number systems support a notion of addition, negation, multiplication, or some other operation, that satisfies the commutative, associative, distributive, etc. property.
-
-Each of the number systems mentioned above supports the four basic arithmetic operations of addition, subtraction, multiplication, and (with the exception of the integers) division. Of course, subtraction and division are merely the inverses of addition and multiplication, so in each case, there are really only two _fundamental_ arithmetic operations. **[TODO: Finish writing introduction.]**
+**[TODO: Finish writing introduction.]**
 
 
 :::::: card
@@ -35,18 +31,127 @@ A ___group___ is an algebraic structure $\alg{G; 1, {}^{-1}, \cdot}$ consisting 
 satisfying the following requirements:
 
  * ___Associative property___: $(x \cdot y) \cdot z = x \cdot (y \cdot z)$ for all $x, y, z \in G$.
- * ___Identity property___: $1 \cdot x = x \cdot 1 = x$ for all $x \in G$.
- * ___Inverse property___: $x \cdot x^{-1} = x^{-1} \cdot x = 1$ for all $x \in G$.
+ * ___Identity property___: $1 \cdot x = x$ for all $x \in G$.
+ * ___Inverse property___: $x^{-1} \cdot x = 1$ for all $x \in G$.
 :::
 ::::::
 
 
 :::::: card
 ::: card-header
-**Definition: Subgroup**
+**Identity is the Only Idempotent**
 :::
 ::: card-body
-**TODO**
+**Theorem:** Let $\alg{G; 1, {}^{-1}, \cdot}$ be a group. The only element $x \in G$ having the property that $x \cdot x = x$ is the identity element.
+:::
+------
+::: card-body
+*Proof:* First, to see that the identity element $1 \in G$ actually has the claimed property, observe that $1 \cdot 1 = 1$ follows from the identity property.
+
+Next, to see that no other element of $G$ has this property, let $x \in G$ be given, and suppose $x \cdot x = x$. By multiplying both sides by $x^{-1}$ on the left, we have $x^{-1} \cdot (x \cdot x) = x^{-1} \cdot x$, from which it follows that:
+
+$$ x = 1 \cdot x = (x^{-1} \cdot x) \cdot x = x^{-1} \cdot (x \cdot x) = x^{-1} \cdot x = 1 $$
+
+Thus, we have proven that $x \cdot x = x$ implies $x = 1$. &qed;
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Right Inverse Property**
+:::
+::: card-body
+**Theorem:** Let $\alg{G; 1, {}^{-1}, \cdot}$ be a group. For all $x \in G$, we have $x \cdot x^{-1} = 1$.
+:::
+------
+::: card-body
+*Proof:* Let $x \in G$ be given. We know, from the definition of a group, that $x^{-1} \cdot x = 1$ and $1 \cdot x^{-1} = x^{-1}$. It follows that:
+
+$$ x \cdot x^{-1} = x \cdot (1 \cdot x^{-1}) = x \cdot ((x^{-1} \cdot x) \cdot x^{-1}) = x \cdot (x^{-1} \cdot (x \cdot x^{-1})) = (x \cdot x^{-1}) \cdot (x \cdot x^{-1}) $$
+
+This shows that the element $x \cdot x^{-1} \in G$ remains unchanged when it is multiplied by itself. Using the previous result, this proves that $x \cdot x^{-1} = 1$. &qed;
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Right Identity Property**
+:::
+::: card-body
+**Theorem:** Let $\alg{G; 1, {}^{-1}, \cdot}$ be a group. For all $x \in G$, we have $x \cdot 1 = x$.
+:::
+------
+::: card-body
+*Proof:* Let $x \in G$ be given. We know, from the definition of a group, that $x^{-1} \cdot x = 1$ and $1 \cdot x = x$. It follows that:
+
+$$ x \cdot 1 = x \cdot (x^{-1} \cdot x) = (x \cdot x^{-1}) \cdot x = 1 \cdot x = x $$
+This proves that $x \cdot 1 = x$. &qed;
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Inverses are Unique**
+:::
+::: card-body
+**Theorem:** Let $\alg{G; 1, {}^{-1}, \cdot}$ be a group. If two elements $x, y \in G$ satisfy $x \cdot y = 1$, then $x = y^{-1}$ and $y = x^{-1}$.
+:::
+------
+::: card-body
+*Proof:* Let $x \in G$ be given. We know, from the definition of a group, that $x^{-1} \cdot x = 1$ and $1 \cdot x = x$. It follows that:
+
+$$ x \cdot 1 = x \cdot (x^{-1} \cdot x) = (x \cdot x^{-1}) \cdot x = 1 \cdot x = x $$
+This proves that $x \cdot 1 = x$. &qed;
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Definition: Subgroup, $H \le G$**
+:::
+::: card-body
+Let $\alg{G; 1, {}^{-1}, \cdot}$ be a group. A ___subgroup___ of $\alg{G; 1, {}^{-1}, \cdot}$ is a subset $H \subseteq G$ of its underlying set that satisfies the following requirements:
+
+ * $1 \in H$.
+ * If $x \in H$, then $x^{-1} \in H$.
+ * If $x, y \in H$, then $x \cdot y \in H$.
+
+We write $H \le G$ to denote that $H$ is a subgroup of $\alg{G; 1, {}^{-1}, \cdot}$.
+:::
+::::::
+
+In other words, $H$ is a subgroup of $G$ if and only if the structure $\alg{H; 1, {}^{-1}|_H, \cdot|_H}$ is a group in its own right, where ${}^{-1}|_H$ and $\cdot|_H$ denote the inverse operation ${}^{-1}$ and the group operation $\cdot$ restricted to $H$ and $H \times H$, respectively.
+
+This definition introduces an important notational convention. We will often refer to a group $\alg{G; 1, {}^{-1}, \cdot}$ simply by the name of its underlying set $G$, omitting explicit mention of the identity element, the inversion operation, and the group operation.
+
+It is also common in the mathematics literature to not use any symbol, such as $x \times y$ or $x \cdot y$, to denote the binary operation in a group. Instead, most mathematicians simply write $xy$, using _juxtaposition_ to indicate application of the group operation. Note that the associative property allows us to write expressions like $xyz$ without needing to specify which product should be evaluated first, since both $(xy)z$ and $x(yz)$ are guaranteed to produce the same result.
+
+
+--------------------------------------------------------------------------------
+
+
+:::::: card
+::: card-header
+**Definition: Commute, Commutes**
+:::
+::: card-body
+Let $G$ be a group. We say that two elements $x, y \in G$ ___commute___, or we say that $x$ ___commutes___ with $y$, if $xy = yx$.
+:::
+::::::
+
+
+:::::: card
+::: card-header
+**Definition: Central Element, Center, $Z(G)$**
+:::
+::: card-body
+Let $G$ be a group. An element $x \in G$ is ___central___ if $x$ commutes with every element of $G$. The set of all central elements of $G$ is called the ___center___ of $G$, and is denoted by $Z(G)$.
+
+$$ Z(G) \coloneqq \{ x \in G : \forall y \in G,\ xy = yx \} $$
 :::
 ::::::
 
@@ -142,18 +247,6 @@ $$ (x^g)^h = (g^{-1} x g)^h = h^{-1} (g^{-1} x g) h = (gh)^{-1} x (gh) = x^{gh} 
 
 :::::: card
 ::: card-header
-**Definition: Central Element, Center, $Z(G)$**
-:::
-::: card-body
-Let $G$ be a group. An element $g \in G$ is ___central___ if $g$ commutes with every element of $G$. The set of all central elements of $G$ is called the ___center___ of $G$, and is denoted by $Z(G)$.
-
-$$ Z(G) \coloneqq \{ g \in G : \forall h \in G,\ gh = hg \} $$
-:::
-::::::
-
-
-:::::: card
-::: card-header
 **Center is a Subgroup**
 :::
 ::: card-body
@@ -169,19 +262,6 @@ $$ Z(G) \coloneqq \{ g \in G : \forall h \in G,\ gh = hg \} $$
 :::
 ::::::
 
-
-:::::: card
-::: card-header
-**Center is a Normal Subgroup**
-:::
-::: card-body
-**Theorem:** Let $G$ be a group. Its center $Z(G)$ is a normal subgroup of $G$.
-:::
-------
-::: card-body
-*Proof:* Let $g \in G$ and $z \in Z(G)$. Because $z$ is central, we have $g^{-1}zg = zg^{-1}g = z \in Z(G)$. &qed;
-:::
-::::::
 
 :::::: card
 ::: card-header
