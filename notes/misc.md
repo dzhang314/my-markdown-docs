@@ -130,7 +130,7 @@ which is precisely the definition of $\mu$-strong convexity for $f$.
 :::
 ::::::
 
-Note that this argument does not make use of the symmetry of the inner product $\langle \cdot, \cdot \rangle$.
+Note that this argument does not require the inner product $\langle \cdot, \cdot \rangle$ to be symmetric.
 
 :::::: card
 ::: card-header
