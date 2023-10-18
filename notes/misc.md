@@ -7,6 +7,59 @@
 
 --------------------------------------------------------------------------------
 
+:::::: card
+::: card-header
+**Definition: Unit Interval, $[0_F, 1_F]$, Open Unit Interval, $(0_F, 1_F)$**
+:::
+::: card-body
+Let $F$ be an ordered field. The ___unit interval___ in $F$, denoted by $[0_F, 1_F]$, is the set
+
+$$ [0_F, 1_F] \coloneqq \{ t \in F: 0_F \le t \le 1_F \} $$
+
+where $0_F$ and $1_F$ denote the additive and multiplicative identity elements of $F$, respectively. Similarly, the ___open unit interval___ in $F$, denoted by $(0_F, 1_F)$, is the set
+
+$$ (0_F, 1_F) \coloneqq \{ t \in F: 0_F < t < 1_F \}. $$
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Line Segment, $[\vv, \vw]$, $[\vv, t, \vw]$**
+:::
+::: card-body
+Let $V$ be a vector space over an ordered field $F$. Given two vectors $\vv, \vw \in V$, the ___line segment___ connecting $\vv$ to $\vw$ is the set
+
+$$ [\vv, \vw] \coloneqq \{ t \vv + (1_F - t) \vw : t \in [0_F, 1_F] \}. $$
+
+We also define the notation $[\vv, t, \vw] \coloneqq t \vv + (1_F - t) \vw$ to refer to a particular point along this line segment.
+:::
+::::::
+
+Although the notation $[\vv, t, \vw]$ is well-defined for all values of $t \in F$, we will only write $[\vv, t, \vw]$ when $0_F \le t \le 1_F$.
+
+:::::: card
+::: card-header
+**Definition: Convex Set**
+:::
+::: card-body
+Let $V$ be a vector space over an ordered field $F$. A subset $C \subseteq V$ is ___convex___ if, for all pairs of points $\vv, \vw \in C$, the line segment $[\vv, \vw]$ is contained in $C$.
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Convex Function**
+:::
+::: card-body
+Let $V$ be a vector space over an ordered field $F$, and let $C \subseteq V$ be convex. A function $f: C \to F$ is ___convex___ if, for all $\vv, \vw \in C$ and $t \in [0_F, 1_F]$, we have
+$$ f([\vv, t, \vw]) \le [f(\vv), t, f(\vw)]. $$
+:::
+::::::
+
+On the right-hand side of this inequality, we regard $F$ itself as a vector space over $F$ in writing $[f(\vv), t, f(\vw)]$.
+
+--------------------------------------------------------------------------------
+
 If a first-order ODE can be written in the form
 
 $$ y'(t) = \frac{p(t)}{q(y(t))} $$
