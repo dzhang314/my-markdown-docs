@@ -31,7 +31,11 @@ Let $V$ be a vector space over an ordered field $F$. Given two vectors $\vv, \vw
 
 $$ [\vv, \vw] \coloneqq \{ t \vv + (1_F - t) \vw : t \in [0_F, 1_F] \}. $$
 
-We also define the notation $[\vv, t, \vw] \coloneqq t \vv + (1_F - t) \vw$ to refer to a particular point along this line segment.
+We also define the notation
+
+$$ [\vv, t, \vw] \coloneqq t \vv + (1_F - t) \vw $$
+
+to refer to a particular point along this line segment.
 :::
 ::::::
 
@@ -52,11 +56,96 @@ Let $V$ be a vector space over an ordered field $F$. A subset $C \subseteq V$ is
 :::
 ::: card-body
 Let $V$ be a vector space over an ordered field $F$, and let $C \subseteq V$ be convex. A function $f: C \to F$ is ___convex___ if, for all $\vv, \vw \in C$ and $t \in [0_F, 1_F]$, we have
+
 $$ f([\vv, t, \vw]) \le [f(\vv), t, f(\vw)]. $$
 :::
 ::::::
 
-On the right-hand side of this inequality, we regard $F$ itself as a vector space over $F$ in writing $[f(\vv), t, f(\vw)]$.
+On the right-hand side of this inequality, we regard $F$ itself as a vector space over $F$ in order to write $[f(\vv), t, f(\vw)]$.
+
+:::::: card
+::: card-header
+**Definition: Strictly Convex Function**
+:::
+::: card-body
+Let $V$ be a vector space over an ordered field $F$, and let $C \subseteq V$ be convex. A function $f: C \to F$ is ___strictly convex___ if, for all $\vv, \vw \in C$ and $t \in (0_F, 1_F)$, we have
+
+$$ f([\vv, t, \vw]) < [f(\vv), t, f(\vw)]. $$
+:::
+::::::
+
+:::::: card
+::: card-header
+**Definition: Strongly Convex Function**
+:::
+::: card-body
+Let $V$ be an inner product space over an ordered field $F$, let $C \subseteq V$ be convex, and let $\mu \in F$ be positive ($\mu > 0_F$). A function $f: C \to F$ is ___$\mu$-strongly convex___ if, for all $\vv, \vw \in C$ and $t \in [0_F, 1_F]$, we have
+
+$$ f([\vv, t, \vw]) \le [f(\vv), t, f(\vw)] - \frac{\mu}{2} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle. $$
+:::
+::::::
+
+:::::: card
+::: card-header
+**Characterizing Strong Convexity**
+:::
+::: card-body
+**Theorem:** Let $V$ be an inner product space over an ordered field $F$, let $C \subseteq V$ be convex, and let $\mu \in F$ be positive. A function $f: C \to F$ is $\mu$-strongly convex if and only if the function $g: C \to F$ defined by
+
+$$ g(\vx) \coloneqq f(\vx) - \frac{\mu}{2} \langle \vx, \vx \rangle $$
+
+is convex.
+:::
+------
+::: card-body
+*Proof:* By definition, $g$ is convex if and only if the following inequality holds:
+
+$$ \begin{aligned}
+g([\vv, t, \vw]) &\le [g(\vv), t, g(\vw)] \\
+f([\vv, t, \vw]) - \frac{\mu}{2} \langle [\vv, t, \vw], [\vv, t, \vw] \rangle
+&\le [f(\vv), t, f(\vw)] - \frac{\mu}{2} [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle]
+\end{aligned} $$
+
+We can rearrange this inequality into a form that nearly matches the definition of $\mu$-strong convexity:
+
+$$ f([\vv, t, \vw]) \le [f(\vv), t, f(\vw)] - \frac{\mu}{2} \big( [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle \big) $$
+
+To show that this inequality coincides with the definition of $\mu$-strong convexity, we compute:
+
+$$ \begin{aligned}
+    &[\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle]
+    - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle \\
+    &= t \langle \vv, \vv \rangle + (1_F - t) \langle \vw, \vw \rangle - \langle t \vv + (1_F - t) \vw, t \vv + (1_F - t) \vw \rangle \\
+    &= t \langle \vv, \vv \rangle + (1_F - t) \langle \vw, \vw \rangle - t^2 \langle \vv, \vv \rangle - t (1_F - t) \langle \vv, \vw \rangle - t (1_F - t) \langle \vw, \vv \rangle - (1_F - t)^2 \langle \vw, \vw \rangle \\
+    &= t (1_F - t) \langle \vv, \vv \rangle + t (1_F - t) \langle \vw, \vw \rangle - t (1_F - t) \langle \vv, \vw \rangle - t (1_F - t) \langle \vw, \vv \rangle \\
+    &= t (1_F - t) [\langle \vv, \vv \rangle - \langle \vv, \vw \rangle - \langle \vw, \vv \rangle + \langle \vw, \vw \rangle] \\
+    &= t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle
+\end{aligned} $$
+
+Thus, we have shown that $g$ is convex if and only if
+
+$$ f([\vv, t, \vw]) \le [f(\vv), t, f(\vw)] - \frac{\mu}{2} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle $$
+
+which is precisely the definition of $\mu$-strong convexity for $f$.
+:::
+::::::
+
+Note that this argument does not make use of the symmetry of the inner product $\langle \cdot, \cdot \rangle$.
+
+:::::: card
+::: card-header
+**Definition: Subgradient, Subdifferential, $\partial f(\vv)$**
+:::
+::: card-body
+Let $V$ be a vector space over an ordered field $F$, let $D \subseteq V$, and let $f: D \to F$. A ___subgradient___ of $f$ at a point $\vv \in D$ is a linear functional $g \in V^*$ having the property that
+
+$$ f(\vw) - f(\vv) \ge g(\vw - \vv) $$
+
+for all $\vw \in D$. The set of all subgradients of $f$ at a point $\vv \in D$, denoted by $\partial f(\vv)$, is called the ___subdifferential___ of $f$ at $\vv$.
+
+$$ \partial f(\vv) \coloneqq \{ g \in V^* : \forall \vw \in D,\ f(\vw) - f(\vv) \ge g(\vw - \vv) \} $$
+:::
+::::::
 
 --------------------------------------------------------------------------------
 
