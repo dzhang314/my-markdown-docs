@@ -240,6 +240,58 @@ It follows from the positive-definiteness of the inner product that this inequal
 :::
 ::::::
 
+We now introduce a notion that is dual to $\mu$-strong convexity.
+
+:::::: card
+::: card-header
+**Definition: $L$-Controlled Function**
+:::
+::: card-body
+Let $V$ be an inner product space over an ordered field $F$, let $C \subseteq V$ be convex, and let $L \in F$ be positive ($L > 0_F$). A function $f: C \to F$ is ___$L$-controlled___ if, for all $\vv, \vw \in C$ and $t \in [0_F, 1_F]$, we have
+
+$$ f([\vv, t, \vw]) \ge [f(\vv), t, f(\vw)] - \frac{L}{2} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle. $$
+:::
+::::::
+
+:::::: card
+::: card-header
+**Characterizing $L$-Control**
+:::
+::: card-body
+**Theorem:** Let $V$ be an inner product space over an ordered field $F$, let $C \subseteq V$ be convex, and let $L \in F$ be positive. A function $f: C \to F$ is $L$-controlled if and only if the function $g: C \to F$ defined by
+
+$$ g(\vx) \coloneqq \frac{L}{2} \langle \vx, \vx \rangle - f(\vx) $$
+
+is convex.
+:::
+------
+::: card-body
+*Proof:* By definition, $g$ is convex if and only if the following inequality holds:
+
+$$ \begin{aligned}
+g([\vv, t, \vw]) &\le [g(\vv), t, g(\vw)] \\
+\frac{L}{2} \langle [\vv, t, \vw], [\vv, t, \vw] \rangle - f([\vv, t, \vw])
+&\le \frac{L}{2} [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - [f(\vv), t, f(\vw)]
+\end{aligned} $$
+
+After rearranging this inequality, we can simplify it using our formula for $[\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle$:
+
+$$ \begin{aligned}
+f([\vv, t, \vw])
+&\ge [f(\vv), t, f(\vw)] - \frac{L}{2} \big( [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle \big) \\
+&= [f(\vv), t, f(\vw)] - \frac{L}{2} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle
+\end{aligned} $$
+
+This is precisely the definition of $f$ being $L$-controlled. &qed;
+:::
+::::::
+
+Using the notion of $L$-control, we would like to derive the quadratic upper bound
+
+$$ f(\vy) \le f(\vx) + \nabla f(\vx) \cdot (\vy - \vx) + \frac{L}{2} \langle \vy - \vx, \vy - \vx \rangle $$
+
+which is necessary in the convergence analysis of gradient descent.
+
 --------------------------------------------------------------------------------
 
 If a first-order ODE can be written in the form
