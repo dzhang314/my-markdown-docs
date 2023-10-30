@@ -87,6 +87,39 @@ $$ f([\vv, t, \vw]) \le [f(\vv), t, f(\vw)] - \frac{\mu}{2} t (1_F - t) \langle 
 
 :::::: card
 ::: card-header
+**Comparing Norm of Midpoint to Midpoint of Norms**
+:::
+::: card-body
+**Theorem:** Let $V$ be a vector space over a field $F$, and let $\langle \cdot, \cdot \rangle: V \times V \to F$ be a bilinear form on $V$. (We do not assume $\langle \cdot, \cdot \rangle$ to be symmetric or positive-definite.) For any $\vv, \vw \in V$ and $t \in F$, we have
+
+$$ [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle = t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle. $$
+
+If, in addition, $F$ is an ordered field, $\langle \cdot, \cdot \rangle$ is positive-semidefinite, and $0_F \le t \le 1_F$, then
+
+$$[\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] \ge \langle [\vv, t, \vw], [\vv, t, \vw] \rangle. $$
+:::
+------
+::: card-body
+*Proof:* Let $\vv, \vw \in V$ and $t \in F$ be given. We proceed by direct computation:
+
+$$ \begin{aligned}
+    &[\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle]
+    - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle \\
+    &= t \langle \vv, \vv \rangle + (1_F - t) \langle \vw, \vw \rangle - \langle t \vv + (1_F - t) \vw, t \vv + (1_F - t) \vw \rangle \\
+    &= t \langle \vv, \vv \rangle + (1_F - t) \langle \vw, \vw \rangle - t^2 \langle \vv, \vv \rangle - t (1_F - t) \langle \vv, \vw \rangle - t (1_F - t) \langle \vw, \vv \rangle - (1_F - t)^2 \langle \vw, \vw \rangle \\
+    &= t (1_F - t) \langle \vv, \vv \rangle + t (1_F - t) \langle \vw, \vw \rangle - t (1_F - t) \langle \vv, \vw \rangle - t (1_F - t) \langle \vw, \vv \rangle \\
+    &= t (1_F - t) [\langle \vv, \vv \rangle - \langle \vv, \vw \rangle - \langle \vw, \vv \rangle + \langle \vw, \vw \rangle] \\
+    &= t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle
+\end{aligned} $$
+
+This establishes the desired equation. Now observe that if $\langle \cdot, \cdot \rangle$ is positive-semidefinite and $0_F \le t \le 1_F$, then the right-hand side $t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle$ is a product of three nonnegative quantities. This establishes the desired inequality. &qed;
+:::
+::::::
+
+As a direct corollary of this result, it follows that the squared-norm function $\vx \mapsto \langle \vx, \vx \rangle$ is $2$-strongly convex, or equivalently, that the scaled function $\vx \mapsto \frac{1}{2} \langle \vx, \vx \rangle$ is $1$-strongly convex. It turns out that the squared-norm function completely characterizes the notion of $\mu$-strong convexity, in the sense that the $\mu$-strong convexity of any function can be determined by comparison to $\vx \mapsto \frac{\mu}{2} \langle \vx, \vx \rangle$:
+
+:::::: card
+::: card-header
 **Characterizing $\mu$-Strong Convexity**
 :::
 ::: card-body
@@ -106,31 +139,16 @@ f([\vv, t, \vw]) - \frac{\mu}{2} \langle [\vv, t, \vw], [\vv, t, \vw] \rangle
 &\le [f(\vv), t, f(\vw)] - \frac{\mu}{2} [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle]
 \end{aligned} $$
 
-We can rearrange this inequality into a form that nearly matches the definition of $\mu$-strong convexity:
-
-$$ f([\vv, t, \vw]) \le [f(\vv), t, f(\vw)] - \frac{\mu}{2} \big( [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle \big) $$
-
-To show that this inequality coincides with the definition of $\mu$-strong convexity, we compute:
+After rearranging this inequality, we can simplify it using our formula for $[\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle$:
 
 $$ \begin{aligned}
-    &[\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle]
-    - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle \\
-    &= t \langle \vv, \vv \rangle + (1_F - t) \langle \vw, \vw \rangle - \langle t \vv + (1_F - t) \vw, t \vv + (1_F - t) \vw \rangle \\
-    &= t \langle \vv, \vv \rangle + (1_F - t) \langle \vw, \vw \rangle - t^2 \langle \vv, \vv \rangle - t (1_F - t) \langle \vv, \vw \rangle - t (1_F - t) \langle \vw, \vv \rangle - (1_F - t)^2 \langle \vw, \vw \rangle \\
-    &= t (1_F - t) \langle \vv, \vv \rangle + t (1_F - t) \langle \vw, \vw \rangle - t (1_F - t) \langle \vv, \vw \rangle - t (1_F - t) \langle \vw, \vv \rangle \\
-    &= t (1_F - t) [\langle \vv, \vv \rangle - \langle \vv, \vw \rangle - \langle \vw, \vv \rangle + \langle \vw, \vw \rangle] \\
-    &= t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle
+f([\vv, t, \vw]) &\le [f(\vv), t, f(\vw)] - \frac{\mu}{2} \big( [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle \big) \\
+&= [f(\vv), t, f(\vw)] - \frac{\mu}{2} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle
 \end{aligned} $$
 
-Thus, we have shown that $g$ is convex if and only if
-
-$$ f([\vv, t, \vw]) \le [f(\vv), t, f(\vw)] - \frac{\mu}{2} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle $$
-
-which is precisely the definition of $\mu$-strong convexity for $f$. &qed;
+This is precisely the definition of $\mu$-strong convexity for $f$. &qed;
 :::
 ::::::
-
-Note that this argument does not require the inner product $\langle \cdot, \cdot \rangle$ to be symmetric or positive-definite; it actually works for any bilinear form. However, positive-semidefiniteness of the inner product is necessary to ensure that $\mu$-strong convexity is a stronger condition than convexity.
 
 :::::: card
 ::: card-header
@@ -177,6 +195,48 @@ By adding these two inequalities together, we obtain
 $$ f(\vw) - f(\vv) \ge [t g_1 + (1_F - t) g_2](\vw - \vv) $$
 
 which proves that $t g_1 + (1_F - t) g_2 = [g_1, t, g_2] \in \partial f(\vv)$. Since $t \in [0_F, 1_F]$ was arbitrary, this proves that the line segment $[g_1, g_2]$ is contained in $\partial f(\vv)$. &qed;
+:::
+::::::
+
+:::::: card
+::: card-header
+**Subdifferential of Squared Norm**
+:::
+::: card-body
+**Theorem:** Let $V$ be an inner product space over an ordered field $F$, and consider the function $f: V \to F$ defined by $f(\vx) \coloneqq \frac{1}{2} \langle \vx, \vx \rangle$. For any $\vv, \vx \in V$, the linear functional $g_\vv: V \to F$ defined by $g_\vv(\vx) \coloneqq \langle \vv, \vx \rangle$ is a subdifferential of $f$ at $\vx$ if and only if $\vv = \vx$.
+:::
+------
+::: card-body
+*Proof:* Let $\vv, \vx \in V$ be given. By definition, $g_\vv$ is a subdifferential of $f$ at $\vx$ if and only if
+
+$$ \frac{1}{2} \langle \vy, \vy \rangle - \frac{1}{2} \langle \vx, \vx \rangle \ge \langle \vv, \vy - \vx \rangle $$
+
+for all $\vy \in V$. We can equivalently rearrange this inequality into the form
+
+$$ \langle \vy - 2\vv, \vy \rangle - \langle \vx - 2\vv, \vx \rangle \ge 0. $$
+
+Since this inequality must hold for all values of $\vy$, in particular, it must hold when $\vy = \vv$. Setting $\vy$ to $\vv$ yields the following inequality:
+
+$$ \begin{aligned}
+\langle \vv - 2\vv, \vv \rangle - \langle \vx - 2\vv, \vx \rangle
+&= -\langle \vv, \vv \rangle - \langle \vx, \vx \rangle + 2\langle \vv, \vx \rangle \\
+&= -\langle \vv - \vx, \vv - \vx \rangle \\
+&\ge 0
+\end{aligned} $$
+
+The inequality $-\langle \vv - \vx, \vv - \vx \rangle \ge 0$ can only hold when $\vv = \vx$. This proves that $g_\vv \notin \partial f(\vx)$ whenever $\vv \ne \vx$. To prove the converse, that $g_\vx \in \partial f(\vx)$, we must show that
+
+$$ \frac{1}{2} \langle \vy, \vy \rangle - \frac{1}{2} \langle \vx, \vx \rangle \ge \langle \vx, \vy - \vx \rangle $$
+
+for all $\vy \in V$. We can equivalently rearrange this inequality into the following forms:
+
+$$ \begin{aligned}
+\frac{1}{2} \langle \vy, \vy \rangle - \frac{1}{2} \langle \vx, \vx \rangle &\ge \langle \vx, \vy \rangle - \langle \vx, \vx \rangle \\
+\frac{1}{2} \langle \vy, \vy \rangle + \frac{1}{2} \langle \vx, \vx \rangle &\ge \langle \vx, \vy \rangle \\
+\frac{1}{2} \langle \vy - \vx, \vy - \vx \rangle &\ge 0
+\end{aligned} $$
+
+It follows from the positive-definiteness of the inner product that this inequality holds for all $\vy \in V$. &qed;
 :::
 ::::::
 
