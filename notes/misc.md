@@ -76,7 +76,7 @@ $$ f([\vv, t, \vw]) < [f(\vv), t, f(\vw)]. $$
 
 :::::: card
 ::: card-header
-**Definition: Strongly Convex Function**
+**Definition: $\mu$-Strongly Convex Function**
 :::
 ::: card-body
 Let $V$ be an inner product space over an ordered field $F$, let $C \subseteq V$ be convex, and let $\mu \in F$ be positive ($\mu > 0_F$). A function $f: C \to F$ is ___$\mu$-strongly convex___ if, for all $\vv, \vw \in C$ and $t \in [0_F, 1_F]$, we have
@@ -87,7 +87,7 @@ $$ f([\vv, t, \vw]) \le [f(\vv), t, f(\vw)] - \frac{\mu}{2} t (1_F - t) \langle 
 
 :::::: card
 ::: card-header
-**Characterizing Strong Convexity**
+**Characterizing $\mu$-Strong Convexity**
 :::
 ::: card-body
 **Theorem:** Let $V$ be an inner product space over an ordered field $F$, let $C \subseteq V$ be convex, and let $\mu \in F$ be positive. A function $f: C \to F$ is $\mu$-strongly convex if and only if the function $g: C \to F$ defined by
@@ -126,11 +126,11 @@ Thus, we have shown that $g$ is convex if and only if
 
 $$ f([\vv, t, \vw]) \le [f(\vv), t, f(\vw)] - \frac{\mu}{2} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle $$
 
-which is precisely the definition of $\mu$-strong convexity for $f$.
+which is precisely the definition of $\mu$-strong convexity for $f$. &qed;
 :::
 ::::::
 
-Note that this argument does not require the inner product $\langle \cdot, \cdot \rangle$ to be symmetric.
+Note that this argument does not require the inner product $\langle \cdot, \cdot \rangle$ to be symmetric or positive-definite; it actually works for any bilinear form. However, positive-semidefiniteness of the inner product is necessary to ensure that $\mu$-strong convexity is a stronger condition than convexity.
 
 :::::: card
 ::: card-header
@@ -144,6 +144,39 @@ $$ f(\vw) - f(\vv) \ge g(\vw - \vv) $$
 for all $\vw \in D$. The set of all subgradients of $f$ at a point $\vv \in D$, denoted by $\partial f(\vv)$, is called the ___subdifferential___ of $f$ at $\vv$.
 
 $$ \partial f(\vv) \coloneqq \{ g \in V^* : \forall \vw \in D,\ f(\vw) - f(\vv) \ge g(\vw - \vv) \} $$
+:::
+::::::
+
+:::::: card
+::: card-header
+**Subdifferentials are Convex Sets**
+:::
+::: card-body
+**Theorem:** Let $V$ be a vector space over an ordered field $F$, let $D \subseteq V$, and let $f: D \to F$. For any $\vv \in D$, the subdifferential $\partial f(\vv)$ is a convex subset of the dual space $V^*$.
+:::
+------
+::: card-body
+*Proof:* Let $g_1, g_2 \in \partial f(\vv)$ be given. To show that $\partial f(\vv)$ is convex, we must prove that the line segment $[g_1, g_2]$ is contained in $\partial f(\vv)$. By hypothesis, for all $\vw \in D$, we have
+
+$$ f(\vw) - f(\vv) \ge g_1(\vw - \vv) $$
+
+and
+
+$$ f(\vw) - f(\vv) \ge g_2(\vw - \vv). $$
+
+Let $t \in [0_F, 1_F]$ be given. By multiplying the first equation by $t$ and the second equation by $1_F - t$, we obtain
+
+$$ t f(\vw) - t f(\vv) \ge t g_1(\vw - \vv) $$
+
+and
+
+$$ (1_F - t) f(\vw) - (1_F - t) f(\vv) \ge (1_F - t) g_2(\vw - \vv). $$
+
+By adding these two inequalities together, we obtain
+
+$$ f(\vw) - f(\vv) \ge [t g_1 + (1_F - t) g_2](\vw - \vv) $$
+
+which proves that $t g_1 + (1_F - t) g_2 = [g_1, t, g_2] \in \partial f(\vv)$. Since $t \in [0_F, 1_F]$ was arbitrary, this proves that the line segment $[g_1, g_2]$ is contained in $\partial f(\vv)$. &qed;
 :::
 ::::::
 
