@@ -7,6 +7,8 @@
 
 --------------------------------------------------------------------------------
 
+In these notes, we will develop a generalized form of convex analysis for vector spaces with an arbitrary (possibly infinite) number of dimensions over any ordered field (not just $\Q$ or $\R$).
+
 :::::: card
 ::: card-header
 **Definition: Unit Interval, $[0_F, 1_F]$, Open Unit Interval, $(0_F, 1_F)$**
@@ -21,6 +23,8 @@ where $0_F$ and $1_F$ denote the additive and multiplicative identity elements o
 $$ (0_F, 1_F) \coloneqq \{ t \in F: 0_F < t < 1_F \}. $$
 :::
 ::::::
+
+Whenever we work in an unspecified ordered field $F$, we will refer to the additive and multiplicative identity elements of $F$ as $0_F$ and $1_F$, respectively, to remind ourselves that these may not be real numbers.
 
 :::::: card
 ::: card-header
@@ -50,6 +54,11 @@ Let $V$ be a vector space over an ordered field $F$. A subset $C \subseteq V$ is
 :::
 ::::::
 
+It immediately follows from this definition that:
+ * Any linear subspace of $V$, including $V$ itself, is a convex set.
+ * Any singleton subset of $V$ is a convex set.
+ * The intersection of any number of convex subsets of $V$ is a convex set.
+
 :::::: card
 ::: card-header
 **Definition: Convex Function**
@@ -61,7 +70,7 @@ $$ f([\vv, t, \vw]) \le [f(\vv), t, f(\vw)]. $$
 :::
 ::::::
 
-On the right-hand side of this inequality, we regard $F$ itself as a vector space over $F$ in order to write $[f(\vv), t, f(\vw)]$.
+On the right-hand side of this inequality, we regard $F$ itself as a vector space over $F$ in order to write $[f(\vv), t, f(\vw)]$. Note that the domain of a convex function is required to be a convex set in order for $f([\vv, t, \vw])$ to be well-defined.
 
 :::::: card
 ::: card-header
@@ -81,13 +90,15 @@ $$ f([\vv, t, \vw]) < [f(\vv), t, f(\vw)]. $$
 ::: card-body
 Let $V$ be an inner product space over an ordered field $F$, let $C \subseteq V$ be convex, and let $\mu \in F$ be positive ($\mu > 0_F$). A function $f: C \to F$ is ___$\mu$-strongly convex___ if, for all $\vv, \vw \in C$ and $t \in [0_F, 1_F]$, we have
 
-$$ f([\vv, t, \vw]) \le [f(\vv), t, f(\vw)] - \frac{\mu}{2} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle. $$
+$$ f([\vv, t, \vw]) \le [f(\vv), t, f(\vw)] - \frac{\mu}{2_F} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle. $$
 :::
 ::::::
 
+Note that division by $2_F$ is well-defined because an ordered field cannot have positive characteristic.
+
 :::::: card
 ::: card-header
-**Comparing Norm of Midpoint to Midpoint of Norms**
+**Norm of Midpoint vs. Midpoint of Norms**
 :::
 ::: card-body
 **Theorem:** Let $V$ be a vector space over a field $F$, and let $\langle \cdot, \cdot \rangle: V \times V \to F$ be a bilinear form on $V$. (We do not assume $\langle \cdot, \cdot \rangle$ to be symmetric or positive-definite.) For any $\vv, \vw \in V$ and $t \in F$, we have
@@ -116,7 +127,7 @@ This establishes the desired equation. Now observe that if $\langle \cdot, \cdot
 :::
 ::::::
 
-As a direct corollary of this result, it follows that the squared-norm function $\vx \mapsto \langle \vx, \vx \rangle$ is $2$-strongly convex, or equivalently, that the scaled function $\vx \mapsto \frac{1}{2} \langle \vx, \vx \rangle$ is $1$-strongly convex. It turns out that the squared-norm function completely characterizes the notion of $\mu$-strong convexity, in the sense that the $\mu$-strong convexity of any function can be determined by comparison to $\vx \mapsto \frac{\mu}{2} \langle \vx, \vx \rangle$:
+As a direct corollary of this result, it follows that the squared-norm function $\vx \mapsto \langle \vx, \vx \rangle$ is $2_F$-strongly convex, or equivalently, that the scaled function $\vx \mapsto \frac{1_F}{2_F} \langle \vx, \vx \rangle$ is $1_F$-strongly convex. It turns out that the squared-norm function completely characterizes the notion of $\mu$-strong convexity, in the sense that the $\mu$-strong convexity of any function can be determined by comparison to $\vx \mapsto \frac{\mu}{2_F} \langle \vx, \vx \rangle$.
 
 :::::: card
 ::: card-header
@@ -125,7 +136,7 @@ As a direct corollary of this result, it follows that the squared-norm function 
 ::: card-body
 **Theorem:** Let $V$ be an inner product space over an ordered field $F$, let $C \subseteq V$ be convex, and let $\mu \in F$ be positive. A function $f: C \to F$ is $\mu$-strongly convex if and only if the function $g: C \to F$ defined by
 
-$$ g(\vx) \coloneqq f(\vx) - \frac{\mu}{2} \langle \vx, \vx \rangle $$
+$$ g(\vx) \coloneqq f(\vx) - \frac{\mu}{2_F} \langle \vx, \vx \rangle $$
 
 is convex.
 :::
@@ -135,15 +146,15 @@ is convex.
 
 $$ \begin{aligned}
 g([\vv, t, \vw]) &\le [g(\vv), t, g(\vw)] \\
-f([\vv, t, \vw]) - \frac{\mu}{2} \langle [\vv, t, \vw], [\vv, t, \vw] \rangle
-&\le [f(\vv), t, f(\vw)] - \frac{\mu}{2} [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle]
+f([\vv, t, \vw]) - \frac{\mu}{2_F} \langle [\vv, t, \vw], [\vv, t, \vw] \rangle
+&\le [f(\vv), t, f(\vw)] - \frac{\mu}{2_F} [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle]
 \end{aligned} $$
 
 After rearranging this inequality, we can simplify it using our formula for $[\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle$:
 
 $$ \begin{aligned}
-f([\vv, t, \vw]) &\le [f(\vv), t, f(\vw)] - \frac{\mu}{2} \big( [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle \big) \\
-&= [f(\vv), t, f(\vw)] - \frac{\mu}{2} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle
+f([\vv, t, \vw]) &\le [f(\vv), t, f(\vw)] - \frac{\mu}{2_F} \big( [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle \big) \\
+&= [f(\vv), t, f(\vw)] - \frac{\mu}{2_F} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle
 \end{aligned} $$
 
 This is precisely the definition of $\mu$-strong convexity for $f$. &qed;
@@ -164,6 +175,23 @@ for all $\vw \in D$. The set of all subgradients of $f$ at a point $\vv \in D$, 
 $$ \partial f(\vv) \coloneqq \{ g \in V^* : \forall \vw \in D,\ f(\vw) - f(\vv) \ge g(\vw - \vv) \} $$
 :::
 ::::::
+
+:::::: card
+::: card-header
+**Definition: Transpose, $\vg^T$, Representable Linear Functional, Representable Dual Space, $V^T$**
+:::
+::: card-body
+Let $V$ be an inner product space over an ordered field $F$, and let $\vg \in V$ be a vector. The ___transpose___ of $\vg$ is the linear functional $\vg^T: V \to F$ defined by
+
+$$ \vg^T(\vx) \coloneqq \langle \vg, \vx \rangle. $$
+
+A linear functional $g: V \to F$ is ___representable___ if there exists a vector $\vg \in V$ such that $g = \vg^T$. The set of all representable linear functionals on $V$, denoted by $V^T$, is called the ___representable dual space___ of $V$.
+
+$$ V^T \coloneqq \{ \vg^T : \vg \in V \} = \{ g \in V^* : \exists \vg \in V,\ \forall \vx \in V,\ g(\vx) = \langle \vg, \vx \rangle \} $$
+:::
+::::::
+
+The representable dual space $V^T$ is a linear subspace of the full dual space $V^*$, and they coincide if and only if $V$ is finite-dimensional.
 
 :::::: card
 ::: card-header
@@ -200,40 +228,41 @@ which proves that $t g_1 + (1_F - t) g_2 = [g_1, t, g_2] \in \partial f(\vv)$. S
 
 :::::: card
 ::: card-header
-**Subdifferential of Squared Norm**
+**Subgradient of Squared Norm**
 :::
 ::: card-body
-**Theorem:** Let $V$ be an inner product space over an ordered field $F$, and consider the function $f: V \to F$ defined by $f(\vx) \coloneqq \frac{1}{2} \langle \vx, \vx \rangle$. For any $\vv, \vx \in V$, the linear functional $g_\vv: V \to F$ defined by $g_\vv(\vx) \coloneqq \langle \vv, \vx \rangle$ is a subdifferential of $f$ at $\vx$ if and only if $\vv = \vx$.
+**Theorem:** Let $V$ be an inner product space over an ordered field $F$, and consider the function $f: V \to F$ defined by $f(\vx) \coloneqq \frac{1_F}{2_F} \langle \vx, \vx \rangle$. At any point $\vx \in V$, the unique representable subgradient of $f$ at $\vx$ is $\vx^T$.
+
+$$ \forall \vx \in V,\ \partial f(\vx) \cap V^T = \{ \vx^T \} $$
 :::
 ------
 ::: card-body
-*Proof:* Let $\vv, \vx \in V$ be given. By definition, $g_\vv$ is a subdifferential of $f$ at $\vx$ if and only if
+*Proof:* Let $\vg, \vx \in V$ be given. By definition, $\vg^T$ is a subdifferential of $f$ at $\vx$ if and only if
 
-$$ \frac{1}{2} \langle \vy, \vy \rangle - \frac{1}{2} \langle \vx, \vx \rangle \ge \langle \vv, \vy - \vx \rangle $$
+$$ \frac{1_F}{2_F} \langle \vy, \vy \rangle - \frac{1_F}{2_F} \langle \vx, \vx \rangle \ge \langle \vg, \vy - \vx \rangle $$
 
-for all $\vy \in V$. We can equivalently rearrange this inequality into the form
+for all $\vy \in V$. We can rearrange this inequality into the equivalent form
 
-$$ \langle \vy - 2\vv, \vy \rangle - \langle \vx - 2\vv, \vx \rangle \ge 0. $$
+$$ \langle \vy - 2_F \vg, \vy \rangle - \langle \vx - 2_F \vg, \vx \rangle \ge 0_F. $$
 
-Since this inequality must hold for all values of $\vy$, in particular, it must hold when $\vy = \vv$. Setting $\vy$ to $\vv$ yields the following inequality:
+Since this inequality must hold for all values of $\vy$, in particular, it must hold when $\vy = \vg$. Setting $\vy$ to $\vg$ simplifies the left-hand side of the inequality as follows:
 
 $$ \begin{aligned}
-\langle \vv - 2\vv, \vv \rangle - \langle \vx - 2\vv, \vx \rangle
-&= -\langle \vv, \vv \rangle - \langle \vx, \vx \rangle + 2\langle \vv, \vx \rangle \\
-&= -\langle \vv - \vx, \vv - \vx \rangle \\
-&\ge 0
+\langle \vg - 2_F \vg, \vg \rangle - \langle \vx - 2_F \vg, \vx \rangle
+&= -\langle \vg, \vg \rangle - \langle \vx, \vx \rangle + 2_F \langle \vg, \vx \rangle \\
+&= -\langle \vg - \vx, \vg - \vx \rangle
 \end{aligned} $$
 
-The inequality $-\langle \vv - \vx, \vv - \vx \rangle \ge 0$ can only hold when $\vv = \vx$. This proves that $g_\vv \notin \partial f(\vx)$ whenever $\vv \ne \vx$. To prove the converse, that $g_\vx \in \partial f(\vx)$, we must show that
+It is impossible for the inequality $-\langle \vg - \vx, \vg - \vx \rangle \ge 0$ to hold whenever $\vg \ne \vx$. This proves that $\vg^T \notin \partial f(\vx)$ whenever $\vg \ne \vx$. To prove that converse, that $\vx^T \in \partial f(\vx)$, we must show that
 
-$$ \frac{1}{2} \langle \vy, \vy \rangle - \frac{1}{2} \langle \vx, \vx \rangle \ge \langle \vx, \vy - \vx \rangle $$
+$$ \frac{1_F}{2_F} \langle \vy, \vy \rangle - \frac{1_F}{2_F} \langle \vx, \vx \rangle \ge \langle \vx, \vy - \vx \rangle $$
 
-for all $\vy \in V$. We can equivalently rearrange this inequality into the following forms:
+for all $\vy \in V$. We can simplify this inequality into the following equivalent forms:
 
 $$ \begin{aligned}
-\frac{1}{2} \langle \vy, \vy \rangle - \frac{1}{2} \langle \vx, \vx \rangle &\ge \langle \vx, \vy \rangle - \langle \vx, \vx \rangle \\
-\frac{1}{2} \langle \vy, \vy \rangle + \frac{1}{2} \langle \vx, \vx \rangle &\ge \langle \vx, \vy \rangle \\
-\frac{1}{2} \langle \vy - \vx, \vy - \vx \rangle &\ge 0
+\frac{1_F}{2_F} \langle \vy, \vy \rangle - \frac{1_F}{2_F} \langle \vx, \vx \rangle &\ge \langle \vx, \vy \rangle - \langle \vx, \vx \rangle \\
+\frac{1_F}{2_F} \langle \vy, \vy \rangle + \frac{1_F}{2_F} \langle \vx, \vx \rangle &\ge \langle \vx, \vy \rangle \\
+\frac{1_F}{2_F} \langle \vy - \vx, \vy - \vx \rangle &\ge 0_F
 \end{aligned} $$
 
 It follows from the positive-definiteness of the inner product that this inequality holds for all $\vy \in V$. &qed;
@@ -249,7 +278,7 @@ We now introduce a notion that is dual to $\mu$-strong convexity.
 ::: card-body
 Let $V$ be an inner product space over an ordered field $F$, let $C \subseteq V$ be convex, and let $L \in F$ be positive ($L > 0_F$). A function $f: C \to F$ is ___$L$-controlled___ if, for all $\vv, \vw \in C$ and $t \in [0_F, 1_F]$, we have
 
-$$ f([\vv, t, \vw]) \ge [f(\vv), t, f(\vw)] - \frac{L}{2} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle. $$
+$$ f([\vv, t, \vw]) \ge [f(\vv), t, f(\vw)] - \frac{L}{2_F} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle. $$
 :::
 ::::::
 
@@ -260,7 +289,7 @@ $$ f([\vv, t, \vw]) \ge [f(\vv), t, f(\vw)] - \frac{L}{2} t (1_F - t) \langle \v
 ::: card-body
 **Theorem:** Let $V$ be an inner product space over an ordered field $F$, let $C \subseteq V$ be convex, and let $L \in F$ be positive. A function $f: C \to F$ is $L$-controlled if and only if the function $g: C \to F$ defined by
 
-$$ g(\vx) \coloneqq \frac{L}{2} \langle \vx, \vx \rangle - f(\vx) $$
+$$ g(\vx) \coloneqq \frac{L}{2_F} \langle \vx, \vx \rangle - f(\vx) $$
 
 is convex.
 :::
@@ -270,27 +299,57 @@ is convex.
 
 $$ \begin{aligned}
 g([\vv, t, \vw]) &\le [g(\vv), t, g(\vw)] \\
-\frac{L}{2} \langle [\vv, t, \vw], [\vv, t, \vw] \rangle - f([\vv, t, \vw])
-&\le \frac{L}{2} [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - [f(\vv), t, f(\vw)]
+\frac{L}{2_F} \langle [\vv, t, \vw], [\vv, t, \vw] \rangle - f([\vv, t, \vw])
+&\le \frac{L}{2_F} [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - [f(\vv), t, f(\vw)]
 \end{aligned} $$
 
 After rearranging this inequality, we can simplify it using our formula for $[\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle$:
 
 $$ \begin{aligned}
 f([\vv, t, \vw])
-&\ge [f(\vv), t, f(\vw)] - \frac{L}{2} \big( [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle \big) \\
-&= [f(\vv), t, f(\vw)] - \frac{L}{2} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle
+&\ge [f(\vv), t, f(\vw)] - \frac{L}{2_F} \big( [\langle \vv, \vv \rangle, t, \langle \vw, \vw \rangle] - \langle [\vv, t, \vw], [\vv, t, \vw] \rangle \big) \\
+&= [f(\vv), t, f(\vw)] - \frac{L}{2_F} t (1_F - t) \langle \vv - \vw, \vv - \vw \rangle
 \end{aligned} $$
 
 This is precisely the definition of $f$ being $L$-controlled. &qed;
 :::
 ::::::
 
-Using the notion of $L$-control, we would like to derive the quadratic upper bound
+Let $V$ be an inner product space over an ordered field $F$. Let $L \in F$ be a positive constant, and let $f: V \to F$ be an $L$-controlled convex function. This means that both $f$ and the function $\gamma: V \to F$ defined by
 
-$$ f(\vy) \le f(\vx) + \nabla f(\vx) \cdot (\vy - \vx) + \frac{L}{2} \langle \vy - \vx, \vy - \vx \rangle $$
+$$ \gamma(\vx) \coloneqq \frac{L}{2_F} \langle \vx, \vx \rangle - f(\vx) $$
 
-which is necessary in the convergence analysis of gradient descent.
+are convex. Let $\vx \in V$ be given, and suppose that both $f$ and $\gamma$ have representable subgradients $\vg^T \in \partial f(\vx)$ and $\vh^T \in \partial \gamma(\vx)$. It follows that $\vg^T + \vh^T$ is a representable subgradient of $(f + \gamma)(\vx) = \frac{L}{2_F} \langle \vx, \vx \rangle$, which implies that $\vg^T + \vh^T = L\vx^T$. By definition, for all $\vy \in V$, we have the inequality
+
+$$ \left[ \frac{L}{2_F} \langle \vy, \vy \rangle - f(\vy) \right] - \left[ \frac{L}{2_F} \langle \vx, \vx \rangle - f(\vx) \right] \ge \vh^T(\vy - \vx) $$
+
+which can be rearranged into the equivalent form
+
+$$ f(\vy) - f(\vx) \le \frac{L}{2_F} \left[ \langle \vy, \vy \rangle - \langle \vx, \vx \rangle \right] - \vh^T(\vy - \vx). $$
+
+Since $\vg^T + \vh^T = L\vx^T$, we can write
+
+$$ \begin{aligned} f(\vy) - f(\vx)
+&\le \frac{L}{2_F} \left[ \langle \vy, \vy \rangle - \langle \vx, \vx \rangle \right] - \vh^T(\vy - \vx) \\
+&\le \frac{L}{2_F} \left[ \langle \vy, \vy \rangle - \langle \vx, \vx \rangle \right] - \vh^T(\vy - \vx) + \left( \vg^T + \vh^T \right) (\vy - \vx) - L\vx^T(\vy - \vx) \\
+&= \frac{L}{2_F} \left[ \langle \vy, \vy \rangle - \langle \vx, \vx \rangle \right] + \vg^T (\vy - \vx) - L \langle \vx, \vy - \vx \rangle \\
+&= \vg^T (\vy - \vx)  + \frac{L}{2_F} \langle \vy - \vx, \vy - \vx \rangle
+\end{aligned} $$
+
+which proves that
+
+$$ f(\vy) \le f(\vx) + \vg^T (\vy - \vx)  + \frac{L}{2_F} \langle \vy - \vx, \vy - \vx \rangle $$
+
+for all $\vy \in V$. In particular, for any $\alpha \in F$, we can set $\vy = \vx - \alpha \vg$ to obtain the inequality
+
+$$ f(\vx - \alpha \vg) \le f(\vx) - \alpha \left( 1_F - \frac{L \alpha}{2_F} \right) \langle \vg, \vg \rangle. $$
+
+This inequality shows that a gradient descent step is guaranteed to decrease any convex objective function $f$, as long as:
+
+ * $f$ is $L$-controlled for some positive constant $L \in F$;
+ * the step size $\alpha$ is strictly between $0_F$ and $2_F/L$;
+ * both $f$ and $\gamma$ have representable subgradients at the current point $\vx$;
+ * the subgradient $\vg^T \in \partial f(\vx)$ used to take the step is not zero.
 
 --------------------------------------------------------------------------------
 
