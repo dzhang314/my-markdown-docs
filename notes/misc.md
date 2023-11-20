@@ -282,6 +282,8 @@ $$ f([\vv, t, \vw]) \ge [f(\vv), t, f(\vw)] - \frac{L}{2_F} t (1_F - t) \langle 
 :::
 ::::::
 
+The property of being $L$-controlled becomes _more_ restrictive as the value of $L$ _decreases_. For example, being $1_F$-controlled is a _stronger_ condition than being $2_F$-controlled.
+
 :::::: card
 ::: card-header
 **Characterizing $L$-Control**
