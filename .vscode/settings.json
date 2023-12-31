@@ -27,7 +27,8 @@
         "operatorname",
         "texmath"
     ],
-    "livePreview.serverRoot": "output",
+    "livePreview.serverRoot": "/output/",
+    "livePreview.defaultPreviewPath": "/output/index.html",
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 50
 }
