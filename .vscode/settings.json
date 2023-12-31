@@ -16,6 +16,7 @@
         ]
     },
     "cSpell.words": [
+        "booleanfunctions",
         "linalg",
         "linkify",
         "mathbb",
@@ -26,6 +27,7 @@
         "operatorname",
         "texmath"
     ],
+    "livePreview.serverRoot": "output",
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 0
+    "files.autoSaveDelay": 50
 }
