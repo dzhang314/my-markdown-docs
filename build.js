@@ -50,11 +50,6 @@ function compileMarkdown(input, title, debug, outputFile) {
     output = output.replace("{{{STYLE}}}", style);
     output = output.replace("{{{NAVBAR}}}", navbar);
     output = output.replace("{{{CONTENT}}}", md.render(input));
-    if (debug) {
-        output = output.replace("{{{DEBUG}}}", '<script type="text/javascript" src="https://livejs.com/live.js"></script>');
-    } else {
-        output = output.replace("{{{DEBUG}}}", "");
-    }
     fs.writeFileSync(outputFile, output);
 }
 
