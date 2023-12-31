@@ -9,12 +9,17 @@
 
 # Introduction
 
-Group theory is the first subject in a branch of mathematics known as ___abstract algebra___ or ___modern algebra___. Abstract algebra is one of the main branches of modern pure mathematics, and every mathematician, scientist, or engineer who wants a deep understanding of theoretical foundations should know a thing or two about group theory.
+Group theory is the first subject in a field of mathematics known as ___abstract algebra___ or ___modern algebra___. Abstract algebra is one of the main branches of modern pure mathematics, and every mathematician, scientist, or engineer who wants a firm understanding of theoretical foundations should know a thing or two about group theory.
 
-The goal of abstract algebra is to study the properties of algebraic systems and the interrelations between them. For example, you probably know about a handful of different number systems, including the integers $\Z$, the rational numbers $\Q$, the real numbers $\R$, and possibly the complex numbers $\C$. You may have learned that there are several ___algebraic properties___ that these systems satisfy, such as the ___commutative property___ of addition, $x + y = y + x$, and the ___associative property___ of multiplication, $x \cdot (y \cdot z) = (x \cdot y) \cdot z$.
+The goal of abstract algebra is to study the properties of algebraic systems and the interrelations between them. For example, you probably know about a handful of different number systems, including the integers $\Z$, the rational numbers $\Q$, the real numbers $\R$, and possibly the complex numbers $\C$. You may have also learned about their ___algebraic properties___, such as the ___commutative property___ of addition, $x + y = y + x$, and the ___associative property___ of multiplication, $x \cdot (y \cdot z) = (x \cdot y) \cdot z$.
 
-**[TODO: Finish writing introduction.]**
+In abstract algebra, we will go beyond these familiar number systems to study the properties of algebraic systems in general. We will learn how these properties can inform us about the structure of an unknown algebraic system, and we will see how this knowledge can be used to quickly and easily solve problems that would otherwise be difficult or tedious.
 
+To begin our study of abstract algebra, we will focus on one particular type of algebraic system, known as a ___group___. Groups are an ideal starting point because they strike an excellent balance between simplicity and complexity. They are straightforward to define, involving only a single binary operation, and yet they capture most of the key ideas used to study more complicated algebraic structures. In addition, groups are widely used in both pure and applied contexts. Group theory plays a foundational role not only in abstract algebra itself, but also in mathematical analysis, combinatorics, cryptography, physics, chemistry, and materials science.
+
+
+
+# Groups
 
 :::::: card
 ::: card-header
@@ -36,6 +41,7 @@ satisfying the following requirements:
 :::
 ::::::
 
+The ___commutative property___ $(x \cdot y = y \cdot x)$ is conspicuously absent from the definition of a group.
 
 :::::: card
 ::: card-header
@@ -56,7 +62,6 @@ Thus, we have proven that $x \cdot x = x$ implies $x = 1$. &qed;
 :::
 ::::::
 
-
 :::::: card
 ::: card-header
 **Right Inverse Property**
@@ -73,7 +78,6 @@ $$ x \cdot x^{-1} = x \cdot (1 \cdot x^{-1}) = x \cdot ((x^{-1} \cdot x) \cdot x
 This shows that the element $x \cdot x^{-1} \in G$ remains unchanged when it is multiplied by itself. Using the previous result, this proves that $x \cdot x^{-1} = 1$. &qed;
 :::
 ::::::
-
 
 :::::: card
 ::: card-header
@@ -92,22 +96,8 @@ This proves that $x \cdot 1 = x$. &qed;
 ::::::
 
 
-:::::: card
-::: card-header
-**Inverses are Unique**
-:::
-::: card-body
-**Theorem:** Let $\alg{G; 1, {}^{-1}, \cdot}$ be a group. If two elements $x, y \in G$ satisfy $x \cdot y = 1$, then $x = y^{-1}$ and $y = x^{-1}$.
-:::
-------
-::: card-body
-*Proof:* Let $x \in G$ be given. We know, from the definition of a group, that $x^{-1} \cdot x = 1$ and $1 \cdot x = x$. It follows that:
 
-$$ x \cdot 1 = x \cdot (x^{-1} \cdot x) = (x \cdot x^{-1}) \cdot x = 1 \cdot x = x $$
-This proves that $x \cdot 1 = x$. &qed;
-:::
-::::::
-
+# Subgroups
 
 :::::: card
 ::: card-header
