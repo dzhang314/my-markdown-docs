@@ -1,4 +1,9 @@
 {
+    "livePreview.autoRefreshPreview": "On Changes to Saved Files",
+    "livePreview.defaultPreviewPath": "/output/index.html",
+    "livePreview.serverRoot": "/output/",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 100,
     "emeraldwalk.runonsave": {
         "commands": [
             {
@@ -26,9 +31,5 @@
         "numbertheory",
         "operatorname",
         "texmath"
-    ],
-    "livePreview.serverRoot": "/output/",
-    "livePreview.defaultPreviewPath": "/output/index.html",
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 50
+    ]
 }
