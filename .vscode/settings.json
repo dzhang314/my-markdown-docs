@@ -7,16 +7,12 @@
     "emeraldwalk.runonsave": {
         "commands": [
             {
-                "match": "build.js$",
-                "cmd": "node build.js"
-            },
-            {
                 "match": "(pages|notes)(\\\\|/).*\\.md$",
                 "cmd": "node build.js"
             },
             {
                 "match": "(templates)(\\\\|/).*\\.(html|css|json)$",
-                "cmd": "node build.js"
+                "cmd": "node build.js --force"
             }
         ]
     },
