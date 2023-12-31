@@ -23,15 +23,16 @@ Suppose we have a ___three-point bracket___ for $f$, i.e., a pair of real number
 
 $$ x_0 < x_1 < x_2 \quad \text{and} \quad f(x_0) \ge f(x_1) \le f(x_2). $$
 
-$h_1 \coloneqq x_1 - x_0 > 0$
-
-$h_2 \coloneqq x_2 - x_1 > 0$
-
-$\Delta_1 \coloneqq \frac{f_1 - f_0}{h_1} \ge 0$
-
-$\Delta_2 \coloneqq \frac{f_2 - f_1}{h_2} \ge 0$
+Using this data, we can construct a quadratic interpolating polynomial $p \in \R[x]$ that passes through the points $(x_0, f(x_0))$, $(x_1, f(x_1))$, and $(x_2, f(x_2))$.
 
 $$ p(x) \coloneqq \frac{\Delta_2 - \Delta_1}{h_1 + h_2} (x - x_0)^2 + \frac{2 h_1 \Delta_1 + h_2 \Delta_1 - h_1 \Delta_2}{h_1 + h_2} (x - x_0) + f_0 $$
+
+Here, we have defined $h_1$, $h_2$, $\Delta_1$, and $\Delta_2$ as follows:
+
+$$ h_1 \coloneqq x_1 - x_0 > 0 \qquad h_2 \coloneqq x_2 - x_1 > 0 $$
+$$ \Delta_1 \coloneqq \frac{f(x_1) - f(x_0)}{x_1 - x_0} \le 0 \qquad \Delta_2 \coloneqq \frac{f(x_2) - f(x_1)}{x_2 - x_1} \ge 0 $$
+
+The following _Mathematica_ code verifies the correctness of this formula.
 
 ```
 On[Assert];
