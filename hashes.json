@@ -1,16 +1,58 @@
 {
-    "pages/home.md": "1d7a105d5deefd96101992f54086bd4fa4147aea0777a06359b30debfb1093063da261e7ee9ca6e95f033a39d40133c5",
-    "pages/projects.md": "76e4cb34b4c25e2490c756c9e1541618c5808f748d736aaf4b35f82cace696e2abc4bb8d0aed85264420bfd78f59664a",
-    "pages/publications.md": "2db00898dfb78402cfccc56e103f7a7c7202b7af7c6e828ad62e07ce62b39b4d4982e3c389fb349b43943f43cdcc2243",
-    "pages/about.md": "5127c7a40608652ce6c975c8655069171b8a9b82a89d56390118249dc4eacd3bea2c386af17462502e0fafc25f18f13d",
-    "pages/contact.md": "c05c95d1617eed45eb56182fe0b95f29c5f4c1c35884ca439d8bf84a08ac6aa0c161f56b1c9e15e9f9921ee5bca28368",
-    "notes/groups.md": "0d0028e530444b96c455d893563724f88586dd8438670601658979c5c7780fd68bae5ea30f6e4aed0564e58ae39b8e03",
-    "notes/rings.md": "fdb46e5ae2ebfee4f27bfdccbca8ecf26fb24ae6f1f0f586af64b99a29d793448a58209eed7ca00a1cef21a4ca1da65b",
-    "notes/linalg.md": "2754311cd7da5e84822e3bf70df3a323edd1c08fd7b0142e5727e759837b84daaebc00cad4f0231dd3c4a5c4428613a5",
-    "notes/topology.md": "a85c0b5c449a46ebea935642cb96f65ba8b6f22d393ef84460242a148103e8e27c33d6d1886398341b82d70763d4ce9f",
-    "notes/misc.md": "e29a87f67674101c36fd9adc4ba35bda6a610b3c4a5736f6c702335b084829146dd45a23ca3ed6774515c04b89f94efa",
-    "notes/ecc.md": "3113e481c0efafe35d4154ae95258bb9fa8110360e51b1ff4fab570ad373f0e5a5e431302fe553ca697bd6ca2ef9f126",
-    "notes/legion.md": "7a8a739e171fde0b72182a540e9d954629304b1ca22ffc7d700c41cea465d4f59b0199d5f0f804e6c303f776a21d4a55",
-    "notes/numbertheory.md": "c0e31e84aafeadf940588aa40f4c9360f0ca18a3a57230e57f7402f90b135bde43b41599194f52db1082007c31e0a2b3",
-    "notes/booleanfunctions.md": "c5760448f99166b374c87b7be36403ec079d1c62a5279d5797ebd1e956a3d7357821f0a724e0c9e37e01ce6884e33325"
+    "pages/home.md": {
+        "hash": "1d7a105d5deefd96101992f54086bd4fa4147aea0777a06359b30debfb1093063da261e7ee9ca6e95f033a39d40133c5",
+        "date": ""
+    },
+    "pages/projects.md": {
+        "hash": "76e4cb34b4c25e2490c756c9e1541618c5808f748d736aaf4b35f82cace696e2abc4bb8d0aed85264420bfd78f59664a",
+        "date": ""
+    },
+    "pages/publications.md": {
+        "hash": "2db00898dfb78402cfccc56e103f7a7c7202b7af7c6e828ad62e07ce62b39b4d4982e3c389fb349b43943f43cdcc2243",
+        "date": ""
+    },
+    "pages/about.md": {
+        "hash": "5127c7a40608652ce6c975c8655069171b8a9b82a89d56390118249dc4eacd3bea2c386af17462502e0fafc25f18f13d",
+        "date": ""
+    },
+    "pages/contact.md": {
+        "hash": "c05c95d1617eed45eb56182fe0b95f29c5f4c1c35884ca439d8bf84a08ac6aa0c161f56b1c9e15e9f9921ee5bca28368",
+        "date": ""
+    },
+    "notes/groups.md": {
+        "hash": "0d0028e530444b96c455d893563724f88586dd8438670601658979c5c7780fd68bae5ea30f6e4aed0564e58ae39b8e03",
+        "date": "2023-10-17"
+    },
+    "notes/rings.md": {
+        "hash": "fdb46e5ae2ebfee4f27bfdccbca8ecf26fb24ae6f1f0f586af64b99a29d793448a58209eed7ca00a1cef21a4ca1da65b",
+        "date": "2022-03-25"
+    },
+    "notes/linalg.md": {
+        "hash": "2754311cd7da5e84822e3bf70df3a323edd1c08fd7b0142e5727e759837b84daaebc00cad4f0231dd3c4a5c4428613a5",
+        "date": "2022-03-15"
+    },
+    "notes/topology.md": {
+        "hash": "a85c0b5c449a46ebea935642cb96f65ba8b6f22d393ef84460242a148103e8e27c33d6d1886398341b82d70763d4ce9f",
+        "date": "2023-11-20"
+    },
+    "notes/misc.md": {
+        "hash": "e29a87f67674101c36fd9adc4ba35bda6a610b3c4a5736f6c702335b084829146dd45a23ca3ed6774515c04b89f94efa",
+        "date": "2023-11-02"
+    },
+    "notes/ecc.md": {
+        "hash": "3113e481c0efafe35d4154ae95258bb9fa8110360e51b1ff4fab570ad373f0e5a5e431302fe553ca697bd6ca2ef9f126",
+        "date": "2022-03-17"
+    },
+    "notes/legion.md": {
+        "hash": "7a8a739e171fde0b72182a540e9d954629304b1ca22ffc7d700c41cea465d4f59b0199d5f0f804e6c303f776a21d4a55",
+        "date": "2022-03-15"
+    },
+    "notes/numbertheory.md": {
+        "hash": "c0e31e84aafeadf940588aa40f4c9360f0ca18a3a57230e57f7402f90b135bde43b41599194f52db1082007c31e0a2b3",
+        "date": "2022-06-06"
+    },
+    "notes/booleanfunctions.md": {
+        "hash": "c5760448f99166b374c87b7be36403ec079d1c62a5279d5797ebd1e956a3d7357821f0a724e0c9e37e01ce6884e33325",
+        "date": "2022-11-01"
+    }
 }

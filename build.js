@@ -6,6 +6,7 @@ const navbar   = fs.readFileSync("templates/dkzhang-navbar.html"  , 'utf8');
 const style    = fs.readFileSync("templates/dkzhang-style.css"    , 'utf8');
 const macros   = JSON.parse(fs.readFileSync("templates/dkzhang-macros.json", 'utf8'));
 const hashes   = JSON.parse(fs.readFileSync("hashes.json"                  , 'utf8'));
+const force    = process.argv.includes("--force");
 
 const md = require('markdown-it')({
     html: true,       // allow HTML tags
@@ -45,7 +46,7 @@ addContainerType('card-header', /^card-header$/, '<div class="card-header bg-dar
 addContainerType('card-body', /^card-body$/, '<div class="card-body">', '</div>');
 addContainerType('sans', /^sans$/, '<div class="sans">', '</div>');
 
-function compileMarkdown(input, title, debug, outputFile) {
+function compileMarkdown(input, title, outputFile) {
     output = template.replace("{{{TITLE}}}", title);
     output = output.replace("{{{STYLE}}}", style);
     output = output.replace("{{{NAVBAR}}}", navbar);
@@ -56,19 +57,21 @@ function compileMarkdown(input, title, debug, outputFile) {
 function compilePage(inputFile, title, outputFile) {
     const input = fs.readFileSync(inputFile, "utf8").replaceAll("\r\n", "\n");
     const hash = crypto.createHash('sha384').update(input).digest('hex');
-    if (hashes[inputFile] === hash) {
+    if ((!force) && (hashes[inputFile].hash === hash)) {
         console.log("Skipping " + inputFile + " because it has not changed.");
     } else {
         console.log("Compiling " + inputFile + " to " + outputFile + "...");
-        const today = new Date();
+        const today = force ?
+            hashes[inputFile].date :
+            (new Date()).toISOString().split('T')[0];
         const preprocessedInput = input
             .replaceAll('&qed;', '<span class="float-end">&#9633;</span>')
-            .replaceAll('&today;', today.toISOString().split('T')[0]);
-        compileMarkdown(preprocessedInput, title, true, "output/" + outputFile);
+            .replaceAll('&today;', today);
+        compileMarkdown(preprocessedInput, title, "output/" + outputFile);
         if (fs.existsSync("../dzhang314.github.com")) {
-            compileMarkdown(preprocessedInput, title, false, "../dzhang314.github.com/" + outputFile);
+            compileMarkdown(preprocessedInput, title, "../dzhang314.github.com/" + outputFile);
         }
-        hashes[inputFile] = hash;
+        hashes[inputFile] = {"hash": hash, "date": today};
     }
 }
 
