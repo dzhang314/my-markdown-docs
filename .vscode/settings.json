@@ -25,5 +25,7 @@
         "numbertheory",
         "operatorname",
         "texmath"
-    ]
+    ],
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 0
 }
