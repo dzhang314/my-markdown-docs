@@ -61,7 +61,7 @@ function compilePage(inputFile, title, outputFile) {
         console.log("Skipping " + inputFile + " because it has not changed.");
     } else {
         console.log("Compiling " + inputFile + " to " + outputFile + "...");
-        const today = force ?
+        const today = (force && (inputFile in hashes)) ?
             hashes[inputFile].date :
             (new Date()).toISOString().split('T')[0];
         const preprocessedInput = input
@@ -83,6 +83,7 @@ compilePage("pages/contact.md"         , "David K. Zhang - Contact"             
 compilePage("notes/groups.md"          , "David K. Zhang - Group Theory"               , "groups.html"          );
 compilePage("notes/rings.md"           , "David K. Zhang - Ring Theory"                , "rings.html"           );
 compilePage("notes/linalg.md"          , "David K. Zhang - Linear Algebra"             , "linalg.html"          );
+compilePage("notes/convex.md"          , "David K. Zhang - Convex Analysis"            , "convex.html"          );
 compilePage("notes/topology.md"        , "David K. Zhang - Topology"                   , "topology.html"        );
 compilePage("notes/misc.md"            , "David K. Zhang - Misc. Thoughts"             , "misc.html"            );
 compilePage("notes/ecc.md"             , "David K. Zhang - Error-Correcting Codes"     , "ecc.html"             );

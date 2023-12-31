@@ -36,8 +36,8 @@
         "date": "2023-11-20"
     },
     "notes/misc.md": {
-        "hash": "e29a87f67674101c36fd9adc4ba35bda6a610b3c4a5736f6c702335b084829146dd45a23ca3ed6774515c04b89f94efa",
-        "date": "2023-11-02"
+        "hash": "68608ced7a73e8ddc7769679fa7505dfc60c1288de30e9b5c3100f8c1138f19a39b808c19e24343506de8eb3ed3790f1",
+        "date": "2023-12-31"
     },
     "notes/ecc.md": {
         "hash": "3113e481c0efafe35d4154ae95258bb9fa8110360e51b1ff4fab570ad373f0e5a5e431302fe553ca697bd6ca2ef9f126",
@@ -54,5 +54,9 @@
     "notes/booleanfunctions.md": {
         "hash": "c5760448f99166b374c87b7be36403ec079d1c62a5279d5797ebd1e956a3d7357821f0a724e0c9e37e01ce6884e33325",
         "date": "2022-11-01"
+    },
+    "notes/convex.md": {
+        "hash": "294b74ab5f79127a7a65e676ad5278a9601b576e8f7e303f7baf79c761b8207525ae55cb9c89f379fffbc456473c1c93",
+        "date": "2023-12-31"
     }
 }
