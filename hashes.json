@@ -58,5 +58,9 @@
     "notes/convex.md": {
         "hash": "294b74ab5f79127a7a65e676ad5278a9601b576e8f7e303f7baf79c761b8207525ae55cb9c89f379fffbc456473c1c93",
         "date": "2023-12-31"
+    },
+    "notes/optimization.md": {
+        "hash": "d5922b16475529dde4edd2fdef19d73973db09b01da9a0ee8613d266a418ef09a4f0b9e62d15f059e45c4135eeda6d29",
+        "date": "2023-12-31"
     }
 }

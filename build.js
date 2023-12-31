@@ -84,6 +84,7 @@ compilePage("notes/groups.md"          , "David K. Zhang - Group Theory"        
 compilePage("notes/rings.md"           , "David K. Zhang - Ring Theory"                , "rings.html"           );
 compilePage("notes/linalg.md"          , "David K. Zhang - Linear Algebra"             , "linalg.html"          );
 compilePage("notes/convex.md"          , "David K. Zhang - Convex Analysis"            , "convex.html"          );
+compilePage("notes/optimization.md"    , "David K. Zhang - Optimization"               , "optimization.html"    );
 compilePage("notes/topology.md"        , "David K. Zhang - Topology"                   , "topology.html"        );
 compilePage("notes/misc.md"            , "David K. Zhang - Misc. Thoughts"             , "misc.html"            );
 compilePage("notes/ecc.md"             , "David K. Zhang - Error-Correcting Codes"     , "ecc.html"             );
