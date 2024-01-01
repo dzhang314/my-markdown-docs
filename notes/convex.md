@@ -1,4 +1,4 @@
-# Notes on Convex Analysis {.page-title}
+# Notes on Convex Analysis
 
 <div class="text-center">
     David K. Zhang<br>

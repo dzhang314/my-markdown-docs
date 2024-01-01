@@ -1,4 +1,4 @@
-# Notes on Programming in Legion {.page-title}
+# Notes on Programming in Legion
 
 <div class="text-center">
     David K. Zhang<br>

@@ -1,4 +1,4 @@
-# Notes on Topology {.page-title}
+# Notes on Topology
 
 <div class="text-center">
     David K. Zhang<br>

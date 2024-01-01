@@ -1,4 +1,4 @@
-# Complexity Theory of Boolean Functions {.page-title}
+# Complexity Theory of Boolean Functions
 
 <div class="text-center">
     David K. Zhang<br>

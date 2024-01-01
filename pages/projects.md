@@ -1,4 +1,4 @@
-# Here's what I'm working on. {.page-title}
+# Here's what I'm working on.
 
 I'm currently working with [Alex Aiken](http://theory.stanford.edu/~aiken/) to design and implement a [linear solver library](https://github.com/dzhang314/LegionSolvers) for the [Legion parallel programming system](https://legion.stanford.edu/).
 

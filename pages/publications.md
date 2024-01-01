@@ -1,4 +1,4 @@
-# Your new reading list. {.page-title}
+# Your new reading list.
 
 --------------------------------------------------------------------------------
 

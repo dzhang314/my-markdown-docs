@@ -1,4 +1,4 @@
-# Notes on Linear Algebra {.page-title}
+# Notes on Linear Algebra
 
 <div class="text-center">
     David K. Zhang<br>

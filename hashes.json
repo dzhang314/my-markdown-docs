@@ -1,66 +1,66 @@
 {
     "pages/home.md": {
-        "hash": "1d7a105d5deefd96101992f54086bd4fa4147aea0777a06359b30debfb1093063da261e7ee9ca6e95f033a39d40133c5",
+        "hash": "91764c8056c82f7d3938b8466bb92343477b85a00b5f65679edc4ccf9934c4f3a938498ba974e8908b2e274d45056da5",
         "date": ""
     },
     "pages/projects.md": {
-        "hash": "76e4cb34b4c25e2490c756c9e1541618c5808f748d736aaf4b35f82cace696e2abc4bb8d0aed85264420bfd78f59664a",
+        "hash": "a1b333a368bc49868e15190cd8b6b147d91ceb37b0871da90720b16659c7afdcc38385d44328572837200e5eaeecc5a5",
         "date": ""
     },
     "pages/publications.md": {
-        "hash": "2db00898dfb78402cfccc56e103f7a7c7202b7af7c6e828ad62e07ce62b39b4d4982e3c389fb349b43943f43cdcc2243",
+        "hash": "ae6c68f08c7f52ed4375f12e8ec3243770b596d8317c4e193e9a9d8dede8ce8c0d14003845dd2e7bab4beccb7b753c39",
         "date": ""
     },
     "pages/about.md": {
-        "hash": "5127c7a40608652ce6c975c8655069171b8a9b82a89d56390118249dc4eacd3bea2c386af17462502e0fafc25f18f13d",
+        "hash": "1fa38055d0ab570dcb34cce0416d22be071284828556c485e1719384f3cd4bc407f7d9349bf6225177b41bd130a790aa",
         "date": ""
     },
     "pages/contact.md": {
-        "hash": "c05c95d1617eed45eb56182fe0b95f29c5f4c1c35884ca439d8bf84a08ac6aa0c161f56b1c9e15e9f9921ee5bca28368",
+        "hash": "cca629b7c300c56e181166f8b055fe6c4eb7e00b2f9975c7a0e1713a119564c473d5111cf329cfe73e6ff40f80d9f809",
         "date": ""
     },
     "notes/groups.md": {
-        "hash": "54bdd0793044a5ec7da6ebf6c7d3c4e8f0f1fc4d9459480a9df991efc323fe600488aed0a60335f3214cf01568b79816",
+        "hash": "1091b2eacceb4ab7c69a110536212825446242d29aad9214cc380b29100e135917c7a27aa3346b6ec357b4bbba33da90",
         "date": "2023-12-31"
     },
     "notes/rings.md": {
-        "hash": "fdb46e5ae2ebfee4f27bfdccbca8ecf26fb24ae6f1f0f586af64b99a29d793448a58209eed7ca00a1cef21a4ca1da65b",
+        "hash": "aa2ee11c4a73121fa20200440eae0c21deab8d4a3fdf2858cce640f117b16da3fd46d42b61d03caca7183eb339c62b8a",
         "date": "2022-03-25"
     },
     "notes/linalg.md": {
-        "hash": "2754311cd7da5e84822e3bf70df3a323edd1c08fd7b0142e5727e759837b84daaebc00cad4f0231dd3c4a5c4428613a5",
+        "hash": "c14b4ea4d1d4388e3c15ce7190a64f35f18ba84ba8a58d68a533920d3591aca64abba155f796f5bd70ae24c534371a1c",
         "date": "2022-03-15"
     },
     "notes/topology.md": {
-        "hash": "a85c0b5c449a46ebea935642cb96f65ba8b6f22d393ef84460242a148103e8e27c33d6d1886398341b82d70763d4ce9f",
+        "hash": "7aa21f18f7026bc05853fd9185bc691aeff3a138e7a1452282de03f9382a5eda19f40f67be21e5d8d8b275270c150021",
         "date": "2023-11-20"
     },
     "notes/misc.md": {
-        "hash": "68608ced7a73e8ddc7769679fa7505dfc60c1288de30e9b5c3100f8c1138f19a39b808c19e24343506de8eb3ed3790f1",
+        "hash": "518d3ac76a38c04f1481fd1b2c44f48522fc9ac6f0699071f14f495e28ed4abe8e69a21df49115909e009ab0d29019e2",
         "date": "2023-12-31"
     },
     "notes/ecc.md": {
-        "hash": "3113e481c0efafe35d4154ae95258bb9fa8110360e51b1ff4fab570ad373f0e5a5e431302fe553ca697bd6ca2ef9f126",
+        "hash": "dee5945f183609eb704c6fd9ac563759961adf94001e3084001910b16136501060fcb2e092c06169685a6bc9b555ff7a",
         "date": "2022-03-17"
     },
     "notes/legion.md": {
-        "hash": "7a8a739e171fde0b72182a540e9d954629304b1ca22ffc7d700c41cea465d4f59b0199d5f0f804e6c303f776a21d4a55",
+        "hash": "f8122044dcf9ceffdb818e8f49014fb6a12af39c544ec3208e3579a83fd027c9146621f519501bd2b936dabcddd10a81",
         "date": "2022-03-15"
     },
     "notes/numbertheory.md": {
-        "hash": "c0e31e84aafeadf940588aa40f4c9360f0ca18a3a57230e57f7402f90b135bde43b41599194f52db1082007c31e0a2b3",
+        "hash": "8d22cf64828d1fc9d97ccdc1d4430f9c013bfc7a0b96f7fb61b6fdc04069de0e69d4ccf172b545b7335ef3139a18a505",
         "date": "2022-06-06"
     },
     "notes/booleanfunctions.md": {
-        "hash": "c5760448f99166b374c87b7be36403ec079d1c62a5279d5797ebd1e956a3d7357821f0a724e0c9e37e01ce6884e33325",
+        "hash": "32786410419955486e4a5ce4b49af1c7bf2aa43da2a49772a47d5587adee77aeb6a4e5828039bff9936b1606192e79c6",
         "date": "2022-11-01"
     },
     "notes/convex.md": {
-        "hash": "294b74ab5f79127a7a65e676ad5278a9601b576e8f7e303f7baf79c761b8207525ae55cb9c89f379fffbc456473c1c93",
+        "hash": "2de0d872b0ddcabe0a7caf60995d814aafe7c4b470f57559a7e16eb4902dfeabb4abef86644fb66b97a725ea7f5dd0cc",
         "date": "2023-12-31"
     },
     "notes/optimization.md": {
-        "hash": "ad8d8570c5e224cb84de0c63792dc8b6c8fa8e8e40ce109ae8908560c115a389b8a650d1a54c15a6b9d7b45c158ae1aa",
+        "hash": "5319a15de26e2fccb6ae38090838cd02c29a72aaba58e1d07f11acb9b06e0f98a85090ea3ab59f80b93304a0225dd421",
         "date": "2024-01-01"
     }
 }

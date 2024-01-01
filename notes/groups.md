@@ -1,4 +1,4 @@
-# Notes on Group Theory {.page-title}
+# Notes on Group Theory
 
 <div class="text-center">
     David K. Zhang<br>
@@ -7,7 +7,7 @@
 
 
 
-# Introduction
+## Introduction
 
 Group theory is the first subject in a field of mathematics known as ___abstract algebra___ or ___modern algebra___. Abstract algebra is one of the main branches of modern pure mathematics, and every mathematician, scientist, or engineer who wants a firm understanding of theoretical foundations should know a thing or two about group theory.
 
@@ -19,7 +19,7 @@ To begin our study of abstract algebra, we will focus on one particular type of 
 
 
 
-# Groups
+## Groups
 
 :::::: card
 ::: card-header
@@ -97,7 +97,7 @@ This proves that $x \cdot 1 = x$. &qed;
 
 
 
-# Subgroups
+## Subgroups
 
 :::::: card
 ::: card-header

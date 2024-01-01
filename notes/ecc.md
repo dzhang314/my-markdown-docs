@@ -1,4 +1,4 @@
-# Notes on Error-Correcting Codes {.page-title}
+# Notes on Error-Correcting Codes
 
 <div class="text-center">
     David K. Zhang<br>

@@ -1,4 +1,4 @@
-# Notes on Elementary Number Theory {.page-title}
+# Notes on Elementary Number Theory
 
 <div class="text-center">
     David K. Zhang<br>

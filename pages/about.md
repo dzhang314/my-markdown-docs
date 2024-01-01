@@ -1,4 +1,4 @@
-# Get to know me. {.page-title}
+# Get to know me.
 
 I was born on April 18<sup>th</sup>, 1997 to my incredibly loving and supportive parents, Dong Zhang and Christine Sun. I spent the first seven years of my life in Knoxville, while my parents worked at the [University of Tennessee](https://www.utk.edu/) Textiles and Nonwovens Development Center. Halfway through second grade, when my parents found other work, we moved across the state to Clarksville.
 

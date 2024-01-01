@@ -1,4 +1,4 @@
-# Notes on Optimization {.page-title}
+# Notes on Optimization
 
 <div class="text-center">
     David K. Zhang<br>
@@ -7,7 +7,7 @@
 
 
 
-# One-Dimensional Optimization
+## One-Dimensional Optimization
 
 In this section, we consider the problem of minimizing a continuous function $f: \R \to \R$. More specifically, we want to devise an algorithm to search for a minimizer $x^*$ of $f$ starting from one or more specified initial points. Different types of initial data (three-point brackets, two-point brackets, etc.) will lead to different classes of algorithms.
 
@@ -15,7 +15,9 @@ We will not assume any particular form for the function $f$, and we will develop
 
 Under these conditions, any algorithm that terminates can only perform a finite number of evaluations of $f$. Hence, no algorithm of this type can provide any guarantees about finding a global minimizer or computing an exact result. Even in the one-dimensional case, the best we can hope to do is to approximate a local minimizer of $f$.
 
-## Bracketing and Interpolation
+
+
+### Bracketing and Interpolation
 
 Suppose we have a ___three-point bracket___ for $f$, i.e., an ordered triple of real numbers $x_0, x_1, x_2 \in \R$ such that
 

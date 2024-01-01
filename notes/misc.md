@@ -1,4 +1,4 @@
-# Miscellaneous Thoughts {.page-title}
+# Miscellaneous Thoughts
 
 <div class="text-center">
     David K. Zhang<br>

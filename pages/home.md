@@ -1,4 +1,4 @@
-# Hey! I'm David. {.page-title}
+# Hey! I'm David.
 
 This is where you'll find the things I do and the notes I write.
 

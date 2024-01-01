@@ -1,4 +1,4 @@
-# Notes on Ring Theory and Field Theory {.page-title}
+# Notes on Ring Theory and Field Theory
 
 <div class="text-center">
     David K. Zhang<br>
@@ -7,7 +7,7 @@
 
 
 
-# Introduction
+## Introduction
 
 In these notes, we introduce a new class of algebraic structures, called rngs and rings, whose study is collectively called ___ring theory___. Rngs and rings are more complicated than groups because their definition involves not one, but two binary operations.
 
@@ -103,7 +103,7 @@ satisfying the following requirements:
 
 
 
-# Zero Divisors and Inverses
+## Zero Divisors and Inverses
 
 Every rng $R$ has a distinguished element $0_R$. The rng axioms specify what happens when $0_R$ is fed _into_ the operations of addition and multiplication, but they leave unspecified when $0_R$ is produced as an _output_. This is the topic that we will study in this section.
 
@@ -196,7 +196,7 @@ A ___field___ is a nontrivial commutative ring in which every nonzero element is
 
 
 
-# Under Construction
+## Under Construction
 
 :::::: card
 ::: card-header
