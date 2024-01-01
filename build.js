@@ -20,7 +20,9 @@ md.use(require('markdown-it-texmath'), {
     engine: require('katex'),
     delimiters: 'dollars',
     katexOptions: {
-        macros: macros
+        throwOnError: false,
+        macros: macros,
+        strict: true
     }
 });
 
