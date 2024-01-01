@@ -1,39 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-a:not([class]) { text-decoration: none; }
+a:not([class])       { text-decoration: none; }
 a:not([class]):hover { text-decoration: underline; }
 
 .katex { font-size: 1.05em; }
-
-h1 {
-    font-size: 2.0rem;
-}
-
-h1.page-title {
-    text-align: center;
-    font-size: 2.5rem;
-    padding: 1.0rem;
-}
-
-p {
-    font-family: 'STIX Two Text', serif;
-    text-align: justify;
-}
-
-.sans p {
-    font-family: var(--bs-font-sans-serif);
-    text-align: justify;
-}
-
-li {
-    font-family: 'STIX Two Text', serif;
-}
-
 .navbar { padding: 0 0.5rem; }
-
-.navbar li { font-family: var(--bs-font-sans-serif); }
-
 .container-lg { max-width: 960px; }
+h1.page-title { text-align: center; font-size: 2.5rem; padding: 1.0rem; }
+h1 { font-size: 2.0rem; }
+
+p          { font-family: 'STIX Two Text', serif;    text-align: justify; }
+li         { font-family: 'STIX Two Text', serif; }
+.sans p    { font-family: var(--bs-font-sans-serif); text-align: justify; }
+.navbar li { font-family: var(--bs-font-sans-serif); }
 
 .card-header { padding: 0.30rem 0.70rem 0.10rem; }
 .card-body   { padding: 0.35rem 0.70rem; }
@@ -53,17 +32,12 @@ li {
 
 pre {
     color: black;
-    background-color: var(--bs-gray-100);
-    font-size: 1.0rem;
+    background-color: var(--bs-gray-200);
+    font-size: 0.8rem;
+    padding: 0.5rem;
 }
 
-code {
-    color: black;
-    background-color: var(--bs-gray-100);
-    font-size: 1.0rem;
-}
-
-.keyword { color: var(--bs-blue); filter: brightness(0.6); }
+.keyword     { color: var(--bs-blue);  filter: brightness(0.6); }
 .return-type { color: var(--bs-green); filter: brightness(0.5); }
-.func-name { color: var(--bs-red); filter: brightness(0.5); }
-.arg { color: var(--bs-purple); }
+.func-name   { color: var(--bs-red);   filter: brightness(0.5); }
+.arg         { color: var(--bs-purple); }
