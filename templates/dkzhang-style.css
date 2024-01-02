@@ -1,20 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-a:not([class])       { text-decoration: none; }
+a { text-decoration: none; }
 a:not([class]):hover { text-decoration: underline; }
 
 .katex { font-size: 1.05em; }
-.navbar { padding: 0 0.5rem; }
+.navbar { padding: 0 0.5rem; border-bottom: 1px solid var(--bs-gray-300);  }
 .container-lg { max-width: 960px; }
 h1 { text-align: center; font-size: 2.5rem; padding: 1.0rem; }
 
-p          { font-family: 'STIX Two Text', serif;    text-align: justify; }
-li         { font-family: 'STIX Two Text', serif; }
+p          { font-family: 'STIX Two Text', serif; text-align: justify; }
+li         { font-family: 'STIX Two Text', serif; text-align: justify; }
 .sans p    { font-family: var(--bs-font-sans-serif); text-align: justify; }
-.navbar li { font-family: var(--bs-font-sans-serif); }
+.navbar li { font-family: var(--bs-font-sans-serif); text-align: justify; }
 
-.card-header { padding: 0.30rem 0.70rem 0.10rem; }
-.card-body   { padding: 0.35rem 0.70rem; }
+.card        { margin: 1rem 0rem 1rem; }
+.card-header { padding: 0.3rem 0.7rem 0.1rem; }
+.card-body   { padding: 0.4rem 0.7rem; }
 
 .card-header p:last-child { margin-bottom: 0; }
 .card-body   p:last-child { margin-bottom: 0; }
@@ -27,7 +28,7 @@ li         { font-family: 'STIX Two Text', serif; }
 .card-body ol+p { margin-top: -0.5rem; }
 
 .card-body .katex-display { margin: -0.5rem 0 0.5rem; }
-.card hr { margin: 0.15rem 0; }
+.card hr { margin: 0.1rem 0; }
 
 pre {
     color: black;
