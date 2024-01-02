@@ -8,11 +8,11 @@
         "commands": [
             {
                 "match": "(pages|notes)(\\\\|/).*\\.md$",
-                "cmd": "node build.js"
+                "cmd": "node build.mjs"
             },
             {
                 "match": "(templates)(\\\\|/).*\\.(html|css|json)$",
-                "cmd": "node build.js --force"
+                "cmd": "node build.mjs --force"
             }
         ]
     },
