@@ -227,11 +227,15 @@ Let $G$ be a group. We say that a subgroup $H \le G$ is ___normal___ if for all 
 ::::::
 
 ___left conjugation___ --- this is a left action
+
 $$ {}^g x \coloneqq g x g^{-1} $$
+
 $$ {}^h ({}^g x) = {}^h (g x g^{-1}) = h (g x g^{-1}) h^{-1} = (hg) x (hg)^{-1} = {}^{hg} x $$
 
 ___right conjugation___ --- this is a right action
+
 $$ x^g \coloneqq g^{-1} x g $$
+
 $$ (x^g)^h = (g^{-1} x g)^h = h^{-1} (g^{-1} x g) h = (gh)^{-1} x (gh) = x^{gh} $$
 
 

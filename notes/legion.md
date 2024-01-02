@@ -152,5 +152,3 @@ All of the above `destroy_*` methods in Legion take an optional `bool unordered 
 These functions do exactly what you think they do.
 
 --------------------------------------------------------------------------------
-
-``
