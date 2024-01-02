@@ -2,8 +2,6 @@
   "dependencies": {
     "katex": "^0.16.9",
     "markdown-it": "^14.0.0",
-    "markdown-it-attrs": "^4.1.6",
-    "markdown-it-container": "^4.0.0",
-    "markdown-it-texmath": "^1.0.0"
+    "markdown-it-container": "^4.0.0"
   }
 }
