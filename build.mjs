@@ -125,7 +125,7 @@ function addContainerType(name, regex, startTag, endTag) {
     });
 }
 
-addContainerType('card', /^card$/, '<p><div class="card bg-light border-dark">', '</div></p>');
+addContainerType('card', /^card$/, '<div class="card bg-light border-dark">', '</div>');
 addContainerType('card-header', /^card-header$/, '<div class="card-header bg-dark text-white">', '</div>');
 addContainerType('card-body', /^card-body$/, '<div class="card-body">', '</div>');
 
