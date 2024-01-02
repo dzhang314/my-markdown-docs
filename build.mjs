@@ -129,11 +129,10 @@ addContainerType('card', /^card$/, '<div class="card bg-light border-dark">', '<
 addContainerType('card-header', /^card-header$/, '<div class="card-header bg-dark text-white">', '</div>');
 addContainerType('card-body', /^card-body$/, '<div class="card-body">', '</div>');
 
-function compileMarkdown(input, title, outputFile) {
-    writeFileSync(outputFile, DKZHANG_TEMPLATE
+function compileMarkdown(input, title) {
+    return DKZHANG_TEMPLATE
         .replace("{{{TITLE}}}", title)
-        .replace("{{{CONTENT}}}", md.render(input))
-    );
+        .replace("{{{CONTENT}}}", md.render(input));
 }
 
 function compilePage(inputFile, title, outputFile) {
@@ -149,9 +148,10 @@ function compilePage(inputFile, title, outputFile) {
         const preprocessedInput = input
             .replaceAll('&qed;', '<span class="float-end">&#9633;</span>')
             .replaceAll('&today;', today);
-        compileMarkdown(preprocessedInput, title, "output/" + outputFile);
+        const output = compileMarkdown(preprocessedInput, title);
+        writeFileSync("output/" + outputFile, output);
         if (existsSync("../dzhang314.github.com")) {
-            compileMarkdown(preprocessedInput, title, "../dzhang314.github.com/" + outputFile);
+            writeFileSync("../dzhang314.github.com/" + outputFile, output);
         }
         HASHES[inputFile] = { "hash": hash, "date": today };
     }
