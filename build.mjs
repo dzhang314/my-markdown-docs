@@ -57,8 +57,9 @@ function katexInlineRule(regex) {
 
 function findLineIndex(state, startLine, endLine, charIndex) {
     for (let i = startLine; i < endLine; ++i) {
-        const lineOffset = state.bMarks[i] + state.tShift[i];
-        if (lineOffset <= charIndex && charIndex <= state.eMarks[i]) {
+        const lineStartIndex = state.bMarks[i] + state.tShift[i];
+        const lineEndIndex = state.eMarks[i];
+        if (lineStartIndex <= charIndex && charIndex <= lineEndIndex) {
             return i;
         }
     }
