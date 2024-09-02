@@ -1,34 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* Import STIX Two Text and Fira Code fonts from Google Fonts. */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-a { text-decoration: none; }
-a:not([class]):hover { text-decoration: underline; }
+/* Use STIX Two Text as main text font. */
+p  { font-family: "STIX Two Text", serif; text-align: justify; }
+li { font-family: "STIX Two Text", serif; text-align: justify; }
 
-.katex { font-size: 1.05em; }
-.navbar { padding: 0 0.5rem; border-bottom: 1px solid var(--bs-gray-300);  }
-.container-lg { max-width: 960px; }
-h1 { text-align: center; font-size: 2.5rem; padding: 1.0rem; }
-
-p          { font-family: 'STIX Two Text', serif; text-align: justify; }
-li         { font-family: 'STIX Two Text', serif; text-align: justify; }
+/* Use sans-serif font for navbar and special paragraphs. */
 .sans p    { font-family: var(--bs-font-sans-serif); text-align: justify; }
 .navbar li { font-family: var(--bs-font-sans-serif); text-align: justify; }
 
-.card        { margin: 1rem 0rem 1rem; }
+/* Slightly increase equation size to better match STIX Two Text. */
+.katex { font-size: 1.05em; }
+
+/* Center h1 headings for use as page titles. */
+h1 { text-align: center; padding: 1rem; }
+
+/* Adjust card spacing for visual symmetry. */
+.card        { margin: 1rem 0; }
+.card hr     { margin: 0.1rem 0; }
 .card-header { padding: 0.3rem 0.7rem 0.1rem; }
 .card-body   { padding: 0.4rem 0.7rem; }
 
+/* Tighten spacing around paragraphs, lists,
+   and display-mode equations inside cards. */
+.card-body .katex-display { margin: -0.5rem 0 0.5rem; }
 .card-header p:last-child { margin-bottom: 0; }
 .card-body   p:last-child { margin-bottom: 0; }
 .card-body  ul:last-child { margin-bottom: 0; }
 .card-body  ol:last-child { margin-bottom: 0; }
-
 .card-body p+ul { margin-top: -0.5rem; }
 .card-body p+ol { margin-top: -0.5rem; }
 .card-body ul+p { margin-top: -0.5rem; }
 .card-body ol+p { margin-top: -0.5rem; }
 
-.card-body .katex-display { margin: -0.5rem 0 0.5rem; }
-.card hr { margin: 0.1rem 0; }
+/* Constrain width of main text container for ease of printing. */
+/* 19cm corresponds to an A4 page with 1cm margins on each side. */
+.container-lg { max-width: 19cm; }
+
+/* Adjust navbar padding and add bottom border. */
+.navbar { padding: 0 0.5rem; border-bottom: 1px solid var(--bs-gray-300);  }
+
+/* Only underline links on hover. */
+a { text-decoration: none; }
+a:not([class]):hover { text-decoration: underline; }
 
 pre {
     color: black;
