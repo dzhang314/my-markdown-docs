@@ -174,4 +174,5 @@ compilePage("notes/ecc.md", "David K. Zhang - Error-Correcting Codes", "ecc.html
 compilePage("notes/legion.md", "David K. Zhang - Legion Programming", "legion.html");
 compilePage("notes/numbertheory.md", "David K. Zhang - Number Theory", "numbertheory.html");
 compilePage("notes/booleanfunctions.md", "David K. Zhang - Boolean Function Complexity", "booleanfunctions.html");
+compilePage("notes/websites.md", "David K. Zhang - Building Static Websites", "websites.html");
 writeFileSync("hashes.json", JSON.stringify(HASHES, null, 4));

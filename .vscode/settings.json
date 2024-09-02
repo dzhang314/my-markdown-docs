@@ -4,18 +4,28 @@
     "livePreview.serverRoot": "/output/",
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 100,
-    "emeraldwalk.runonsave": {
-        "commands": [
-            {
-                "match": "(pages|notes)(\\\\|/).*\\.md$",
-                "cmd": "node build.mjs"
-            },
-            {
-                "match": "(templates)(\\\\|/).*\\.(html|css|json)$",
-                "cmd": "node build.mjs --force"
-            }
-        ]
-    },
+    "runOnSave.commands": [
+        {
+            "globMatch": "**/*.md",
+            "command": "node build.mjs",
+            "async": false
+        },
+        {
+            "globMatch": "**/*.html",
+            "command": "node build.mjs --force",
+            "async": false
+        },
+        {
+            "globMatch": "**/*.css",
+            "command": "node build.mjs --force",
+            "async": false
+        },
+        {
+            "globMatch": "**/*.json",
+            "command": "node build.mjs --force",
+            "async": false
+        }
+    ],
     "cSpell.words": [
         "booleanfunctions",
         "linalg",
