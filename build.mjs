@@ -4,6 +4,8 @@ import markdownIt from 'markdown-it';
 import markdownItContainer from 'markdown-it-container';
 import katex from 'katex';
 
+///////////////////////////////////////////////////////////////// TEMPLATE FILES
+
 const DKZHANG_STYLE = readFileSync("templates/dkzhang-style.css", 'utf8');
 const DKZHANG_NAVBAR = readFileSync("templates/dkzhang-navbar.html", 'utf8');
 const DKZHANG_TEMPLATE = readFileSync("templates/dkzhang-template.html", 'utf8')
@@ -13,148 +15,131 @@ const DKZHANG_MACROS = JSON.parse(readFileSync("templates/dkzhang-macros.json", 
 const HASHES = JSON.parse(readFileSync("hashes.json", 'utf8'));
 const FORCE = process.argv.includes("--force");
 
-const md = markdownIt({
-    html: true,       // allow HTML tags
-    linkify: true,    // automatically convert URLs into links
-    typographer: true // replace quotes with smart quotes
-});
+//////////////////////////////////////////////////////////////////// MARKDOWN-IT
 
-function isKatexOpen(str, idx) {
-    if (str[idx] === '$') {
-        const prevChar = str[idx - 1];
-        if (prevChar === undefined) { return true; }
-        const code = prevChar.charCodeAt(0);
-        return (code !== 0x5c && (code < 0x30 || code > 0x39));
-    }
-    return ((str[idx] === '\\' && str[idx + 1] === '('));
+const md = markdownIt({ html: true, linkify: true, typographer: true });
+
+////////////////////////////////////////////////////////// MARKDOWN-IT-CONTAINER
+
+function addContainer(name, classes) {
+    md.use(markdownItContainer, name, {
+        validate: params => params.trim() === name,
+        render: (tokens, i) => tokens[i].nesting === 1
+            ? `<div class="${classes}">\n` : "</div>\n"
+    });
 }
 
-function isKatexClose(str, idx) {
-    if (str[idx] === '$') {
-        const nextChar = str[idx + 1];
-        if (nextChar === undefined) { return true; }
-        const code = nextChar.charCodeAt(0);
-        return (code < 0x30 || code > 0x39);
-    }
-    return ((str[idx] === '\\' && str[idx + 1] === ')'));
-}
+addContainer("card", "card bg-light border-dark");
+addContainer("card-header", "card-header bg-dark text-white");
+addContainer("card-body", "card-body");
 
-function katexInlineRule(regex) {
-    return function (state, silent) {
-        if (!isKatexOpen(state.src, state.pos)) { return false; }
+/////////////////////////////////////////////////////////////////// KATEX PARSER
+
+function addKatexInlineRule(regex) {
+    md.inline.ruler.before("escape", "math_inline", (state, silent) => {
         regex.lastIndex = state.pos;
         const match = regex.exec(state.src);
-        if (match === null) { return false; }
-        if (!isKatexClose(state.src, regex.lastIndex - 1)) { return false; }
+        if (match === null) return false;
         if (!silent) {
-            const token = state.push('math_inline', 'math', 0);
+            const token = state.push("math_inline", "math", 0);
             token.content = match[1];
         }
         state.pos = regex.lastIndex;
         return true;
-    }
+    });
 }
 
 function findLineIndex(state, startLine, endLine, charIndex) {
     for (let i = startLine; i < endLine; ++i) {
-        const lineStartIndex = state.bMarks[i] + state.tShift[i];
-        const lineEndIndex = state.eMarks[i];
-        if (lineStartIndex <= charIndex && charIndex <= lineEndIndex) {
+        const startIndex = state.bMarks[i] + state.tShift[i];
+        if (startIndex <= charIndex && charIndex <= state.eMarks[i]) {
             return i;
         }
     }
 }
 
-function katexBlockRule(regex) {
-    return function (state, startLine, endLine, silent) {
-        regex.lastIndex = state.bMarks[startLine] + state.tShift[startLine];
-        const match = regex.exec(state.src);
-        if (match === null) { return false; }
-        if (!silent) {
-            const lastLine = findLineIndex(
-                state, startLine, endLine, regex.lastIndex - 1
-            );
-            const oldParentType = state.parentType;
-            const oldLineMax = state.lineMax;
-            state.lineMax = lastLine;
-            state.parentType = 'math';
-
-            let token = state.push('math_block', 'math', 0);
-            token.block = true;
-            token.content = match[1];
-            token.map = [startLine, lastLine + 1];
-
-            state.parentType = oldParentType;
-            state.lineMax = oldLineMax;
-            state.line = lastLine + 1;
+function addKatexBlockRule(regex) {
+    md.block.ruler.before("fence", "math_block",
+        (state, startLine, endLine, silent) => {
+            regex.lastIndex =
+                state.bMarks[startLine] + state.tShift[startLine];
+            const match = regex.exec(state.src);
+            if (match === null) return false;
+            if (!silent) {
+                const lastLine = findLineIndex(
+                    state, startLine, endLine, regex.lastIndex - 1
+                );
+                const oldParentType = state.parentType;
+                const oldLineMax = state.lineMax;
+                state.lineMax = lastLine;
+                state.parentType = "math";
+                let token = state.push("math_block", "math", 0);
+                token.block = true;
+                token.content = match[1];
+                token.map = [startLine, lastLine + 1];
+                state.parentType = oldParentType;
+                state.lineMax = oldLineMax;
+                state.line = lastLine + 1;
+            }
+            return true;
         }
-        return true;
-    }
+    );
 }
 
-md.inline.ruler.before('escape', 'math_inline', katexInlineRule(/\$((?:[^\s\\])|(?:\S.*?[^\s\\]))\$/gy));
-md.inline.ruler.before('escape', 'math_inline', katexInlineRule(/\\\((.+?)\\\)/gy));
-md.block.ruler.before('fence', 'math_block', katexBlockRule(/\\\[([\s\S]+?)\\\]/gmy));
-md.block.ruler.before('fence', 'math_block', katexBlockRule(/\${2}([^$]*?[^\\])\${2}/gmy));
+addKatexInlineRule(/\$((?:[^\s\\])|(?:\S.*?[^\s\\]))\$/gy);
+addKatexInlineRule(/\\\((.+?)\\\)/gy);
+addKatexBlockRule(/\\\[([\s\S]+?)\\\]/gmy);
+addKatexBlockRule(/\${2}([^$]*?[^\\])\${2}/gmy);
+
+///////////////////////////////////////////////////////////////// KATEX RENDERER
 
 function katexRenderer(displayMode) {
-    return function (tokens, idx) {
-        return katex.renderToString(tokens[idx].content, {
-            displayMode: displayMode,
-            throwOnError: false,
-            macros: DKZHANG_MACROS,
-            strict: true
-        });
-    }
-}
-
-md.renderer.rules['math_inline'] = katexRenderer(false);
-md.renderer.rules['math_block'] = katexRenderer(true);
-
-function addContainerType(name, regex, startTag, endTag) {
-    md.use(markdownItContainer, name, {
-        validate: function (params) {
-            return params.trim().match(regex);
-        },
-        render: function (tokens, idx) {
-            if (tokens[idx].nesting === 1) {
-                return startTag + '\n';
-            } else {
-                return endTag + '\n';
-            }
-        }
+    return (tokens, i) => katex.renderToString(tokens[i].content, {
+        displayMode, macros: DKZHANG_MACROS, strict: true, throwOnError: false
     });
 }
 
-addContainerType('card', /^card$/, '<div class="card bg-light border-dark">', '</div>');
-addContainerType('card-header', /^card-header$/, '<div class="card-header bg-dark text-white">', '</div>');
-addContainerType('card-body', /^card-body$/, '<div class="card-body">', '</div>');
+md.renderer.rules.math_inline = katexRenderer(false);
+md.renderer.rules.math_block = katexRenderer(true);
 
-function compileMarkdown(input, title) {
-    return DKZHANG_TEMPLATE
-        .replace("{{{TITLE}}}", title)
-        .replace("{{{CONTENT}}}", md.render(input));
+////////////////////////////////////////////////////////////////// BUILD WEBSITE
+
+function preprocessMarkdown(string, date) {
+    const result = [];
+    let codeBlock = false;
+    for (const line of string.split('\n')) {
+        if (/^\s*```/.test(line)) { codeBlock = !codeBlock; }
+        if (codeBlock) { result.push(line); continue; }
+        if (/^\s*\\\[|^\s*\$\$/.test(line)) { result.push(""); }
+        result.push(line
+            .replaceAll("&qed;", `<span class="float-end">&#8718;</span>`)
+            .replaceAll('&today;', date));
+    }
+    return result.join('\n');
 }
 
 function compilePage(inputFile, title, outputFile) {
     const input = readFileSync(inputFile, "utf8").replaceAll("\r\n", "\n");
     const hash = createHash('sha384').update(input).digest('hex');
     if ((!FORCE) && (HASHES[inputFile].hash === hash)) {
-        console.log("Skipping " + inputFile + " because it has not changed.");
+        console.log("Skipped " + inputFile + " because it has not changed.");
     } else {
-        console.log("Compiling " + inputFile + " to " + outputFile + "...");
-        const today = (FORCE && (inputFile in HASHES)) ?
+        const startTime = Date.now();
+        const date = (FORCE && (inputFile in HASHES)) ?
             HASHES[inputFile].date :
             (new Date()).toISOString().split('T')[0];
-        const preprocessedInput = input
-            .replaceAll('&qed;', '<span class="float-end">&#9633;</span>')
-            .replaceAll('&today;', today);
-        const output = compileMarkdown(preprocessedInput, title);
+        const output = DKZHANG_TEMPLATE
+            .replace("{{{TITLE}}}", title)
+            .replace("{{{CONTENT}}}", md.render(
+                preprocessMarkdown(input, date)));
+        const endTime = Date.now();
         writeFileSync("output/" + outputFile, output);
         if (existsSync("../dzhang314.github.com")) {
             writeFileSync("../dzhang314.github.com/" + outputFile, output);
         }
-        HASHES[inputFile] = { "hash": hash, "date": today };
+        HASHES[inputFile] = { "hash": hash, "date": date };
+        console.log("Compiled " + inputFile + " to " + outputFile +
+            " in " + (endTime - startTime) + "ms.");
     }
 }
 
