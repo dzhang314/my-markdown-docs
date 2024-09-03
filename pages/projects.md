@@ -6,8 +6,8 @@ In the spring of 2020, I worked with the [LCLS Advanced Methods Group](https://l
 
 I also develop open-source scientific software in my spare time. I'm the author of several [Julia](https://julialang.org/) packages, all available in [the general Julia package registry](https://github.com/JuliaRegistries/General).
 
- * [**MultiFloats.jl**](https://github.com/dzhang314/MultiFloats.jl) is the world's fastest* library for extended-precision floating-point arithmetic.
- * [**DZOptimization.jl**](https://github.com/dzhang314/DZOptimization.jl) is a high-performance library for smooth local nonlinear optimization.
+ * [**MultiFloats.jl**](https://github.com/dzhang314/MultiFloats.jl) is the world's fastest* library for high-precision floating-point arithmetic.
+ * [**DZOptimization.jl**](https://github.com/dzhang314/DZOptimization.jl) is a high-performance library for local nonlinear optimization.
  * [**RungeKuttaToolKit.jl**](https://github.com/dzhang314/RungeKuttaToolKit.jl) is a library of tools for deriving new Runge--Kutta methods.
  * [**AssemblyView.jl**](https://github.com/dzhang314/AssemblyView.jl) is a utility for displaying, analyzing, and summarizing x86 assembly code.
 
