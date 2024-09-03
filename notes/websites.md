@@ -15,11 +15,13 @@ There are lots of popular and well-tested tools for creating static websites, li
 
 - I like programming, and building a static site generator is [something of](https://news.ycombinator.com/item?id=38126210) [a rite of passage](https://news.ycombinator.com/item?id=25227181) [for programming enthusiasts](https://news.ycombinator.com/item?id=27687899).
 
+All of the tools I've developed for building dkzhang.com are **open-source and freely available on GitHub** in the [dzhang314/my-markdown-docs](https://github.com/dzhang314/my-markdown-docs) repository. If you'd like to create a similar website, please feel free to use my files as a starting point --- but be aware that they are highly tailored to my specific preferences, and you will likely want to adapt them to suit your own taste.
+
 
 
 ## Overview
 
-Every page on my website is generated from a Markdown file in [dzhang314/my-markdown-docs](https://github.com/dzhang314/my-markdown-docs). These Markdown files, together with a few [HTML/CSS templates](https://github.com/dzhang314/my-markdown-docs/tree/main/templates) and [a JS build script](https://github.com/dzhang314/my-markdown-docs/blob/main/build.mjs), are the only manually-written files used to create dkzhang.com.
+Every page on my website is generated from a Markdown file in [dzhang314/my-markdown-docs](https://github.com/dzhang314/my-markdown-docs). These Markdown files, together with a few [HTML/CSS templates](https://github.com/dzhang314/my-markdown-docs/tree/main/templates) and [a JS build script](https://github.com/dzhang314/my-markdown-docs/blob/main/build.mjs), are the only manually-written files I use to create dkzhang.com.
 
 Each page has the same basic structure outlined in [dkzhang-template.html](https://github.com/dzhang314/my-markdown-docs/blob/main/templates/dkzhang-template.html). This template has four fields that [build.mjs](https://github.com/dzhang314/my-markdown-docs/blob/main/build.mjs) fills in to generate the final HTML file for each page.
 
@@ -42,7 +44,7 @@ The structure of the navbar is defined in [dkzhang-navbar.html](https://github.c
 
 The style of this website is based on the [Bootswatch Litera theme](https://bootswatch.com/litera/) with a few manual tweaks in [dkzhang-style.css](https://github.com/dzhang314/my-markdown-docs/blob/main/templates/dkzhang-style.css) to adjust navbar and card padding. I apply a `max-width` constraint to the main `container-lg` to improve legibility and ensure consistent printing. A width of `19cm` fits A4 paper with 1cm margins and US Letter paper with 0.5" margins.
 
-I display text using the highly-legible [STIX fonts](https://www.stixfonts.org/), which are optimized for both screen and print media and are conveniently hosted by [Google Fonts](https://fonts.google.com/specimen/STIX+Two+Text). To match the STIX glyphs, I display code using [Fira Code](https://github.com/tonsky/FiraCode?tab=readme-ov-file) at `font-size: 1.0rem;` and slightly enlarge the KaTeX math font with `.katex { font-size: 1.05em; }`.
+I display text using the [STIX fonts](https://www.stixfonts.org/), which are optimized for legibility on both screen and print media and are conveniently hosted by [Google Fonts](https://fonts.google.com/specimen/STIX+Two+Text). To match the STIX glyphs, I display code using [Fira Code](https://github.com/tonsky/FiraCode?tab=readme-ov-file) at `font-size: 1.0rem;` and slightly enlarge the KaTeX math font with `.katex { font-size: 1.05em; }`.
 
 
 
@@ -78,19 +80,20 @@ Every page on my website is written in Markdown, a lightweight markup language w
     **Theorem**: Let $a, b, c \in \C$ be real or complex numbers
     with $a \ne 0$. For any $x \in \C$, the quadratic equation
     $ax^2 + bx + c = 0$ is satisfied if and only if
-    \[ x = \frac{-b \pm \sqrt{\Delta(a, b, c)}}{2a}. \]
+    \[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}. \]
     :::
     ::::::
 
-I use [`katex.renderToString`](https://katex.org/docs/api) to render pre-render math to static HTML elements which display correctly even when JavaScript is disabled. I also maintain a collection of [TeX macros](https://github.com/dzhang314/my-markdown-docs/blob/main/templates/dkzhang-macros.json) with helpful abbreviations that facilitate real-time note-taking during lectures and seminars.
+I use [`katex.renderToString`](https://katex.org/docs/api) to render math to static HTML elements that display correctly even when JavaScript is disabled. I also maintain a collection of [TeX macros](https://github.com/dzhang314/my-markdown-docs/blob/main/templates/dkzhang-macros.json) with helpful abbreviations that I've developed for real-time note-taking during lectures and seminars.
 
 
 
 ## Writing
 
-The markdown-it rendering pipeline processes simple Markdown documents [like this one](https://github.com/dzhang314/my-markdown-docs/blob/main/notes/websites.md) in a matter of milliseconds. This is fast enough to run on every keystroke as I type. I use [VSCode](https://code.visualstudio.com/) with the [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server) and [Run on Save](https://marketplace.visualstudio.com/items?itemName=pucelle.run-on-save) extensions to [automatically run build.mjs](https://github.com/dzhang314/my-markdown-docs/blob/main/.vscode/settings.json) and view the final rendered webpage in real time while I write. This is especially helpful for typesetting complex equations and fiddling with CSS styles.
+My markdown-it rendering pipeline is fast enough to run on every keystroke as I type. I use [VSCode](https://code.visualstudio.com/) with the [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server) and [Run on Save](https://marketplace.visualstudio.com/items?itemName=pucelle.run-on-save) extensions to [automatically run build.mjs](https://github.com/dzhang314/my-markdown-docs/blob/main/.vscode/settings.json) and view the final rendered webpage in real time while I write. This is especially helpful for typesetting complex equations and fiddling with line breaks.
 
-You can **try out my writing setup** at [dkzhang.com/ZhangEdit](https://www.dkzhang.com/ZhangEdit), an in-browser Markdown editor that uses the same markdown-it extensions and CSS styles as my website.
+You can **try out my writing setup** at [dkzhang.com/ZhangEdit](https://www.dkzhang.com/ZhangEdit), a live in-browser Markdown editor that uses the same markdown-it extensions and CSS styles as my website.
+
 
 
 ## Hosting
