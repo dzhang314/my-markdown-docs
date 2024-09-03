@@ -37,16 +37,19 @@ h1 { text-align: center; padding: 1rem; }
 .card-body ul+p { margin-top: -0.5rem; }
 .card-body ol+p { margin-top: -0.5rem; }
 
+/* Only underline links on hover. */
+a { text-decoration: none; }
+a:not([class]):hover { text-decoration: underline; }
+
+/* Ensure browser does not add side margin when printing. */
+@page { size: portrait; margin: auto 0; }
+
 /* Constrain width of main text container for ease of printing. */
 /* 19cm corresponds to an A4 page with 1cm margins on each side. */
 .container-lg { max-width: 19cm; padding: 0; }
 
 /* Adjust navbar padding and add bottom border. */
 .navbar { padding: 0 0.5rem; border-bottom: 1px solid var(--bs-gray-300);  }
-
-/* Only underline links on hover. */
-a { text-decoration: none; }
-a:not([class]):hover { text-decoration: underline; }
 
 pre {
     color: black;
