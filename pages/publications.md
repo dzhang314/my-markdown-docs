@@ -1,5 +1,35 @@
 # Your new reading list.
 
+***High-Performance Branch-Free Algorithms for Extended-Precision Floating-Point Arithmetic***\
+David K. Zhang and Alex Aiken\
+***SC 2025***, pages 695--710\
+DOI: [10.1145/3712285.3759876](https://doi.org/10.1145/3712285.3759876)\
+Published online on November 15, 2025.
+
+**Abstract:** We present new branch-free algorithms for floating-point arithmetic at double, triple, or quadruple the native machine precision. These algorithms are the fastest known by at least an order of magnitude and are conjectured to be optimal, not only in an asymptotic sense, but in their exact FLOP count and circuit depth. Unlike previous algorithms, which either use complex branching logic or are only correct on specific classes of inputs, our algorithms have computer-verified proofs of correctness for all floating-point inputs within machine overflow and underflow thresholds. Compared to state-of-the-art multiprecision libraries, our algorithms achieve up to 11.7× the peak performance of QD, 34.4× over CAMPARY, 35.6× over MPFR, and 41.4× over FLINT.
+
+--------------------------------------------------------------------------------
+
+***KDRSolvers: Scalable, Flexible, Task-Oriented Krylov Solvers***\
+David K. Zhang, Rohan Yadav, Alex Aiken, Fred Kjolstad, and Sean Treichler\
+***PAW-ATM 2025***, pages 1351--1365\
+DOI: [10.1145/3731599.3767501](https://doi.org/10.1145/3731599.3767501)\
+Published online on November 15, 2025.
+
+**Abstract:** We present KDRSolvers, a novel framework for representing sparse linear systems and implementing Krylov subspace methods on modern heterogeneous supercomputers. KDRSolvers uses dependent partitioning to uniformly represent sparse matrix storage formats as abstract maps between a matrix’s domain, range, and set of nonzero entries. This abstraction enables KDRSolvers to define universal co-partitioning operators for matrices and vectors independent of underlying storage formats, allowing changes in data partitioning strategies to automatically propagate through an application with no code modification. KDRSolvers also introduces multi-operator systems in which matrix and vector data can be ingested and processed in multiple non-contiguous pieces without data movement. Our implementation of KDRSolvers, targeting the Legion runtime system, achieves greater flexibility and competitive performance compared to PETSc and Trilinos. In experiments with up to 1,024 GPUs on the Lassen supercomputer, our implementation achieves up to a 9.6% reduction in execution time per iteration.
+
+--------------------------------------------------------------------------------
+
+***Automatic Verification of Floating-Point Accumulation Networks***\
+David K. Zhang and Alex Aiken\
+***CAV 2025***, pages 215--237\
+DOI: [10.1007/978-3-031-98682-6_12](https://doi.org/10.1007/978-3-031-98682-6_12)\
+Published online on July 23, 2025.
+
+**Abstract:** Floating-point accumulation networks (FPANs) are key building blocks used in many floating-point algorithms, including compensated summation and double-double arithmetic. FPANs are notoriously difficult to analyze, and algorithms using FPANs are often published without rigorous correctness proofs. In fact, on at least one occasion, a published error bound for a widely used FPAN was later found to be incorrect. In this paper, we present an automatic procedure that produces computer-verified proofs of several FPAN correctness properties, including error bounds that are tight to the nearest bit. Our approach is underpinned by a novel floating-point abstraction that models the sign, exponent, and number of leading and trailing zeros and ones in the mantissa of each number flowing through an FPAN. We also present a new FPAN for double-double addition that is faster and more accurate than the previous best known algorithm.
+
+--------------------------------------------------------------------------------
+
 ***Sidekick: In-Network Assistance for Secure End-to-End Transport Protocols***\
 Gina Yuan, Matthew Sotoudeh, David K. Zhang,\
 Michael Welzl, David Mazières, and Keith Winstein\
