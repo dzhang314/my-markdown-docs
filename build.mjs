@@ -156,7 +156,6 @@ compilePage("notes/optimization.md", "David K. Zhang - Optimization", "optimizat
 compilePage("notes/topology.md", "David K. Zhang - Topology", "topology.html");
 compilePage("notes/misc.md", "David K. Zhang - Misc. Thoughts", "misc.html");
 compilePage("notes/ecc.md", "David K. Zhang - Error-Correcting Codes", "ecc.html");
-compilePage("notes/legion.md", "David K. Zhang - Legion Programming", "legion.html");
 compilePage("notes/numbertheory.md", "David K. Zhang - Number Theory", "numbertheory.html");
 compilePage("notes/booleanfunctions.md", "David K. Zhang - Boolean Function Complexity", "booleanfunctions.html");
 compilePage("notes/websites.md", "David K. Zhang - Building Static Websites", "websites.html");
