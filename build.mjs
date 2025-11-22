@@ -21,17 +21,20 @@ const md = markdownIt({ html: true, linkify: true, typographer: true });
 
 ////////////////////////////////////////////////////////// MARKDOWN-IT-CONTAINER
 
-function addContainer(name, classes) {
+function addContainer(name, tag, classes, attributes) {
+    let open_tag = `<${tag} class="${classes.join(' ')}"`;
+    for (const attr of attributes) { open_tag += ` ${attr}`; }
+    open_tag += ">\n";
+    const close_tag = `</${tag}>\n`;
     md.use(markdownItContainer, name, {
         validate: params => params.trim() === name,
-        render: (tokens, i) => tokens[i].nesting === 1
-            ? `<div class="${classes}">\n` : "</div>\n"
+        render: (tokens, i) => (tokens[i].nesting === 1) ? open_tag : close_tag
     });
 }
 
-addContainer("card", "card bg-light border-dark");
-addContainer("card-header", "card-header bg-dark text-white");
-addContainer("card-body", "card-body");
+addContainer("card", "div", ["card", "bg-light", "border-dark"], []);
+addContainer("card-header", "div", ["card-header", "bg-dark", "text-white"], []);
+addContainer("card-body", "div", ["card-body"], []);
 
 /////////////////////////////////////////////////////////////////// KATEX PARSER
 
