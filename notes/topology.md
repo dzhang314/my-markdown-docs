@@ -160,6 +160,6 @@ Let $(X, T)$ be a topological space. A subset of $X$ is ___clopen___ if it is bo
 :::
 ::::::
 
-Every topological space $(X, T)$ has at least two clopen sets: the empty set $\varnothing$ and the set $X$ itself.
+In every topological space $(X, T)$, the empty set $\varnothing$ and the set $X$ itself are both clopen.
 
 --------------------------------------------------------------------------------

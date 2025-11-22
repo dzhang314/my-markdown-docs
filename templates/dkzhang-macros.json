@@ -19,6 +19,7 @@
     "\\fchar": "\\operatorname{char}",
     "\\powerset": "\\mathcal{P}({#1})",
     "\\abs": "\\left\\lvert {#1} \\right\\rvert",
+    "\\dd": "{\\mathrm{d}}",
     "\\va": "{\\mathbf{a}}",
     "\\vb": "{\\mathbf{b}}",
     "\\vc": "{\\mathbf{c}}",

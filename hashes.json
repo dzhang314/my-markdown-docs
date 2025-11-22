@@ -32,8 +32,8 @@
         "date": "2022-03-15"
     },
     "notes/topology.md": {
-        "hash": "f62f45719856f7b1916cffd48cd2e8811e8c36685e45594e76e03f748ec4d02a848d374eb278d6911d8bdc918e333d16",
-        "date": "2025-11-21"
+        "hash": "f9f36bb8fba872054a8feb5b7ab5d795bf29c9abf6e8a168a096b5c89597fb1a8efa92951a358c1a6990807fc0ccd90b",
+        "date": "2025-11-22"
     },
     "notes/misc.md": {
         "hash": "518d3ac76a38c04f1481fd1b2c44f48522fc9ac6f0699071f14f495e28ed4abe8e69a21df49115909e009ab0d29019e2",
@@ -62,5 +62,9 @@
     "notes/websites.md": {
         "hash": "858b9bec09185e1e4980547c18ac4e17b4f86ee830f58c3968a51fd804b09755ffb08074bacf86354601c2f7c5318ffc",
         "date": "2024-09-03"
+    },
+    "notes/functionalanalysis.md": {
+        "hash": "f3a398a82f3cf19742e8d883b9123d65d517897191153634a65c0a6b27b6707061955ad62925172fa1fffc1c1e676964",
+        "date": "2025-11-22"
     }
 }
