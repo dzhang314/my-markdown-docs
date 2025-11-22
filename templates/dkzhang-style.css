@@ -52,6 +52,13 @@ a:not([class]):hover { text-decoration: underline; }
 /* Adjust navbar padding and add bottom border. */
 .navbar { padding: 0 0.5rem; border-bottom: 1px solid var(--bs-gray-300);  }
 
+/* Use checkbox trick to toggle navbar without JS. */
+#navbar-checkbox:checked ~ .navbar-collapse { display: block; }
+#navbar-checkbox:focus + .navbar-toggler { outline: auto; }
+
+/* Use disclosure widget to toggle dropdown menu without JS. */
+details[open] > .dropdown-menu { display: block; }
+
 pre {
     color: black;
     background-color: var(--bs-gray-200);
