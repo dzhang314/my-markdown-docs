@@ -14,7 +14,7 @@
 ::: card-body
 Let $X$ be a set, and let $F$ be an ordered field. An $F$-valued ___pseudometric___ on $X$ is a function $d: X \times X \to F$ that satisfies the following requirements:
 
- * $d(x, x) = 0_F$ for all $x \in X$.
+ * ___Reflexivity___: $d(x, x) = 0_F$ for all $x \in X$.
  * ___Symmetry___: $d(x, y) = d(y, x)$ for all $x, y \in X$.
  * ___Triangle inequality___: $d(x, z) \le d(x, y) + d(y, z)$ for all $x, y, z \in X$.
 :::
