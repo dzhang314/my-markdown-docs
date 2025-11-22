@@ -62,6 +62,6 @@ details[open] > .dropdown-menu { display: block; }
 pre {
     color: black;
     background-color: var(--bs-gray-200);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding: 0.5rem;
 }
