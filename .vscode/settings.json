@@ -28,6 +28,7 @@
     ],
     "cSpell.words": [
         "booleanfunctions",
+        "katex",
         "linalg",
         "linkify",
         "mathbb",
@@ -36,6 +37,8 @@
         "normalin",
         "numbertheory",
         "operatorname",
-        "texmath"
+        "STIX",
+        "texmath",
+        "Zhang"
     ]
 }
