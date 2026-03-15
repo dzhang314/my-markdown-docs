@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "katex": "^0.16.25",
-    "markdown-it": "^14.1.0",
+    "katex": "^0.16.38",
+    "markdown-it": "^14.1.1",
     "markdown-it-container": "^4.0.0"
   }
 }
