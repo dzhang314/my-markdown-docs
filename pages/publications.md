@@ -198,7 +198,7 @@ See [conference program listing](http://meetings.aps.org/Meeting/MAR16/Session/H
 and [published abstract](http://absimage.aps.org/image/MAR16/MWS_MAR16-2015-000096.pdf).
 
 **Abstract:** Recently, experimental measurements and theoretical modeling have
-been in a disagreement concerning the binding energy of biexctions in transition
+been in a disagreement concerning the binding energy of biexcitons in transition
 metal dichalcogenides. While theory predicts a smaller binding energy (∼20 meV)
 that is, as logically expected, lower than that of the trion, experiment finds
 values much larger (∼60 meV), actually exceeding those for the trion. In this
