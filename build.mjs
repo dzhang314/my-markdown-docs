@@ -38,6 +38,13 @@ addContainer("card-body", "div", ["card-body"], []);
 
 /////////////////////////////////////////////////////////////////// KATEX PARSER
 
+md.inline.ruler.before("entity", "qed", (state, silent) => {
+    if (!state.src.startsWith("&qed;", state.pos)) return false;
+    if (!silent) state.push("qed", "", 0);
+    state.pos += "&qed;".length;
+    return true;
+});
+
 function addKatexInlineRule(regex) {
     md.inline.ruler.before("escape", "math_inline", (state, silent) => {
         regex.lastIndex = state.pos;
@@ -85,7 +92,8 @@ function addKatexBlockRule(regex) {
                 state.line = lastLine + 1;
             }
             return true;
-        }
+        },
+        { alt: ["paragraph", "blockquote"] }
     );
 }
 
@@ -95,6 +103,8 @@ addKatexBlockRule(/\\\[([\s\S]+?)\\\]/gmy);
 addKatexBlockRule(/\${2}([^$]*?[^\\])\${2}/gmy);
 
 ///////////////////////////////////////////////////////////////// KATEX RENDERER
+
+md.renderer.rules.qed = () => `<span class="float-end">&#8718;</span>`;
 
 function katexRenderer(displayMode) {
     return (tokens, i) => katex.renderToString(tokens[i].content, {
@@ -107,20 +117,6 @@ md.renderer.rules.math_block = katexRenderer(true);
 
 ////////////////////////////////////////////////////////////////// BUILD WEBSITE
 
-function preprocessMarkdown(string, date) {
-    const result = [];
-    let codeBlock = false;
-    for (const line of string.split('\n')) {
-        if (/^\s*```/.test(line)) { codeBlock = !codeBlock; }
-        if (codeBlock) { result.push(line); continue; }
-        if (/^\s*\\\[|^\s*\$\$/.test(line)) { result.push(""); }
-        result.push(line
-            .replaceAll("&qed;", `<span class="float-end">&#8718;</span>`)
-            .replaceAll('&today;', date));
-    }
-    return result.join('\n');
-}
-
 function compilePage(inputFile, title, outputFile) {
     const input = readFileSync(inputFile, "utf8").replaceAll("\r\n", "\n");
     const hash = createHash('sha384').update(input).digest('hex');
@@ -131,10 +127,10 @@ function compilePage(inputFile, title, outputFile) {
         const date = (FORCE && (inputFile in HASHES)) ?
             HASHES[inputFile].date :
             (new Date()).toISOString().split('T')[0];
+        const content = input.replaceAll('&today;', date);
         const output = DKZHANG_TEMPLATE
             .replace("{{{TITLE}}}", title)
-            .replace("{{{CONTENT}}}", md.render(
-                preprocessMarkdown(input, date)));
+            .replace("{{{CONTENT}}}", md.render(content));
         const endTime = Date.now();
         writeFileSync("output/" + outputFile, output);
         if (existsSync("../dzhang314.github.com")) {
